@@ -1,0 +1,132 @@
+"use client";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { ArrowLeft, ShipWheel } from "lucide-react";
+import ProfileCard from "../components/ProfileCard";
+import Footer from "../components/Footer";
+
+export default function AboutUs() {
+  return (
+    <main className="min-h-screen bg-[#0A1128] text-white">
+      {/* Hero Section for About Us */}
+      <section className="relative pt-40 pb-24 px-6 md:px-12 bg-white/[0.02] border-b border-white/5">
+        <div className="max-w-7xl mx-auto">
+          <Link href="/" className="inline-flex items-center gap-2 text-blue-400 font-bold tracking-widest text-xs uppercase mb-12 group">
+            <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
+            Back to Home
+          </Link>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-serif font-black uppercase tracking-tighter leading-[0.85] mb-12">
+              Our <br /> <span className="text-blue-500 italic">Genesis.</span>
+            </h1>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Main Content Section */}
+      <section className="py-24 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+          <div className="lg:col-span-5">
+            <div className="sticky top-40 space-y-8">
+              <span className="text-sm font-bold tracking-[0.3em] text-blue-500 block uppercase italic">Bworth Technologies</span>
+              <h2 className="text-4xl md:text-5xl font-serif font-bold uppercase leading-tight tracking-tighter">
+                Repurposing fashion for a better future.
+              </h2>
+              <div className="w-20 h-20 border-2 border-blue-500 rounded-full flex items-center justify-center animate-spin-slow">
+                <ShipWheel size={40} className="text-blue-500" />
+              </div>
+            </div>
+          </div>
+
+          <div className="lg:col-span-7 prose prose-invert max-w-none">
+            <div className="space-y-12">
+              <p className="text-xl md:text-2xl font-light leading-relaxed text-white/70 text-justify">
+                Founded in April 2024 in Gurugram, Bworth Technologies Pvt Ltd addresses the persistent problem of wardrobe clutter, for which no established solution exists. Without proper disposal methods, used apparel often ends up in landfills, releasing harmful carbon emissions that damage our environment.
+              </p>
+
+              <div className="p-8 bg-blue-600/10 border border-blue-500/20 rounded-3xl">
+                <p className="text-lg font-medium leading-relaxed italic text-blue-100 mb-0">
+                  "Bworth is more than just a company; it is a movement towards conscious consumerism. We strive to give every clothing item a second chance, significantly reducing environmental damage."
+                </p>
+              </div>
+
+              <p className="text-lg leading-relaxed text-white/50 text-justify">
+                To mitigate this environmental impact, Bworth has developed an ecosystem where used apparel is repurposed through reuse, upcycling, and recycling methods. Our vision extends beyond environmental conservation to also address changing fashion trends.
+              </p>
+
+              <p className="text-lg leading-relaxed text-white/50 text-justify">
+                Our flagship Buyback program plays a crucial role in this by helping to reduce the fashion industry's carbon footprint and its environmental impact. This program allows consumers to participate in a circular economy, promoting the sustainable use of fashion. Our mission is to integrate sustainability into the fabric of fashion, thereby preserving the planet's beauty for future generations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Founder / Leadership Section */}
+      <section className="py-24 px-6 md:px-12 border-t border-white/5 bg-[#020610] overflow-hidden">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="order-2 lg:order-1"
+          >
+            <div className="w-full max-w-md mx-auto lg:ml-0">
+              <ProfileCard
+                name="Dheeraj Anand"
+                title="Founder"
+                handle="dheerajanand"
+                status="MBA • 18 Years Expertise"
+                contactText="Connect"
+                avatarUrl="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80"
+                miniAvatarUrl="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&q=80"
+                showUserInfo={true}
+                enableTilt={true}
+                enableMobileTilt={true}
+                showBehindGlow={true}
+                behindGlowColor="rgba(59, 130, 246, 0.4)"
+                innerGradient="linear-gradient(145deg, #020610 30%, #172554 100%)"
+                onContactClick={() => window.open('https://linkedin.com', '_blank')}
+              />
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="space-y-8 order-1 lg:order-2"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className="text-xs font-bold tracking-[0.3em] text-blue-500 uppercase">Leadership</span>
+            <h2 className="text-4xl md:text-6xl font-serif font-black uppercase tracking-tighter leading-none text-white">
+              Visionary <br /> <span className="italic text-white/20 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Leadership.</span>
+            </h2>
+            <p className="text-lg md:text-xl font-light leading-relaxed text-white/40 text-justify">
+              With an MBA and 18 years of deep expertise in building businesses, Dheeraj Anand leads BWorth with a strategic vision to redefine sustainability in fashion. His leadership combines improved business acumen with a passion for environmental impact.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      <Footer />
+
+      <style jsx>{`
+        .animate-spin-slow {
+          animation: spin 8s linear infinite;
+        }
+        @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+      `}</style>
+    </main>
+  );
+}

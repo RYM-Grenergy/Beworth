@@ -1,0 +1,96 @@
+"use client";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { ArrowLeft, Target, Recycle, Users } from "lucide-react";
+import Footer from "../components/Footer";
+
+export default function OurMission() {
+  const missionPoints = [
+    {
+      icon: <Recycle size={28} />,
+      title: "Circular Lifecycle",
+      desc: "Extending the life of every garment through our unique buyback program."
+    },
+    {
+      icon: <Users size={28} />,
+      title: "Community Engagement",
+      desc: "Organizing offline events in residential societies to build direct platforms."
+    },
+    {
+      icon: <Target size={28} />,
+      title: "Dead Stock Clearance",
+      desc: "Assisting brands in clearing dead stock, promoting a waste-free industry."
+    }
+  ];
+
+  return (
+    <main className="min-h-screen bg-[#0A1128] text-white">
+      <section className="relative pt-40 pb-24 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto">
+          <Link href="/" className="inline-flex items-center gap-2 text-blue-400 font-bold tracking-widest text-xs uppercase mb-12 group">
+            <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
+            Back to Home
+          </Link>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-serif font-black uppercase tracking-tighter leading-[0.85] mb-12">
+              Our <br /> <span className="text-blue-500 italic">Mission.</span>
+            </h1>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 md:px-12 border-t border-white/5">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+          <div className="lg:col-span-7">
+            <div className="space-y-12">
+              <p className="text-2xl md:text-4xl font-serif font-medium leading-tight text-white/90">
+                Revolutionizing the fashion industry through a unique buyback program that ensures zero waste.
+              </p>
+
+              <p className="text-lg md:text-xl font-light leading-relaxed text-white/50 text-justify">
+                Our mission is to extend the lifecycle of every item by allowing consumers to return their clothes after use. We aim to solve the problem of wardrobe clutter by offering a sustainable solution that benefits both consumers and sellers.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12">
+                {missionPoints.map((point, i) => (
+                  <div key={i} className="p-8 bg-white/5 rounded-3xl border border-white/5 hover:bg-blue-600 transition-all duration-500 group">
+                    <div className="mb-6 text-blue-400 group-hover:text-white transition-colors">{point.icon}</div>
+                    <h3 className="text-xl font-serif font-bold uppercase mb-3">{point.title}</h3>
+                    <p className="text-sm text-white/40 group-hover:text-white/80 transition-colors uppercase tracking-wider font-bold">{point.desc}</p>
+                  </div>
+                ))}
+              </div>
+
+              <p className="text-lg leading-relaxed text-white/50 text-justify pt-8 border-t border-white/5">
+                By organizing offline events in residential societies and partnering with brands, we intend to create a direct and engaging platform for our customers. We are committed to providing a flexible commission program for sellers and ensuring the clearance of dead stock, thus promoting a circular economy.
+              </p>
+            </div>
+          </div>
+
+          <div className="lg:col-span-1 hidden lg:block"></div>
+
+          <div className="lg:col-span-4">
+            <div className="p-10 border border-blue-500/30 rounded-[3rem] bg-blue-600/5 backdrop-blur-xl sticky top-40">
+              <span className="text-xs font-bold uppercase tracking-[0.3em] text-blue-500 mb-6 block">Core Goal</span>
+              <p className="text-2xl font-serif font-black uppercase mb-8 italic">
+                Sustainability integrated into every thread.
+              </p>
+              <p className="text-sm font-medium text-white/40 leading-relaxed mb-8">
+                We are committed to fostering trust and building long-term relationships through innovative and sustainable solutions.
+              </p>
+              <div className="w-full h-[1px] bg-white/10 mb-8"></div>
+              <p className="text-[10px] uppercase font-bold tracking-widest text-blue-400">#CircularCulture</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </main>
+  );
+}

@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #020610;
+    /* Deeper, richer black-navy */
+    color: #F8FAFC;
+    /* Crisp off-white */
+    @apply antialiased overflow-x-hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply tracking-tighter font-serif;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: var(--font-playfair), serif;
+  }
+
+  .font-sans {
+    font-family: var(--font-space-grotesk), sans-serif;
+  }
+
+  .outline-text {
+    -webkit-text-stroke: 1px currentColor;
+    color: transparent;
+  }
+
+  .vertical-text {
+    writing-mode: vertical-rl;
+  }
+
+  .glass {
+    @apply bg-white/[0.03] backdrop-blur-2xl border border-white/5;
+  }
+
+  .glass-dark {
+    @apply bg-black/20 backdrop-blur-2xl border border-white/5;
+  }
+
+  /* Subtler Neutral Glow */
+  .soft-glow {
+    box-shadow: 0 0 50px -12px rgba(255, 255, 255, 0.05);
+  }
+}
