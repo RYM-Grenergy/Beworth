@@ -21,7 +21,7 @@ export default function Footer() {
           <div className="lg:col-span-5">
             <Link href="/" className="block mb-8">
               <img
-                src="/logo2.4046ff39ad9795bdb70f.4046ff39ad9795bdb70f.jpeg"
+                src="/logo.png"
                 alt="Bworth Logo"
                 className="h-10 w-auto object-contain invert hue-rotate-180"
               />

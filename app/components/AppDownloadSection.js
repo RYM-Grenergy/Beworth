@@ -83,7 +83,7 @@ export default function AppDownloadSection() {
                             <div className="flex justify-between items-center">
                                 <div className="h-8 w-auto flex items-center justify-center">
                                     <img
-                                        src="/logo2.4046ff39ad9795bdb70f.4046ff39ad9795bdb70f.jpeg"
+                                        src="/logo.png"
                                         alt="Bworth Logo"
                                         className="h-full w-auto object-contain invert hue-rotate-180"
                                     />

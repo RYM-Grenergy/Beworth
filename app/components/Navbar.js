@@ -24,8 +24,7 @@ export default function Navbar() {
     { name: "Our Mission", href: "/our-mission", count: "03" },
     { name: "Our Vision", href: "/our-vision", count: "04" },
     { name: "Brands", href: "/brands", count: "05" },
-    { name: "Policies", href: "/policies", count: "06" },
-    { name: "Contact Us", href: "/contact-us", count: "07" },
+    { name: "Contact Us", href: "/contact-us", count: "06" },
   ];
 
   const menuVariants = {
@@ -69,7 +68,7 @@ export default function Navbar() {
             className="group flex items-center gap-3"
           >
             <img
-              src="/logo2.4046ff39ad9795bdb70f.4046ff39ad9795bdb70f.jpeg"
+              src="/logo.png"
               alt="Bworth Logo"
               className="h-10 w-auto object-contain invert hue-rotate-180"
             />
@@ -103,7 +102,7 @@ export default function Navbar() {
               <div>
                 <Link href="/" className="block">
                   <img
-                    src="/logo2.4046ff39ad9795bdb70f.4046ff39ad9795bdb70f.jpeg"
+                    src="/logo.png"
                     alt="Bworth Logo"
                     className="h-16 w-auto object-contain invert hue-rotate-180 mb-6"
                   />
@@ -129,7 +128,7 @@ export default function Navbar() {
               <div className="sticky top-0 z-10 flex justify-between items-center md:justify-end p-6 md:p-8 bg-[#0A1128]/80 backdrop-blur-sm">
                 <div className="md:hidden">
                   <img
-                    src="/logo2.4046ff39ad9795bdb70f.4046ff39ad9795bdb70f.jpeg"
+                    src="/logo.png"
                     alt="Bworth Logo"
                     className="h-10 w-auto object-contain invert hue-rotate-180"
                   />
@@ -138,7 +137,7 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className="flex items-center gap-2 px-4 py-2 hover:bg-white hover:text-black transition-all border border-white/10 rounded-full group bg-white/5"
                 >
-                  <span className="text-xs font-bold uppercase tracking-widest">CLOSE</span>
+                  <span className="text-[10px] font-bold uppercase tracking-widest">CLOSE</span>
                   <X size={20} className="group-hover:rotate-90 transition-transform" />
                 </button>
               </div>
@@ -158,11 +157,11 @@ export default function Navbar() {
                           onClick={() => setIsOpen(false)}
                           className="flex items-baseline gap-3 md:gap-6 py-3 md:py-4 xl:py-5 border-b border-white/5 group-hover:border-white/10 md:group-hover:pl-4 transition-all duration-300"
                         >
-                          <span className={`text-[10px] md:text-xs font-mono font-bold transition-colors mb-1 ${isActive ? "text-blue-400" : "text-white/20"
+                          <span className={`text-[9px] md:text-[10px] font-mono font-bold transition-colors mb-1 ${isActive ? "text-blue-400" : "text-white/20"
                             }`}>
                             {link.count}
                           </span>
-                          <span className={`text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-serif font-black uppercase tracking-tighter transition-all group-hover:scale-[1.01] inline-block ${isActive ? "italic text-blue-500" : "text-white/80 group-hover:text-white"
+                          <span className={`text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-serif font-black uppercase tracking-tighter transition-all group-hover:scale-[1.01] inline-block ${isActive ? "italic text-blue-500" : "text-white/80 group-hover:text-white"
                             }`}>
                             {link.name}
                           </span>

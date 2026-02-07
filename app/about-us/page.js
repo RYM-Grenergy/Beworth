@@ -93,7 +93,7 @@ export default function AboutUs() {
                 showBehindGlow={true}
                 behindGlowColor="rgba(59, 130, 246, 0.4)"
                 innerGradient="linear-gradient(145deg, #020610 30%, #172554 100%)"
-                onContactClick={() => window.open('https://linkedin.com', '_blank')}
+                onContactClick={() => window.open('https://www.linkedin.com/in/dheeraj-anand-b6b407100/', '_blank')}
               />
             </div>
           </motion.div>
