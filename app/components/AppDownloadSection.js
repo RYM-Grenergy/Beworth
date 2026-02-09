@@ -1,41 +1,91 @@
 "use client";
 import { motion } from "framer-motion";
 import { Smartphone, Download, Star, ShieldCheck, Zap, Recycle, Coins, Leaf } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
+import { useTheme } from "../context/ThemeContext";
+import { translations } from "../utils/translations";
 
 export default function AppDownloadSection() {
+    const { language } = useLanguage();
+    const { theme } = useTheme();
+    const t = translations[language];
+
     const features = [
-        { icon: <Zap size={20} />, title: "Shop Smart", desc: "Discover stylish, sustainable fashion." },
-        { icon: <Coins size={20} />, title: "Sell & Earn", desc: "Exchange clothes for BWorth Coins." },
-        { icon: <Recycle size={20} />, title: "Recycle", desc: "Upcycle and reduce textile waste." },
-        { icon: <Leaf size={20} />, title: "Carbon Savings", desc: "Track your CO₂ savings." },
+        { icon: <Zap size={20} />, title: t.app_download.shop_smart, desc: t.app_download.shop_smart_desc },
+        { icon: <Coins size={20} />, title: t.app_download.sell_earn, desc: t.app_download.sell_earn_desc },
+        { icon: <Recycle size={20} />, title: t.app_download.recycle, desc: t.app_download.recycle_desc },
+        { icon: <Leaf size={20} />, title: t.app_download.carbon_savings, desc: t.app_download.carbon_savings_desc },
     ];
 
     return (
-        <section className="py-32 px-6 md:px-12 bg-[#020610] relative overflow-hidden">
+        <section
+            className={`py-32 px-6 md:px-12 relative overflow-hidden transition-colors ${theme === "white" ? "bg-[#F8FAFC]" : "bg-[#020610]"
+                }`}
+        >
             {/* Background Decorative - Subtler white glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-600/[0.02] blur-[150px] -z-10"></div>
+            <div
+                className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full blur-[150px] -z-10 ${theme === "white" ? "bg-blue-600/[0.05]" : "bg-blue-600/[0.02]"
+                    }`}
+            ></div>
 
             <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-20">
                 <div className="flex-1 space-y-12">
                     <div className="space-y-6">
-                        <span className="text-xs font-bold tracking-[0.3em] text-blue-500 uppercase">Mobile App</span>
-                        <h2 className="text-5xl md:text-7xl font-serif font-black uppercase tracking-tighter leading-none text-white">
-                            BWorth in your <br /> <span className="italic text-white/20 outline-text !-webkit-text-stroke-white">Pocket.</span>
+                        <span className="text-xs font-bold tracking-[0.3em] text-blue-500 uppercase">
+                            {t.app_download.mobile_app}
+                        </span>
+                        <h2
+                            className={`text-5xl md:text-7xl font-serif font-black uppercase tracking-tighter leading-none ${theme === "white" ? "text-black" : "text-white"
+                                }`}
+                        >
+                            {t.app_download.pocket_title_bworth} <br />{" "}
+                            <span
+                                className={`italic outline-text !-webkit-text-stroke-white ${theme === "white"
+                                        ? "text-black/10"
+                                        : "text-white/20"
+                                    }`}
+                            >
+                                {t.app_download.pocket_title_pocket}
+                            </span>
                         </h2>
-                        <p className="text-xl font-light text-white/50 leading-relaxed max-w-xl">
-                            India’s first sustainable fashion marketplace. Buy, Sell, Recycle, and Earn Rewards—all in one app.
+                        <p
+                            className={`text-xl font-light leading-relaxed max-w-xl ${theme === "white"
+                                    ? "text-black/50"
+                                    : "text-white/50"
+                                }`}
+                        >
+                            {t.app_download.desc}
                         </p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {features.map((feature, i) => (
                             <div key={i} className="flex gap-4 group">
-                                <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                                <div
+                                    className={`w-12 h-12 border rounded-xl flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all ${theme === "white"
+                                            ? "bg-black/5 border-black/10"
+                                            : "bg-white/5 border-white/10"
+                                        }`}
+                                >
                                     {feature.icon}
                                 </div>
                                 <div>
-                                    <h4 className="font-serif font-bold uppercase text-white tracking-tight">{feature.title}</h4>
-                                    <p className="text-sm text-white/30">{feature.desc}</p>
+                                    <h4
+                                        className={`font-serif font-bold uppercase tracking-tight ${theme === "white"
+                                                ? "text-black"
+                                                : "text-white"
+                                            }`}
+                                    >
+                                        {feature.title}
+                                    </h4>
+                                    <p
+                                        className={`text-sm ${theme === "white"
+                                                ? "text-black/40"
+                                                : "text-white/30"
+                                            }`}
+                                    >
+                                        {feature.desc}
+                                    </p>
                                 </div>
                             </div>
                         ))}
@@ -46,29 +96,72 @@ export default function AppDownloadSection() {
                             href="https://play.google.com/store/apps/details?id=com.BworthGo&pcampaignid=web_share"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="bg-white text-black px-10 py-6 rounded-full font-bold uppercase tracking-widest flex items-center gap-4 hover:bg-blue-600 hover:text-white transition-all shadow-2xl shadow-white/5 group"
+                            className={`px-10 py-6 rounded-full font-bold uppercase tracking-widest flex items-center gap-4 hover:bg-blue-600 hover:text-white transition-all shadow-2xl group ${theme === "white"
+                                    ? "bg-black text-white shadow-black/5"
+                                    : "bg-white text-black shadow-white/5"
+                                }`}
                         >
                             <div className="flex flex-col items-start leading-none">
-                                <span className="text-[10px] opacity-60 font-sans">GET IT ON</span>
-                                <span className="text-lg">Google Play</span>
+                                <span className="text-[10px] opacity-60 font-sans">
+                                    {t.app_download.get_it_on}
+                                </span>
+                                <span className="text-lg">
+                                    {t.app_download.google_play}
+                                </span>
                             </div>
-                            <Download size={24} className="group-hover:translate-y-1 transition-transform" />
+                            <Download
+                                size={24}
+                                className="group-hover:translate-y-1 transition-transform"
+                            />
                         </a>
 
                         <div className="flex gap-10">
                             <div className="text-center">
-                                <span className="block text-2xl font-serif font-bold text-white leading-none">50+</span>
-                                <span className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Downloads</span>
+                                <span
+                                    className={`block text-2xl font-serif font-bold leading-none ${theme === "white"
+                                            ? "text-black"
+                                            : "text-white"
+                                        }`}
+                                >
+                                    50+
+                                </span>
+                                <span
+                                    className={`text-[10px] uppercase tracking-widest font-bold ${theme === "white"
+                                            ? "text-black/40"
+                                            : "text-white/40"
+                                        }`}
+                                >
+                                    {t.app_download.downloads}
+                                </span>
                             </div>
                             <div className="text-center">
-                                <span className="block text-2xl font-serif font-bold text-white leading-none">18+</span>
-                                <span className="text-[10px] uppercase tracking-widest text-white/40 font-bold">Rated</span>
+                                <span
+                                    className={`block text-2xl font-serif font-bold leading-none ${theme === "white"
+                                            ? "text-black"
+                                            : "text-white"
+                                        }`}
+                                >
+                                    18+
+                                </span>
+                                <span
+                                    className={`text-[10px] uppercase tracking-widest font-bold ${theme === "white"
+                                            ? "text-black/40"
+                                            : "text-white/40"
+                                        }`}
+                                >
+                                    {t.app_download.rated}
+                                </span>
                             </div>
                         </div>
                     </div>
 
-                    <p className="text-[10px] text-white/20 font-bold uppercase tracking-[0.2em] flex items-center gap-2">
-                        <Smartphone size={12} /> This app is available for all of your devices
+                    <p
+                        className={`text-[10px] font-bold uppercase tracking-[0.2em] flex items-center gap-2 ${theme === "white"
+                                ? "text-black/20"
+                                : "text-white/20"
+                            }`}
+                    >
+                        <Smartphone size={12} /> {t.app_download.available_msg}
                     </p>
                 </div>
 
@@ -94,31 +187,31 @@ export default function AppDownloadSection() {
                             </div>
 
                             <div className="p-6 bg-blue-600/20 border border-blue-500/20 rounded-3xl">
-                                <span className="text-[10px] font-bold text-blue-500 uppercase tracking-widest">Your Balance</span>
+                                <span className="text-[10px] font-bold text-blue-500 uppercase tracking-widest">{t.app_download.your_balance}</span>
                                 <div className="flex items-baseline gap-2 mt-2">
                                     <span className="text-4xl font-serif font-bold text-white">2,450</span>
-                                    <span className="text-xs font-bold text-white/40">BWorth Coins</span>
+                                    <span className="text-xs font-bold text-white/40">{t.app_download.coins}</span>
                                 </div>
                             </div>
 
                             <div className="space-y-4">
-                                <span className="text-xs font-bold text-white/40 uppercase tracking-widest">Sustainability Stats</span>
+                                <span className="text-xs font-bold text-white/40 uppercase tracking-widest">{t.app_download.stats}</span>
                                 <div className="grid grid-cols-2 gap-4">
                                     <div className="p-4 bg-white/5 rounded-2xl border border-white/5">
                                         <Leaf size={16} className="text-green-500 mb-2" />
                                         <span className="block text-lg font-serif font-bold text-white">12.4kg</span>
-                                        <span className="text-[10px] uppercase text-white/20">CO₂ Saved</span>
+                                        <span className="text-[10px] uppercase text-white/20">{t.app_download.co2_saved}</span>
                                     </div>
                                     <div className="p-4 bg-white/5 rounded-2xl border border-white/5">
                                         <Recycle size={16} className="text-blue-500 mb-2" />
                                         <span className="block text-lg font-serif font-bold text-white">8 Items</span>
-                                        <span className="text-[10px] uppercase text-white/20">Recycled</span>
+                                        <span className="text-[10px] uppercase text-white/20">{t.app_download.recycled}</span>
                                     </div>
                                 </div>
                             </div>
 
                             <div className="p-6 bg-white/[0.02] border border-white/[0.05] rounded-3xl">
-                                <span className="text-xs font-bold text-white/60 mb-4 block uppercase tracking-widest">Sustainable Picks</span>
+                                <span className="text-xs font-bold text-white/60 mb-4 block uppercase tracking-widest">{t.app_download.picks}</span>
                                 <div className="flex gap-4">
                                     <div className="w-24 h-32 bg-white/5 rounded-xl border border-white/10 overflow-hidden">
                                         <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=200&h=300&fit=crop&q=80" className="w-full h-full object-cover opacity-80" alt="Sustainable Shirts" />
@@ -149,7 +242,7 @@ export default function AppDownloadSection() {
                     <div className="absolute -right-6 top-1/4 p-4 bg-white/[0.03] backdrop-blur-xl border border-white/[0.05] rounded-2xl shadow-2xl animate-bounce-slow">
                         <div className="flex items-center gap-3">
                             <ShieldCheck size={16} className="text-blue-500" />
-                            <span className="text-[10px] font-bold text-white/60 tracking-widest uppercase">Secured by Turbopack</span>
+                            <span className="text-[10px] font-bold text-white/60 tracking-widest uppercase">{t.app_download.secured}</span>
                         </div>
                     </div>
                 </div>

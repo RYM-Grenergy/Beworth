@@ -3,16 +3,32 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowLeft, Eye, Sparkles, Globe } from "lucide-react";
 import Footer from "../components/Footer";
+import { useLanguage } from "../context/LanguageContext";
+import { useTheme } from "../context/ThemeContext";
+import { translations } from "../utils/translations";
 
 export default function OurVision() {
+  const { language } = useLanguage();
+  const { theme } = useTheme();
+  const t = translations[language];
+
   return (
-    <main className="min-h-screen bg-[#0A1128] text-white">
+    <main
+      className={`min-h-screen transition-colors ${theme === "white" ? "bg-[#F8FAFC] text-black" : "bg-[#0A1128] text-white"
+        }`}
+    >
       {/* Header */}
       <section className="relative pt-40 pb-24 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
-          <Link href="/" className="inline-flex items-center gap-2 text-blue-400 font-bold tracking-widest text-xs uppercase mb-12 group">
-            <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-            Back to Home
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-blue-400 font-bold tracking-widest text-xs uppercase mb-12 group"
+          >
+            <ArrowLeft
+              size={16}
+              className="group-hover:-translate-x-1 transition-transform"
+            />
+            {t.common.back_home}
           </Link>
 
           <motion.div
@@ -21,14 +37,22 @@ export default function OurVision() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-serif font-black uppercase tracking-tighter leading-[0.85] mb-12">
-              Our <br /> <span className="text-transparent outline-text !-webkit-text-stroke-blue-500 italic">Vision.</span>
+              {t.vision_page.title_our} <br />{" "}
+              <span className="text-transparent outline-text !-webkit-text-stroke-blue-500 italic">
+                {t.vision_page.title_vision}
+              </span>
             </h1>
           </motion.div>
         </div>
       </section>
 
       {/* Vision Blocks */}
-      <section className="py-24 px-6 md:px-12 border-t border-white/5 bg-white/[0.01]">
+      <section
+        className={`py-24 px-6 md:px-12 border-t transition-colors ${theme === "white"
+            ? "border-black/5 bg-black/[0.02]"
+            : "border-white/5 bg-white/[0.01]"
+          }`}
+      >
         <div className="max-w-7xl mx-auto space-y-32">
           {/* Block 1 */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -37,21 +61,24 @@ export default function OurVision() {
                 <Globe size={32} />
               </div>
               <h2 className="text-4xl md:text-6xl font-serif font-black uppercase tracking-tighter leading-none">
-                A Global <br /> Win-Win Scenario.
+                {t.vision_page.global_win} <br /> {t.vision_page.win_scenario}
               </h2>
-              <p className="text-xl md:text-2xl font-light leading-relaxed text-white/50 text-justify">
-                BWorth Technologies Private Limited envisions creating a sustainable ecosystem within the fashion marketplace, where both consumers and sellers benefit in a win-win scenario. Our goal is to transform the fast fashion industry by promoting sustainability and environmental consciousness.
+              <p
+                className={`text-xl md:text-2xl font-light leading-relaxed text-justify ${theme === "white" ? "text-black/50" : "text-white/50"
+                  }`}
+              >
+                {t.vision_page.vision_desc}
               </p>
             </div>
             <div className="relative aspect-square rounded-[4rem] overflow-hidden group shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1542601906970-351950ed87a5?q=80&w=1000&auto=format&fit=crop"
-                alt="Sustainable Future"
+                src="https://plus.unsplash.com/premium_photo-1673356302169-574db56b52cd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fGNsb3Roc3xlbnwwfHwwfHx8MA%3D%3D"
+                alt=""
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-blue-900/40 group-hover:bg-blue-900/20 transition-colors"></div>
               <p className="absolute bottom-12 left-12 right-12 text-5xl font-serif font-black uppercase tracking-tighter italic text-white opacity-40">
-                Transformation
+                {t.vision_page.transformation}
               </p>
             </div>
           </div>
@@ -66,18 +93,27 @@ export default function OurVision() {
               />
               <div className="absolute inset-0 bg-blue-900/40 group-hover:bg-blue-900/20 transition-colors"></div>
               <p className="absolute bottom-12 left-12 right-12 text-5xl font-serif font-black uppercase tracking-tighter italic text-white opacity-40">
-                Responsibility
+                {t.vision_page.responsibility}
               </p>
             </div>
             <div className="order-1 lg:order-2 space-y-8">
-              <div className="w-16 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-blue-500 -rotate-3">
+              <div
+                className={`w-16 h-16 border rounded-2xl flex items-center justify-center text-blue-500 -rotate-3 ${theme === "white"
+                    ? "bg-black/5 border-black/10"
+                    : "bg-white/5 border-white/10"
+                  }`}
+              >
                 <Sparkles size={32} />
               </div>
               <h2 className="text-4xl md:text-6xl font-serif font-black uppercase tracking-tighter leading-none">
-                Responsible <br /> Consumption.
+                {t.vision_page.resp_consumption} <br />{" "}
+                {t.vision_page.consumption}
               </h2>
-              <p className="text-xl md:text-2xl font-light leading-relaxed text-white/50 text-justify">
-                By addressing the common issue of overfilled wardrobes with clothes that are no longer worn but not entirely discarded, we aim to provide a solution that not only helps individuals manage their wardrobe efficiently but also contributes to environmental sustainability. Our vision is to make fashion consumption more responsible and to instill a sense of value in every garment purchased.
+              <p
+                className={`text-xl md:text-2xl font-light leading-relaxed text-justify ${theme === "white" ? "text-black/50" : "text-white/50"
+                  }`}
+              >
+                {t.vision_page.resp_desc}
               </p>
             </div>
           </div>

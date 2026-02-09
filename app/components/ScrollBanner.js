@@ -1,19 +1,31 @@
 "use client";
 import { motion } from "framer-motion";
 
+import { useLanguage } from "../context/LanguageContext";
+import { useTheme } from "../context/ThemeContext";
+import { translations } from "../utils/translations";
+
 export default function ScrollBanner() {
-  const text = "SUSTAINABLE FUTURE";
+  const { language } = useLanguage();
+  const { theme } = useTheme();
+  const t = translations[language];
+  const text = t.scroll_banner.text;
   const items = Array(10).fill(text);
 
   return (
-    <div className="bg-black text-white py-6 md:py-8 overflow-hidden transform md:-rotate-1 relative z-10 my-24 border-y border-white/10 shadow-2xl">
+    <div
+      className={`py-6 md:py-8 overflow-hidden transform md:-rotate-1 relative z-10 my-24 border-y shadow-2xl transition-colors ${theme === "white"
+          ? "bg-white text-black border-black/10"
+          : "bg-black text-white border-white/10"
+        }`}
+    >
       <div className="flex relative items-center">
         <motion.div
           animate={{ x: ["0%", "-50%"] }}
           transition={{
             repeat: Infinity,
             duration: 20,
-            ease: "linear"
+            ease: "linear",
           }}
           className="flex whitespace-nowrap"
         >

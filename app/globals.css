@@ -1,12 +1,28 @@
 @import "tailwindcss";
 
 @layer base {
+  :root {
+    --bg-primary: #020610;
+    --text-primary: #F8FAFC;
+    --border-primary: rgba(255, 255, 255, 0.05);
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --menu-bg: #0A1128;
+  }
+
+  body.theme-white {
+    --bg-primary: #F8FAFC;
+    --text-primary: #020610;
+    --border-primary: rgba(0, 0, 0, 0.1);
+    --glass-bg: rgba(0, 0, 0, 0.03);
+    --menu-bg: #FFFFFF;
+  }
+
   body {
-    background-color: #020610;
+    background-color: var(--bg-primary);
     /* Deeper, richer black-navy */
-    color: #F8FAFC;
+    color: var(--text-primary);
     /* Crisp off-white */
-    @apply antialiased overflow-x-hidden;
+    @apply antialiased overflow-x-hidden transition-colors duration-300;
   }
 
   h1,
@@ -16,6 +32,12 @@
   h5,
   h6 {
     @apply tracking-tighter font-serif;
+  }
+
+  body.lang-hi {
+    letter-spacing: 0.05em;
+    /* Increased spacing for Hindi readability */
+    word-spacing: 0.05em;
   }
 }
 
@@ -38,7 +60,9 @@
   }
 
   .glass {
-    @apply bg-white/[0.03] backdrop-blur-2xl border border-white/5;
+    @apply backdrop-blur-2xl border transition-colors duration-300;
+    background-color: var(--glass-bg);
+    border-color: var(--border-primary);
   }
 
   .glass-dark {

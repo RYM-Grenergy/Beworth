@@ -1,6 +1,8 @@
 import { Space_Grotesk, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import { LanguageProvider } from "./context/LanguageContext";
+import { ThemeProvider } from "./context/ThemeContext";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -26,8 +28,12 @@ export default function RootLayout({ children }) {
         className={`${spaceGrotesk.variable} ${playfair.variable} antialiased font-sans`}
         suppressHydrationWarning
       >
-        <Navbar />
-        {children}
+        <LanguageProvider>
+          <ThemeProvider>
+            <Navbar />
+            {children}
+          </ThemeProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useCallback, useMemo } from 'react';
+import { useTheme } from '../context/ThemeContext';
 
 const DEFAULT_INNER_GRADIENT = 'linear-gradient(145deg, #020610 0%, #1a2342 100%)';
 
@@ -49,11 +50,14 @@ const ProfileCardComponent = ({
     showUserInfo = true,
     onContactClick
 }) => {
+    const { theme } = useTheme();
     const wrapRef = useRef(null);
     const shellRef = useRef(null);
 
     const enterTimerRef = useRef(null);
     const leaveRafRef = useRef(null);
+
+
 
     const tiltEngine = useMemo(() => {
         if (!enableTilt) return null;
@@ -308,8 +312,8 @@ const ProfileCardComponent = ({
         () => ({
             '--icon': iconUrl ? `url(${iconUrl})` : 'none',
             '--grain': grainUrl ? `url(${grainUrl})` : 'none',
-            '--inner-gradient': innerGradient ?? DEFAULT_INNER_GRADIENT,
-            '--behind-glow-color': behindGlowColor ?? 'rgba(59, 130, 246, 0.4)',
+            '--inner-gradient': innerGradient ?? (theme === 'white' ? 'linear-gradient(145deg, #ffffff 0%, #f0f9ff 100%)' : DEFAULT_INNER_GRADIENT),
+            '--behind-glow-color': behindGlowColor ?? (theme === 'white' ? 'rgba(59, 130, 246, 0.2)' : 'rgba(59, 130, 246, 0.4)'),
             '--behind-glow-size': behindGlowSize ?? '50%',
             '--pointer-x': '50%',
             '--pointer-y': '50%',
@@ -335,7 +339,7 @@ const ProfileCardComponent = ({
             '--sunpillar-clr-5': 'var(--sunpillar-5)',
             '--sunpillar-clr-6': 'var(--sunpillar-6)'
         }),
-        [iconUrl, grainUrl, innerGradient, behindGlowColor, behindGlowSize, cardRadius]
+        [iconUrl, grainUrl, innerGradient, behindGlowColor, behindGlowSize, cardRadius, theme]
     );
 
     const handleContactClick = useCallback(() => {
@@ -438,7 +442,7 @@ const ProfileCardComponent = ({
                             'rgba(0, 0, 0, 0.8) calc((var(--pointer-from-left) * 10px) - 3px) calc((var(--pointer-from-top) * 20px) - 6px) 20px -5px',
                         transition: 'transform 1s ease',
                         transform: 'translateZ(0) rotateX(0deg) rotateY(0deg)',
-                        background: 'rgba(0, 0, 0, 0.9)'
+                        background: theme === 'white' ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.9)'
                     }}
                     onMouseEnter={e => {
                         e.currentTarget.style.transition = 'none';
@@ -458,7 +462,7 @@ const ProfileCardComponent = ({
                         className="absolute inset-0"
                         style={{
                             backgroundImage: 'var(--inner-gradient)',
-                            backgroundColor: 'rgba(0, 0, 0, 0.9)',
+                            backgroundColor: theme === 'white' ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.9)',
                             borderRadius: cardRadius,
                             display: 'grid',
                             gridArea: '1 / -1'
@@ -500,21 +504,23 @@ const ProfileCardComponent = ({
                             />
                             {showUserInfo && (
                                 <div
-                                    className="absolute z-[2] flex items-center justify-between backdrop-blur-[30px] border border-white/10 pointer-events-auto"
+                                    className={`absolute z-[2] flex items-center justify-between backdrop-blur-[30px] border pointer-events-auto ${theme === 'white' ? 'border-black/5' : 'border-white/10'
+                                        }`}
                                     style={{
                                         '--ui-inset': '20px',
                                         '--ui-radius-bias': '6px',
                                         bottom: 'var(--ui-inset)',
                                         left: 'var(--ui-inset)',
                                         right: 'var(--ui-inset)',
-                                        background: 'rgba(255, 255, 255, 0.1)',
+                                        background: theme === 'white' ? 'rgba(0, 0, 0, 0.03)' : 'rgba(255, 255, 255, 0.1)',
                                         borderRadius: 'calc(max(0px, var(--card-radius) - var(--ui-inset) + var(--ui-radius-bias)))',
                                         padding: '12px 14px'
                                     }}
                                 >
                                     <div className="flex items-center gap-3">
                                         <div
-                                            className="rounded-full overflow-hidden border border-white/10 flex-shrink-0"
+                                            className={`rounded-full overflow-hidden border flex-shrink-0 ${theme === 'white' ? 'border-black/10' : 'border-white/10'
+                                                }`}
                                             style={{ width: '48px', height: '48px' }}
                                         >
                                             <img
@@ -531,12 +537,25 @@ const ProfileCardComponent = ({
                                             />
                                         </div>
                                         <div className="flex flex-col items-start gap-1.5">
-                                            <div className="text-sm font-medium text-white/90 leading-none">@{handle}</div>
-                                            <div className="text-sm text-white/70 leading-none">{status}</div>
+                                            <div
+                                                className={`text-sm font-medium leading-none ${theme === 'white' ? 'text-black/90' : 'text-white/90'
+                                                    }`}
+                                            >
+                                                @{handle}
+                                            </div>
+                                            <div
+                                                className={`text-sm leading-none ${theme === 'white' ? 'text-black/60' : 'text-white/70'
+                                                    }`}
+                                            >
+                                                {status}
+                                            </div>
                                         </div>
                                     </div>
                                     <button
-                                        className="border border-white/10 rounded-lg px-4 py-3 text-xs font-semibold text-white/90 cursor-pointer backdrop-blur-[10px] transition-all duration-200 ease-out hover:border-white/40 hover:-translate-y-px hover:shadow-[0_0_15px_rgba(59,130,246,0.5)]"
+                                        className={`border rounded-lg px-4 py-3 text-xs font-semibold cursor-pointer backdrop-blur-[10px] transition-all duration-200 ease-out hover:-translate-y-px hover:shadow-[0_0_15px_rgba(59,130,246,0.5)] ${theme === 'white'
+                                            ? 'border-black/10 text-black/90 hover:border-black/30'
+                                            : 'border-white/10 text-white/90 hover:border-white/40'
+                                            }`}
                                         onClick={handleContactClick}
                                         style={{ pointerEvents: 'auto', display: 'block', gridArea: 'auto', borderRadius: '8px' }}
                                         type="button"
@@ -564,8 +583,8 @@ const ProfileCardComponent = ({
                                     className="font-serif italic font-bold tracking-tight m-0"
                                     style={{
                                         fontSize: 'min(5svh, 2.5em)',
-                                        color: 'white',
-                                        textShadow: '0 2px 10px rgba(0,0,0,0.5)',
+                                        color: theme === 'white' ? '#0A1128' : 'white',
+                                        textShadow: theme === 'white' ? 'none' : '0 2px 10px rgba(0,0,0,0.5)',
                                         display: 'block',
                                         gridArea: 'auto',
                                         pointerEvents: 'auto'
@@ -574,7 +593,8 @@ const ProfileCardComponent = ({
                                     {name}
                                 </h3>
                                 <p
-                                    className="font-medium text-white/60 whitespace-nowrap mx-auto w-min tracking-widest uppercase text-xs mt-2"
+                                    className={`font-medium whitespace-nowrap mx-auto w-min tracking-widest uppercase text-xs mt-2 ${theme === 'white' ? 'text-black/60' : 'text-white/60'
+                                        }`}
                                     style={{
                                         display: 'block',
                                         gridArea: 'auto',
