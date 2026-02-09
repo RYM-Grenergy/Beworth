@@ -40,7 +40,7 @@ export default function Brands() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-serif font-black uppercase tracking-tighter leading-[0.85] mb-12">
+            <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-[10rem] font-serif font-black uppercase tracking-tighter leading-[0.85] mb-12">
               {t.brands_page.title_brand} <br />{" "}
               <span className="text-blue-500 italic">
                 {t.brands_page.title_partners}

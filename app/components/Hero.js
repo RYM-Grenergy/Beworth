@@ -69,7 +69,7 @@ export default function Hero() {
     }, { scope: containerRef });
 
     return (
-        <section ref={containerRef} className="relative min-h-screen flex flex-col justify-end px-6 md:px-12 pb-12 pt-32 lg:pt-0 lg:justify-center overflow-hidden">
+        <section ref={containerRef} className="relative min-h-screen flex flex-col justify-center px-6 md:px-12 pb-12 pt-24 lg:pt-0 overflow-hidden">
             {/* Interactive Mouse Glow */}
             <div
                 className="pointer-events-none fixed inset-0 z-10 opacity-30 transition-opacity duration-300 pointer-events-none"
@@ -100,7 +100,7 @@ export default function Hero() {
             ></div>
             <div className="absolute bottom-1/4 left-0 w-1/3 h-1/3 bg-blue-600/[0.03] rounded-full blur-[100px] -z-10"></div>
 
-            <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-20">
+            <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-8 lg:gap-12 items-center relative z-20">
                 <div className="lg:col-span-7">
                     <div>
                         <div
@@ -116,7 +116,7 @@ export default function Hero() {
                         </div>
 
                         <div
-                            className={`text-5xl md:text-7xl lg:text-8xl font-serif font-black uppercase leading-[0.85] tracking-tighter ${theme === "white" ? "text-black" : "text-white"
+                            className={`text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-black uppercase leading-[0.85] tracking-tighter ${theme === "white" ? "text-black" : "text-white"
                                 }`}
                         >
                             <GsapTextReveal
