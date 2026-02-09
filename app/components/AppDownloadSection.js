@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Smartphone, Download, Star, ShieldCheck, Zap, Recycle, Coins, Leaf } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import { useTheme } from "../context/ThemeContext";
@@ -175,9 +176,12 @@ export default function AppDownloadSection() {
                         <div className="mt-12 space-y-8">
                             <div className="flex justify-between items-center">
                                 <div className="h-8 w-auto flex items-center justify-center">
-                                    <img
+                                    <Image
                                         src="/logo.png"
                                         alt="Bworth Logo"
+                                        width={0}
+                                        height={0}
+                                        sizes="100vw"
                                         className="h-full w-auto object-contain invert hue-rotate-180"
                                     />
                                 </div>
@@ -213,14 +217,14 @@ export default function AppDownloadSection() {
                             <div className="p-6 bg-white/[0.02] border border-white/[0.05] rounded-3xl">
                                 <span className="text-xs font-bold text-white/60 mb-4 block uppercase tracking-widest">{t.app_download.picks}</span>
                                 <div className="flex gap-4">
-                                    <div className="w-24 h-32 bg-white/5 rounded-xl border border-white/10 overflow-hidden">
-                                        <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=200&h=300&fit=crop&q=80" className="w-full h-full object-cover opacity-80" alt="Sustainable Shirts" />
+                                    <div className="w-24 h-32 bg-white/5 rounded-xl border border-white/10 overflow-hidden relative">
+                                        <Image src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=200&h=300&fit=crop&q=80" fill className="object-cover opacity-80" alt="Sustainable Shirts" />
                                     </div>
-                                    <div className="w-24 h-32 bg-white/5 rounded-xl border border-white/10 overflow-hidden">
-                                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=200&h=300&fit=crop&q=80" className="w-full h-full object-cover opacity-80" alt="Sustainable Jacket" />
+                                    <div className="w-24 h-32 bg-white/5 rounded-xl border border-white/10 overflow-hidden relative">
+                                        <Image src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=200&h=300&fit=crop&q=80" fill className="object-cover opacity-80" alt="Sustainable Jacket" />
                                     </div>
-                                    <div className="w-24 h-32 bg-white/5 rounded-xl border border-white/10 overflow-hidden">
-                                        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=200&h=300&fit=crop&q=80" className="w-full h-full object-cover opacity-80" alt="Sustainable Jeans" />
+                                    <div className="w-24 h-32 bg-white/5 rounded-xl border border-white/10 overflow-hidden relative">
+                                        <Image src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=200&h=300&fit=crop&q=80" fill className="object-cover opacity-80" alt="Sustainable Jeans" />
                                     </div>
                                 </div>
                             </div>

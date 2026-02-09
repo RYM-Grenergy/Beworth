@@ -133,42 +133,56 @@ export default function ContactUs() {
           <div className="lg:col-span-7">
             <div
               className={`p-8 md:p-12 border rounded-[3rem] backdrop-blur-xl transition-colors ${theme === "white"
-                  ? "bg-black/[0.02] border-black/5"
-                  : "bg-white/[0.02] border-white/5"
+                ? "bg-black/[0.02] border-black/5"
+                : "bg-white/[0.02] border-white/5"
                 }`}
             >
-              <form className="space-y-8">
+              <form className="space-y-8" action="#" method="POST">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-2">
                     <label
+                      htmlFor="name"
                       className={`text-[10px] font-bold uppercase tracking-widest ml-1 ${theme === "white" ? "text-black/30" : "text-white/30"
                         }`}
                     >
                       {t.contact_page.your_name}
                     </label>
                     <input
+                      id="name"
+                      name="name"
                       type="text"
                       placeholder={t.contact_page.ph_name}
+                      autoComplete="name"
+                      minLength={2}
+                      maxLength={50}
+                      pattern="[a-zA-Z\s]+"
+                      title="Name should only contain letters and spaces."
                       className={`w-full border-b p-4 focus:border-blue-500 outline-none transition-colors font-bold ${theme === "white"
-                          ? "bg-black/5 border-black/10 placeholder:text-black/20"
-                          : "bg-white/5 border-white/10 placeholder:text-white/10"
+                        ? "bg-black/5 border-black/10 placeholder:text-black/20"
+                        : "bg-white/5 border-white/10 placeholder:text-white/10"
                         }`}
                       required
                     />
                   </div>
                   <div className="space-y-2">
                     <label
+                      htmlFor="email"
                       className={`text-[10px] font-bold uppercase tracking-widest ml-1 ${theme === "white" ? "text-black/30" : "text-white/30"
                         }`}
                     >
                       {t.contact_page.your_email}
                     </label>
                     <input
+                      id="email"
+                      name="email"
                       type="email"
                       placeholder={t.contact_page.ph_email}
+                      autoComplete="email"
+                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                      title="Please enter a valid email address."
                       className={`w-full border-b p-4 focus:border-blue-500 outline-none transition-colors font-bold ${theme === "white"
-                          ? "bg-black/5 border-black/10 placeholder:text-black/20"
-                          : "bg-white/5 border-white/10 placeholder:text-white/10"
+                        ? "bg-black/5 border-black/10 placeholder:text-black/20"
+                        : "bg-white/5 border-white/10 placeholder:text-white/10"
                         }`}
                       required
                     />
@@ -176,34 +190,45 @@ export default function ContactUs() {
                 </div>
                 <div className="space-y-2">
                   <label
+                    htmlFor="tel"
                     className={`text-[10px] font-bold uppercase tracking-widest ml-1 ${theme === "white" ? "text-black/30" : "text-white/30"
                       }`}
                   >
                     {t.contact_page.mobile}
                   </label>
                   <input
+                    id="tel"
+                    name="phone"
                     type="tel"
                     placeholder="+91"
+                    autoComplete="tel"
+                    pattern="[+]?[0-9]{10,14}"
+                    title="Phone number should be 10-14 digits, optionally starting with +."
                     className={`w-full border-b p-4 focus:border-blue-500 outline-none transition-colors font-bold ${theme === "white"
-                        ? "bg-black/5 border-black/10 placeholder:text-black/20"
-                        : "bg-white/5 border-white/10 placeholder:text-white/10"
+                      ? "bg-black/5 border-black/10 placeholder:text-black/20"
+                      : "bg-white/5 border-white/10 placeholder:text-white/10"
                       }`}
                     required
                   />
                 </div>
                 <div className="space-y-2">
                   <label
+                    htmlFor="comments"
                     className={`text-[10px] font-bold uppercase tracking-widest ml-1 ${theme === "white" ? "text-black/30" : "text-white/30"
                       }`}
                   >
                     {t.contact_page.comments}
                   </label>
                   <textarea
+                    id="comments"
+                    name="comments"
                     rows="4"
+                    minLength={10}
+                    maxLength={1000}
                     placeholder={t.contact_page.ph_comments}
                     className={`w-full border-b p-4 focus:border-blue-500 outline-none transition-colors font-bold resize-none ${theme === "white"
-                        ? "bg-black/5 border-black/10 placeholder:text-black/20"
-                        : "bg-white/5 border-white/10 placeholder:text-white/10"
+                      ? "bg-black/5 border-black/10 placeholder:text-black/20"
+                      : "bg-white/5 border-white/10 placeholder:text-white/10"
                       }`}
                     required
                   ></textarea>

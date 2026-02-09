@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, Eye, Sparkles, Globe } from "lucide-react";
 import Footer from "../components/Footer";
 import { useLanguage } from "../context/LanguageContext";
@@ -49,8 +50,8 @@ export default function OurVision() {
       {/* Vision Blocks */}
       <section
         className={`py-24 px-6 md:px-12 border-t transition-colors ${theme === "white"
-            ? "border-black/5 bg-black/[0.02]"
-            : "border-white/5 bg-white/[0.01]"
+          ? "border-black/5 bg-black/[0.02]"
+          : "border-white/5 bg-white/[0.01]"
           }`}
       >
         <div className="max-w-7xl mx-auto space-y-32">
@@ -71,10 +72,11 @@ export default function OurVision() {
               </p>
             </div>
             <div className="relative aspect-square rounded-[4rem] overflow-hidden group shadow-2xl">
-              <img
+              <Image
                 src="https://plus.unsplash.com/premium_photo-1673356302169-574db56b52cd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjl8fGNsb3Roc3xlbnwwfHwwfHx8MA%3D%3D"
-                alt=""
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                alt="Global Transformation"
+                fill
+                className="object-cover transition-transform duration-1000 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-blue-900/40 group-hover:bg-blue-900/20 transition-colors"></div>
               <p className="absolute bottom-12 left-12 right-12 text-5xl font-serif font-black uppercase tracking-tighter italic text-white opacity-40">
@@ -86,10 +88,11 @@ export default function OurVision() {
           {/* Block 2 */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="order-2 lg:order-1 relative aspect-square rounded-[4rem] overflow-hidden group shadow-2xl">
-              <img
+              <Image
                 src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=1000&auto=format&fit=crop"
                 alt="Responsible Fashion"
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                fill
+                className="object-cover transition-transform duration-1000 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-blue-900/40 group-hover:bg-blue-900/20 transition-colors"></div>
               <p className="absolute bottom-12 left-12 right-12 text-5xl font-serif font-black uppercase tracking-tighter italic text-white opacity-40">
@@ -99,8 +102,8 @@ export default function OurVision() {
             <div className="order-1 lg:order-2 space-y-8">
               <div
                 className={`w-16 h-16 border rounded-2xl flex items-center justify-center text-blue-500 -rotate-3 ${theme === "white"
-                    ? "bg-black/5 border-black/10"
-                    : "bg-white/5 border-white/10"
+                  ? "bg-black/5 border-black/10"
+                  : "bg-white/5 border-white/10"
                   }`}
               >
                 <Sparkles size={32} />

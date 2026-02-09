@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, Flag, MapPin, Award } from "lucide-react";
 import Footer from "../components/Footer";
 import { useLanguage } from "../context/LanguageContext";
@@ -119,10 +120,11 @@ export default function Brands() {
                   className={`relative rounded-[2rem] overflow-hidden aspect-[4/5] border group ${theme === "white" ? "border-black/10" : "border-white/10"
                     }`}
                 >
-                  <img
+                  <Image
                     src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=800&auto=format&fit=crop"
                     alt="Indian Craftsmanship"
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                    fill
+                    className="object-cover transition-transform duration-1000 group-hover:scale-110"
                   />
                   <div
                     className={`absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-60 ${theme === "white" ? "from-[#F8FAFC]" : "from-[#0A1128]"
@@ -143,8 +145,8 @@ export default function Brands() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div
                   className={`p-8 border rounded-3xl hover:border-blue-500/30 transition-colors group ${theme === "white"
-                      ? "bg-black/5 border-black/5"
-                      : "bg-white/5 border-white/5"
+                    ? "bg-black/5 border-black/5"
+                    : "bg-white/5 border-white/5"
                     }`}
                 >
                   <h4
@@ -162,8 +164,8 @@ export default function Brands() {
                 </div>
                 <div
                   className={`p-8 border rounded-3xl hover:border-blue-500/30 transition-colors group ${theme === "white"
-                      ? "bg-black/5 border-black/5"
-                      : "bg-white/5 border-white/5"
+                    ? "bg-black/5 border-black/5"
+                    : "bg-white/5 border-white/5"
                     }`}
                 >
                   <h4

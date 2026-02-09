@@ -3,6 +3,7 @@ import React, { useRef, useState, useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowDownRight, Sparkles, Leaf, Recycle } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import { useTheme } from "../context/ThemeContext";
@@ -145,11 +146,14 @@ export default function Hero() {
                                 : "border-white/10"
                                 }`}
                         >
-                            <div className="aspect-[3/4] overflow-hidden">
-                                <img
+                            <div className="aspect-[3/4] relative overflow-hidden">
+                                <Image
                                     src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop"
                                     alt="Sustainable Fashion Editorial"
-                                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                    layout="fill"
+                                    objectFit="cover"
+                                    className="transition-transform duration-1000 group-hover:scale-110"
+                                    priority
                                 />
                             </div>
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>

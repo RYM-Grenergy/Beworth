@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight, Instagram, Twitter, Linkedin, Youtube } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import { useTheme } from "../context/ThemeContext";
@@ -23,17 +24,20 @@ export default function Footer() {
   return (
     <footer
       className={`pt-24 pb-12 px-6 md:px-12 border-t transition-colors ${theme === "white"
-          ? "bg-[#F8FAFC] text-black border-black/10"
-          : "bg-[#0A1128] text-white border-white/5"
+        ? "bg-[#F8FAFC] text-black border-black/10"
+        : "bg-[#0A1128] text-white border-white/5"
         }`}
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
           <div className="lg:col-span-5">
             <Link href="/" className="block mb-8">
-              <img
+              <Image
                 src="/logo.png"
                 alt="Bworth Logo"
+                width={0}
+                height={0}
+                sizes="100vw"
                 className={`h-10 w-auto object-contain transition-all ${theme === "white" ? "" : "invert hue-rotate-180"
                   }`}
               />
@@ -50,8 +54,8 @@ export default function Footer() {
                   key={i}
                   href="#"
                   className={`w-12 h-12 flex items-center justify-center border rounded-full hover:bg-blue-600 hover:text-white transition-all cursor-pointer ${theme === "white"
-                      ? "bg-black/5 border-black/10"
-                      : "bg-white/5 border-white/10"
+                    ? "bg-black/5 border-black/10"
+                    : "bg-white/5 border-white/10"
                     }`}
                 >
                   <Icon size={20} />

@@ -1,6 +1,7 @@
 "use client";
 import { useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -202,10 +203,11 @@ export default function Home() {
                 className={`mission-image aspect-square rounded-[3rem] overflow-hidden border ${theme === "white" ? "border-black/10" : "border-white/10"
                   }`}
               >
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=800&q=80"
                   alt="Sustainable Fashion Concept"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+                  fill
+                  className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
                 />
               </div>
             </div>
@@ -278,10 +280,11 @@ export default function Home() {
                 className={`relative aspect-[4/5] rounded-[3.5rem] overflow-hidden border shadow-3xl h-full ${theme === "white" ? "border-black/10" : "border-white/10"
                   }`}
               >
-                <img
+                <Image
                   src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop"
                   alt="Sustainable Fashion Elite"
-                  className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-110"
+                  fill
+                  className="object-cover transition-all duration-1000 group-hover:scale-110"
                 />
                 <div
                   className={`absolute inset-0 bg-gradient-to-t transition-opacity group-hover:opacity-70 ${theme === "white"

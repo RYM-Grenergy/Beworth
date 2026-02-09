@@ -17,8 +17,27 @@ const playfair = Playfair_Display({
 
 export const metadata = {
   title: "Bworth Technologies - Sustainable Fashion Ecosystem",
-  description:
-    "Creating a sustainable fashion marketplace through innovative buyback programs. Join us in reducing fashion industry's carbon footprint.",
+  description: "Creating a sustainable fashion marketplace through innovative buyback programs. Join us in reducing fashion industry's carbon footprint.",
+  keywords: ["Sustainable Fashion", "Buyback Program", "Eco-friendly Clothing", "Fashion Tech", "Bworth Technologies", "Circular Economy"],
+  authors: [{ name: "Bworth Technologies" }],
+  creator: "Bworth Technologies",
+  openGraph: {
+    title: "Bworth Technologies - Sustainable Fashion Ecosystem",
+    description: "Creating a sustainable fashion marketplace through innovative buyback programs. Join us in reducing fashion industry's carbon footprint.",
+    url: "https://bworth.co.in",
+    siteName: "Bworth Technologies",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bworth Technologies - Sustainable Fashion Ecosystem",
+    description: "Creating a sustainable fashion marketplace through innovative buyback programs.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({ children }) {

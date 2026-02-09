@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Globe, ArrowRight, Sun, Moon } from "lucide-react";
@@ -72,9 +73,12 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link href="/" className="group flex items-center gap-3">
-            <img
+            <Image
               src="/logo.png"
               alt="Bworth Logo"
+              width={0}
+              height={0}
+              sizes="100vw"
               className={`h-10 w-auto object-contain transition-all ${theme === "white" ? "" : "invert hue-rotate-180"
                 }`}
             />
@@ -119,9 +123,12 @@ export default function Navbar() {
             >
               <div>
                 <Link href="/" className="block">
-                  <img
+                  <Image
                     src="/logo.png"
                     alt="Bworth Logo"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
                     className={`h-16 w-auto object-contain mb-6 ${theme === "white" ? "" : "invert hue-rotate-180"
                       }`}
                   />
@@ -181,9 +188,12 @@ export default function Navbar() {
                   }`}
               >
                 <div className="md:hidden">
-                  <img
+                  <Image
                     src="/logo.png"
                     alt="Bworth Logo"
+                    width={0}
+                    height={0}
+                    sizes="100vw"
                     className={`h-10 w-auto object-contain ${theme === "white" ? "" : "invert hue-rotate-180"
                       }`}
                   />
@@ -215,8 +225,8 @@ export default function Navbar() {
                   <button
                     onClick={() => setIsOpen(false)}
                     className={`flex items-center gap-2 px-4 py-2 transition-all border rounded-full group ${theme === "white"
-                        ? "hover:bg-black hover:text-white border-black/10 bg-black/5"
-                        : "hover:bg-white hover:text-black border-white/10 bg-white/5"
+                      ? "hover:bg-black hover:text-white border-black/10 bg-black/5"
+                      : "hover:bg-white hover:text-black border-white/10 bg-white/5"
                       }`}
                   >
                     <span className="text-[10px] font-bold uppercase tracking-widest">
@@ -244,26 +254,26 @@ export default function Navbar() {
                           href={link.href}
                           onClick={() => setIsOpen(false)}
                           className={`flex items-baseline gap-3 md:gap-6 py-3 md:py-4 xl:py-5 border-b transition-all duration-300 ${theme === "white"
-                              ? "border-black/5 group-hover:border-black/10"
-                              : "border-white/5 group-hover:border-white/10"
+                            ? "border-black/5 group-hover:border-black/10"
+                            : "border-white/5 group-hover:border-white/10"
                             } md:group-hover:pl-4`}
                         >
                           <span
                             className={`text-[9px] md:text-[10px] font-mono font-bold transition-colors mb-1 ${isActive
-                                ? "text-blue-500"
-                                : theme === "white"
-                                  ? "text-black/40"
-                                  : "text-white/20"
+                              ? "text-blue-500"
+                              : theme === "white"
+                                ? "text-black/40"
+                                : "text-white/20"
                               }`}
                           >
                             {link.count}
                           </span>
                           <span
                             className={`text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-serif font-black uppercase tracking-tighter transition-all group-hover:scale-[1.01] inline-block ${isActive
-                                ? "italic text-blue-600"
-                                : theme === "white"
-                                  ? "text-black/80 group-hover:text-black"
-                                  : "text-white/80 group-hover:text-white"
+                              ? "italic text-blue-600"
+                              : theme === "white"
+                                ? "text-black/80 group-hover:text-black"
+                                : "text-white/80 group-hover:text-white"
                               }`}
                           >
                             {link.name}
@@ -271,8 +281,8 @@ export default function Navbar() {
                           <ArrowRight
                             size={32}
                             className={`ml-auto transition-all duration-300 text-blue-500 hidden md:block ${isActive
-                                ? "opacity-100 translate-x-0"
-                                : "opacity-0 -translate-x-10 group-hover:opacity-100 group-hover:translate-x-0"
+                              ? "opacity-100 translate-x-0"
+                              : "opacity-0 -translate-x-10 group-hover:opacity-100 group-hover:translate-x-0"
                               }`}
                           />
                         </Link>
