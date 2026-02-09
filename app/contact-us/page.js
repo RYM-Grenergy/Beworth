@@ -14,7 +14,7 @@ export default function ContactUs() {
 
   return (
     <main
-      className={`min-h-screen transition-colors ${theme === "white" ? "bg-[#F8FAFC] text-black" : "bg-[#0A1128] text-white"
+      className={`min-h-screen transition-colors ${theme === "white" ? "bg-[#F8FAFC] text-black" : "bg-[#14A3C7] text-white"
         }`}
     >
       <section
@@ -41,9 +41,9 @@ export default function ContactUs() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-[10rem] font-serif font-black uppercase tracking-tighter leading-[0.85] mb-12">
-              {t.contact_page.get_in} <br />{" "}
+              Let's start a <br />{" "}
               <span className="text-blue-500 italic">
-                {t.contact_page.touch}
+                conversation.
               </span>
             </h1>
           </motion.div>
@@ -58,15 +58,11 @@ export default function ContactUs() {
           {/* Left: Contact Info */}
           <div className="lg:col-span-5 space-y-16">
             <div className="space-y-8">
-              <h2 className="text-3xl md:text-4xl font-serif font-bold uppercase tracking-tight">
-                {t.contact_page.start_convo} <br />
-                {t.contact_page.conversation}
-              </h2>
               <p
-                className={`font-medium leading-relaxed max-w-sm ${theme === "white" ? "text-black/40" : "text-white/40"
+                className={`font-medium leading-relaxed max-w-sm ${theme === "white" ? "text-black/40" : "text-white"
                   }`}
               >
-                {t.contact_page.help_desc}
+                Have questions about our buyback program or want to partner with us? We're here to help revolutionize fashion together.
               </p>
             </div>
 
@@ -80,10 +76,10 @@ export default function ContactUs() {
                 </div>
                 <div>
                   <span
-                    className={`text-[10px] uppercase tracking-[0.2em] font-bold block mb-1 ${theme === "white" ? "text-black/20" : "text-white/20"
+                    className={`text-[10px] uppercase tracking-[0.2em] font-bold block mb-1 ${theme === "white" ? "text-black/20" : "text-white"
                       }`}
                   >
-                    {t.contact_page.phone}
+                    Phone
                   </span>
                   <p className="text-xl font-bold">+91 8826668050</p>
                 </div>
@@ -98,10 +94,10 @@ export default function ContactUs() {
                 </div>
                 <div>
                   <span
-                    className={`text-[10px] uppercase tracking-[0.2em] font-bold block mb-1 ${theme === "white" ? "text-black/20" : "text-white/20"
+                    className={`text-[10px] uppercase tracking-[0.2em] font-bold block mb-1 ${theme === "white" ? "text-black/20" : "text-white"
                       }`}
                   >
-                    {t.contact_page.email}
+                    Email
                   </span>
                   <p className="text-xl font-bold underline decoration-blue-500/30 underline-offset-8">
                     info@bworth.co.in
@@ -118,12 +114,12 @@ export default function ContactUs() {
                 </div>
                 <div>
                   <span
-                    className={`text-[10px] uppercase tracking-[0.2em] font-bold block mb-1 ${theme === "white" ? "text-black/20" : "text-white/20"
+                    className={`text-[10px] uppercase tracking-[0.2em] font-bold block mb-1 ${theme === "white" ? "text-black/20" : "text-white"
                       }`}
                   >
-                    {t.contact_page.location}
+                    Location
                   </span>
-                  <p className="text-xl font-bold">{t.contact_page.address}</p>
+                  <p className="text-xl font-bold">Gurugram, Haryana, India</p>
                 </div>
               </div>
             </div>
@@ -142,16 +138,16 @@ export default function ContactUs() {
                   <div className="space-y-2">
                     <label
                       htmlFor="name"
-                      className={`text-[10px] font-bold uppercase tracking-widest ml-1 ${theme === "white" ? "text-black/30" : "text-white/30"
+                      className={`text-[10px] font-bold uppercase tracking-widest ml-1 ${theme === "white" ? "text-black/30" : "text-white"
                         }`}
                     >
-                      {t.contact_page.your_name}
+                      Your Name *
                     </label>
                     <input
                       id="name"
                       name="name"
                       type="text"
-                      placeholder={t.contact_page.ph_name}
+                      placeholder="NAME"
                       autoComplete="name"
                       minLength={2}
                       maxLength={50}
@@ -159,7 +155,7 @@ export default function ContactUs() {
                       title="Name should only contain letters and spaces."
                       className={`w-full border-b p-4 focus:border-blue-500 outline-none transition-colors font-bold ${theme === "white"
                         ? "bg-black/5 border-black/10 placeholder:text-black/20"
-                        : "bg-white/5 border-white/10 placeholder:text-white/10"
+                        : "bg-white/5 border-white/10 placeholder:text-white/40 text-white"
                         }`}
                       required
                     />
@@ -167,22 +163,22 @@ export default function ContactUs() {
                   <div className="space-y-2">
                     <label
                       htmlFor="email"
-                      className={`text-[10px] font-bold uppercase tracking-widest ml-1 ${theme === "white" ? "text-black/30" : "text-white/30"
+                      className={`text-[10px] font-bold uppercase tracking-widest ml-1 ${theme === "white" ? "text-black/30" : "text-white"
                         }`}
                     >
-                      {t.contact_page.your_email}
+                      Your Email *
                     </label>
                     <input
                       id="email"
                       name="email"
                       type="email"
-                      placeholder={t.contact_page.ph_email}
+                      placeholder="EMAIL"
                       autoComplete="email"
                       pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                       title="Please enter a valid email address."
                       className={`w-full border-b p-4 focus:border-blue-500 outline-none transition-colors font-bold ${theme === "white"
                         ? "bg-black/5 border-black/10 placeholder:text-black/20"
-                        : "bg-white/5 border-white/10 placeholder:text-white/10"
+                        : "bg-white/5 border-white/10 placeholder:text-white/40 text-white"
                         }`}
                       required
                     />
@@ -191,10 +187,10 @@ export default function ContactUs() {
                 <div className="space-y-2">
                   <label
                     htmlFor="tel"
-                    className={`text-[10px] font-bold uppercase tracking-widest ml-1 ${theme === "white" ? "text-black/30" : "text-white/30"
+                    className={`text-[10px] font-bold uppercase tracking-widest ml-1 ${theme === "white" ? "text-black/30" : "text-white"
                       }`}
                   >
-                    {t.contact_page.mobile}
+                    Mobile Number *
                   </label>
                   <input
                     id="tel"
@@ -206,7 +202,7 @@ export default function ContactUs() {
                     title="Phone number should be 10-14 digits, optionally starting with +."
                     className={`w-full border-b p-4 focus:border-blue-500 outline-none transition-colors font-bold ${theme === "white"
                       ? "bg-black/5 border-black/10 placeholder:text-black/20"
-                      : "bg-white/5 border-white/10 placeholder:text-white/10"
+                      : "bg-white/5 border-white/10 placeholder:text-white/40 text-white"
                       }`}
                     required
                   />
@@ -214,10 +210,10 @@ export default function ContactUs() {
                 <div className="space-y-2">
                   <label
                     htmlFor="comments"
-                    className={`text-[10px] font-bold uppercase tracking-widest ml-1 ${theme === "white" ? "text-black/30" : "text-white/30"
+                    className={`text-[10px] font-bold uppercase tracking-widest ml-1 ${theme === "white" ? "text-black/30" : "text-white"
                       }`}
                   >
-                    {t.contact_page.comments}
+                    Comments *
                   </label>
                   <textarea
                     id="comments"
@@ -225,10 +221,10 @@ export default function ContactUs() {
                     rows="4"
                     minLength={10}
                     maxLength={1000}
-                    placeholder={t.contact_page.ph_comments}
+                    placeholder="HOW CAN WE HELP?"
                     className={`w-full border-b p-4 focus:border-blue-500 outline-none transition-colors font-bold resize-none ${theme === "white"
                       ? "bg-black/5 border-black/10 placeholder:text-black/20"
-                      : "bg-white/5 border-white/10 placeholder:text-white/10"
+                      : "bg-white/5 border-white/10 placeholder:text-white/40 text-white"
                       }`}
                     required
                   ></textarea>
@@ -237,7 +233,7 @@ export default function ContactUs() {
                   type="submit"
                   className="w-full bg-blue-600 text-white p-6 rounded-full font-bold uppercase tracking-widest hover:bg-blue-500 transition-all flex items-center justify-center gap-3 shadow-xl shadow-blue-500/20 group"
                 >
-                  {t.contact_page.send}
+                  Send Message
                   <Send
                     size={18}
                     className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"

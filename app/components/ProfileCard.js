@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useCallback, useMemo } from 'react';
 import { useTheme } from '../context/ThemeContext';
 
-const DEFAULT_INNER_GRADIENT = 'linear-gradient(145deg, #020610 0%, #1a2342 100%)';
+const DEFAULT_INNER_GRADIENT = 'linear-gradient(145deg, #14A3C7 0%, #14A3C7 100%)';
 
 const ANIMATION_CONFIG = {
     INITIAL_DURATION: 1200,
@@ -48,6 +48,7 @@ const ProfileCardComponent = ({
     status = 'Online',
     contactText = 'Contact',
     showUserInfo = true,
+    showOverlayInfo = true,
     onContactClick
 }) => {
     const { theme } = useTheme();
@@ -442,7 +443,7 @@ const ProfileCardComponent = ({
                             'rgba(0, 0, 0, 0.8) calc((var(--pointer-from-left) * 10px) - 3px) calc((var(--pointer-from-top) * 20px) - 6px) 20px -5px',
                         transition: 'transform 1s ease',
                         transform: 'translateZ(0) rotateX(0deg) rotateY(0deg)',
-                        background: theme === 'white' ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.9)'
+                        background: theme === 'white' ? 'rgba(255, 255, 255, 0.9)' : 'rgba(255, 255, 255, 0.1)'
                     }}
                     onMouseEnter={e => {
                         e.currentTarget.style.transition = 'none';
@@ -462,7 +463,7 @@ const ProfileCardComponent = ({
                         className="absolute inset-0"
                         style={{
                             backgroundImage: 'var(--inner-gradient)',
-                            backgroundColor: theme === 'white' ? 'rgba(255, 255, 255, 0.9)' : 'rgba(0, 0, 0, 0.9)',
+                            backgroundColor: theme === 'white' ? 'rgba(255, 255, 255, 0.9)' : 'rgba(255, 255, 255, 0.1)',
                             borderRadius: cardRadius,
                             display: 'grid',
                             gridArea: '1 / -1'
@@ -512,7 +513,7 @@ const ProfileCardComponent = ({
                                         bottom: 'var(--ui-inset)',
                                         left: 'var(--ui-inset)',
                                         right: 'var(--ui-inset)',
-                                        background: theme === 'white' ? 'rgba(0, 0, 0, 0.03)' : 'rgba(255, 255, 255, 0.1)',
+                                        background: theme === 'white' ? 'rgba(0, 0, 0, 0.03)' : 'rgba(0, 0, 0, 0.05)',
                                         borderRadius: 'calc(max(0px, var(--card-radius) - var(--ui-inset) + var(--ui-radius-bias)))',
                                         padding: '12px 14px'
                                     }}
@@ -538,7 +539,7 @@ const ProfileCardComponent = ({
                                         </div>
                                         <div className="flex flex-col items-start gap-1.5">
                                             <div
-                                                className={`text-sm font-medium leading-none ${theme === 'white' ? 'text-black/90' : 'text-white/90'
+                                                className={`text-sm font-medium leading-none ${theme === 'white' ? 'text-black/90' : 'text-white'
                                                     }`}
                                             >
                                                 @{handle}
@@ -554,7 +555,7 @@ const ProfileCardComponent = ({
                                     <button
                                         className={`border rounded-lg px-4 py-3 text-xs font-semibold cursor-pointer backdrop-blur-[10px] transition-all duration-200 ease-out hover:-translate-y-px hover:shadow-[0_0_15px_rgba(59,130,246,0.5)] ${theme === 'white'
                                             ? 'border-black/10 text-black/90 hover:border-black/30'
-                                            : 'border-white/10 text-white/90 hover:border-white/40'
+                                            : 'border-white/10 text-white hover:border-white/40'
                                             }`}
                                         onClick={handleContactClick}
                                         style={{ pointerEvents: 'auto', display: 'block', gridArea: 'auto', borderRadius: '8px' }}
@@ -568,43 +569,45 @@ const ProfileCardComponent = ({
                         </div>
 
                         {/* Details content */}
-                        <div
-                            className="max-h-full overflow-hidden text-center relative z-[5]"
-                            style={{
-                                transform:
-                                    'translate3d(calc(var(--pointer-from-left) * -6px + 3px), calc(var(--pointer-from-top) * -6px + 3px), 0.1px)',
-                                gridArea: '1 / -1',
-                                borderRadius: cardRadius,
-                                pointerEvents: 'none'
-                            }}
-                        >
-                            <div className="w-full absolute flex flex-col" style={{ top: '3em', display: 'flex', gridArea: 'auto' }}>
-                                <h3
-                                    className="font-serif italic font-bold tracking-tight m-0"
-                                    style={{
-                                        fontSize: 'min(5svh, 2.5em)',
-                                        color: theme === 'white' ? '#0A1128' : 'white',
-                                        textShadow: theme === 'white' ? 'none' : '0 2px 10px rgba(0,0,0,0.5)',
-                                        display: 'block',
-                                        gridArea: 'auto',
-                                        pointerEvents: 'auto'
-                                    }}
-                                >
-                                    {name}
-                                </h3>
-                                <p
-                                    className={`font-medium whitespace-nowrap mx-auto w-min tracking-widest uppercase text-xs mt-2 ${theme === 'white' ? 'text-black/60' : 'text-white/60'
-                                        }`}
-                                    style={{
-                                        display: 'block',
-                                        gridArea: 'auto',
-                                        pointerEvents: 'auto'
-                                    }}
-                                >
-                                    {title}
-                                </p>
+                        {showOverlayInfo && (
+                            <div
+                                className="max-h-full overflow-hidden text-center relative z-[5]"
+                                style={{
+                                    transform:
+                                        'translate3d(calc(var(--pointer-from-left) * -6px + 3px), calc(var(--pointer-from-top) * -6px + 3px), 0.1px)',
+                                    gridArea: '1 / -1',
+                                    borderRadius: cardRadius,
+                                    pointerEvents: 'none'
+                                }}
+                            >
+                                <div className="w-full absolute flex flex-col" style={{ top: '3em', display: 'flex', gridArea: 'auto' }}>
+                                    <h3
+                                        className="font-serif italic font-bold tracking-tight m-0"
+                                        style={{
+                                            fontSize: 'min(5svh, 2.5em)',
+                                            color: theme === 'white' ? '#0A1128' : 'white',
+                                            textShadow: theme === 'white' ? 'none' : '0 2px 10px rgba(0,0,0,0.5)',
+                                            display: 'block',
+                                            gridArea: 'auto',
+                                            pointerEvents: 'auto'
+                                        }}
+                                    >
+                                        {name}
+                                    </h3>
+                                    <p
+                                        className={`font-medium whitespace-nowrap mx-auto w-min tracking-widest uppercase text-xs mt-2 ${theme === 'white' ? 'text-black/60' : 'text-white/60'
+                                            }`}
+                                        style={{
+                                            display: 'block',
+                                            gridArea: 'auto',
+                                            pointerEvents: 'auto'
+                                        }}
+                                    >
+                                        {title}
+                                    </p>
+                                </div>
                             </div>
-                        </div>
+                        )}
                     </div>
                 </section>
             </div>

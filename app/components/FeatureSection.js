@@ -36,8 +36,8 @@ export default function FeatureSection() {
     return (
         <section
             className={`py-24 px-6 md:px-12 backdrop-blur-sm border-y transition-colors ${theme === "white"
-                    ? "bg-black/[0.02] border-black/[0.05]"
-                    : "bg-white/[0.01] border-white/[0.05]"
+                ? "bg-black/[0.02] border-black/[0.05]"
+                : "bg-white/[0.01] border-white/[0.05]"
                 }`}
         >
             <div className="max-w-7xl mx-auto">
@@ -45,8 +45,8 @@ export default function FeatureSection() {
                     <div className="max-w-2xl">
                         <span
                             className={`text-sm font-bold tracking-widest block mb-4 uppercase ${theme === "white"
-                                    ? "text-black/40"
-                                    : "text-white/30"
+                                ? "text-black/40"
+                                : "text-white/60"
                                 }`}
                         >
                             {t.features.tech_fashion}
@@ -59,7 +59,7 @@ export default function FeatureSection() {
                         </h2>
                     </div>
                     <p
-                        className={`font-medium max-w-sm leading-relaxed ${theme === "white" ? "text-black/50" : "text-white/30"
+                        className={`font-medium max-w-sm leading-relaxed ${theme === "white" ? "text-black/50" : "text-white/60"
                             }`}
                     >
                         {t.features.desc}
@@ -76,8 +76,8 @@ export default function FeatureSection() {
                             transition={{ duration: 0.5, delay: i * 0.1 }}
                             whileHover={{ y: -5 }}
                             className={`p-10 border transition-all duration-500 group ${theme === "white"
-                                    ? "border-black/[0.05] hover:bg-black/[0.05]"
-                                    : "border-white/[0.05] hover:bg-white/[0.02]"
+                                ? "border-black/[0.05] hover:bg-black/[0.05]"
+                                : "border-white/[0.05] hover:bg-white/[0.02]"
                                 } ${i === 0
                                     ? "md:rounded-l-3xl"
                                     : i === features.length - 1
@@ -87,8 +87,8 @@ export default function FeatureSection() {
                         >
                             <motion.div
                                 className={`mb-8 p-3 w-fit rounded-lg group-hover:bg-blue-600 group-hover:text-white transition-all text-blue-500 ${theme === "white"
-                                        ? "bg-black/[0.05]"
-                                        : "bg-white/[0.05]"
+                                    ? "bg-black/[0.05]"
+                                    : "bg-white/[0.05]"
                                     }`}
                                 whileHover={{ scale: 1.1, rotate: 5 }}
                             >
@@ -96,16 +96,16 @@ export default function FeatureSection() {
                             </motion.div>
                             <h3
                                 className={`text-2xl font-serif font-bold uppercase mb-4 transition-colors group-hover:text-blue-500 ${theme === "white"
-                                        ? "text-black"
-                                        : "text-white"
+                                    ? "text-black"
+                                    : "text-white"
                                     }`}
                             >
                                 {f.title}
                             </h3>
                             <p
                                 className={`text-sm font-medium leading-relaxed transition-colors ${theme === "white"
-                                        ? "text-black/50 group-hover:text-black/70"
-                                        : "text-white/40 group-hover:text-white/60"
+                                    ? "text-black/50 group-hover:text-black/70"
+                                    : "text-white/60 group-hover:text-white/80"
                                     }`}
                             >
                                 {f.desc}

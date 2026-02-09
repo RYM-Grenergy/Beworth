@@ -67,7 +67,7 @@ export default function Navbar() {
         className={`fixed top-0 w-full z-[80] transition-all duration-300 px-6 py-4 md:px-12 md:py-6 ${scrolled
           ? theme === "white"
             ? "bg-white/90 backdrop-blur-md border-b border-black/[0.05]"
-            : "bg-[#020610]/90 backdrop-blur-md border-b border-white/[0.05]"
+            : "bg-[#14A3C7]/90 backdrop-blur-md border-b border-white/[0.05]"
           : "bg-transparent"
           }`}
       >
@@ -111,7 +111,7 @@ export default function Navbar() {
             animate="open"
             exit="closed"
             variants={menuVariants}
-            className={`fixed inset-0 z-[100] flex flex-col md:flex-row overflow-hidden ${theme === "white" ? "bg-white text-black" : "bg-[#0A1128] text-white"
+            className={`fixed inset-0 z-[100] flex flex-col md:flex-row overflow-hidden ${theme === "white" ? "bg-white text-black" : "bg-[#14A3C7] text-white"
               }`}
           >
             {/* Left side info (Optional/Desktop) */}
@@ -134,7 +134,7 @@ export default function Navbar() {
                   />
                 </Link>
                 <p
-                  className={`mt-6 max-w-xs font-medium leading-relaxed text-sm xl:text-base ${theme === "white" ? "text-black/60" : "text-white/40"
+                  className={`mt-6 max-w-xs font-medium leading-relaxed text-sm xl:text-base ${theme === "white" ? "text-black/60" : "text-white"
                     }`}
                 >
                   {t.navbar.desc}
@@ -146,7 +146,7 @@ export default function Navbar() {
                   onClick={toggleLanguage}
                   className={`flex items-center gap-3 transition-colors cursor-pointer group ${theme === "white"
                     ? "text-black/40 hover:text-blue-600"
-                    : "text-white/20 hover:text-blue-400"
+                    : "text-white hover:text-blue-400"
                     }`}
                 >
                   <Globe size={18} />
@@ -163,7 +163,7 @@ export default function Navbar() {
                   }
                   className={`flex items-center gap-3 transition-colors cursor-pointer group ${theme === "white"
                     ? "text-black/40 hover:text-blue-600"
-                    : "text-white/20 hover:text-blue-400"
+                    : "text-white hover:text-blue-400"
                     }`}
                 >
                   {theme === "blue" ? <Sun size={18} /> : <Moon size={18} />}
@@ -173,7 +173,7 @@ export default function Navbar() {
                 </div>
 
                 <div
-                  className={`text-[10px] uppercase tracking-[0.2em] font-bold ${theme === "white" ? "text-black/20" : "text-white/10"
+                  className={`text-[10px] uppercase tracking-[0.2em] font-bold ${theme === "white" ? "text-black/20" : "text-white"
                     }`}
                 >
                   © {new Date().getFullYear()} BEWORTH TECHNOLOGIES
@@ -184,7 +184,7 @@ export default function Navbar() {
             {/* Right side navigation */}
             <div className="flex-1 flex flex-col h-full overflow-y-auto">
               <div
-                className={`sticky top-0 z-10 flex justify-between items-center md:justify-end p-6 md:p-8 backdrop-blur-sm ${theme === "white" ? "bg-white/80" : "bg-[#0A1128]/80"
+                className={`sticky top-0 z-10 flex justify-between items-center md:justify-end p-6 md:p-8 backdrop-blur-sm ${theme === "white" ? "bg-white/80" : "bg-[#14A3C7]/80"
                   }`}
               >
                 <div className="md:hidden">
@@ -263,7 +263,7 @@ export default function Navbar() {
                               ? "text-blue-500"
                               : theme === "white"
                                 ? "text-black/40"
-                                : "text-white/20"
+                                : "text-white"
                               }`}
                           >
                             {link.count}
@@ -273,7 +273,7 @@ export default function Navbar() {
                               ? "italic text-blue-600"
                               : theme === "white"
                                 ? "text-black/80 group-hover:text-black"
-                                : "text-white/80 group-hover:text-white"
+                                : "text-white group-hover:text-white"
                               }`}
                           >
                             {link.name}
@@ -292,7 +292,7 @@ export default function Navbar() {
                 </div>
 
                 <div
-                  className={`mt-12 md:hidden flex justify-between text-[10px] font-bold tracking-widest uppercase ${theme === "white" ? "text-black/20" : "text-white/10"
+                  className={`mt-12 md:hidden flex justify-between text-[10px] font-bold tracking-widest uppercase ${theme === "white" ? "text-black/20" : "text-white"
                     }`}
                 >
                   <span>{t.navbar.sustainability}</span>

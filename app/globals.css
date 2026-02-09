@@ -2,11 +2,11 @@
 
 @layer base {
   :root {
-    --bg-primary: #020610;
-    --text-primary: #F8FAFC;
+    --bg-primary: #14A3C7;
+    --text-primary: #020610;
     --border-primary: rgba(255, 255, 255, 0.05);
     --glass-bg: rgba(255, 255, 255, 0.03);
-    --menu-bg: #0A1128;
+    --menu-bg: #14A3C7;
   }
 
   body.theme-white {

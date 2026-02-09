@@ -15,24 +15,24 @@ export default function OurMission() {
   const missionPoints = [
     {
       icon: <Recycle size={28} />,
-      title: t.mission_page.circular_title,
-      desc: t.mission_page.circular_desc
+      title: "Circular Lifecycle",
+      desc: "Extending the life of every garment through our unique buyback program."
     },
     {
       icon: <Users size={28} />,
-      title: t.mission_page.community_title,
-      desc: t.mission_page.community_desc
+      title: "Community Engagement",
+      desc: "Organizing offline events in residential societies to build direct platforms."
     },
     {
       icon: <Target size={28} />,
-      title: t.mission_page.deadstock_title,
-      desc: t.mission_page.deadstock_desc
+      title: "Dead Stock Clearance",
+      desc: "Assisting brands in clearing dead stock, promoting a waste-free industry."
     }
   ];
 
   return (
     <main
-      className={`min-h-screen transition-colors ${theme === "white" ? "bg-[#F8FAFC] text-black" : "bg-[#0A1128] text-white"
+      className={`min-h-screen transition-colors ${theme === "white" ? "bg-[#F8FAFC] text-black" : "bg-[#14A3C7] text-white"
         }`}
     >
       <section
@@ -65,17 +65,17 @@ export default function OurMission() {
           <div className="lg:col-span-7">
             <div className="space-y-12">
               <p
-                className={`text-2xl md:text-4xl font-serif font-medium leading-tight ${theme === "white" ? "text-black/90" : "text-white/90"
+                className={`text-2xl md:text-4xl font-serif font-medium leading-tight ${theme === "white" ? "text-black/90" : "text-white"
                   }`}
               >
-                {t.mission_page.rev_title}
+                Revolutionizing the fashion industry through a unique buyback program that ensures zero waste.
               </p>
 
               <p
-                className={`text-lg md:text-xl font-light leading-relaxed text-justify ${theme === "white" ? "text-black/50" : "text-white/50"
+                className={`text-lg md:text-xl font-light leading-relaxed text-justify ${theme === "white" ? "text-black/50" : "text-white"
                   }`}
               >
-                {t.mission_page.rev_desc}
+                Our mission is to extend the lifecycle of every item by allowing consumers to return their clothes after use. We aim to solve the problem of wardrobe clutter by offering a sustainable solution that benefits both consumers and sellers.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-12">
@@ -83,8 +83,8 @@ export default function OurMission() {
                   <div
                     key={i}
                     className={`p-8 rounded-3xl border hover:bg-blue-600 transition-all duration-500 group ${theme === "white"
-                        ? "bg-black/5 border-black/5"
-                        : "bg-white/5 border-white/5"
+                      ? "bg-black/5 border-black/5"
+                      : "bg-white/5 border-white/5"
                       }`}
                   >
                     <div className="mb-6 text-blue-400 group-hover:text-white transition-colors">
@@ -94,7 +94,7 @@ export default function OurMission() {
                       {point.title}
                     </h3>
                     <p
-                      className={`text-sm group-hover:text-white/80 transition-colors uppercase tracking-wider font-bold ${theme === "white" ? "text-black/40" : "text-white/40"
+                      className={`text-sm group-hover:text-white/80 transition-colors uppercase tracking-wider font-bold ${theme === "white" ? "text-black/40" : "text-white"
                         }`}
                     >
                       {point.desc}
@@ -105,11 +105,11 @@ export default function OurMission() {
 
               <p
                 className={`text-lg leading-relaxed text-justify pt-8 border-t ${theme === "white"
-                    ? "text-black/50 border-black/5"
-                    : "text-white/50 border-white/5"
+                  ? "text-black/50 border-black/5"
+                  : "text-white border-white/5"
                   }`}
               >
-                {t.mission_page.events_desc}
+                By organizing offline events in residential societies and partnering with brands, we intend to create a direct and engaging platform for our customers. We are committed to providing a flexible commission program for sellers and ensuring the clearance of dead stock, thus promoting a circular economy.
               </p>
             </div>
           </div>
@@ -119,28 +119,28 @@ export default function OurMission() {
           <div className="lg:col-span-4">
             <div
               className={`p-10 border rounded-[3rem] backdrop-blur-xl sticky top-40 ${theme === "white"
-                  ? "border-blue-500/20 bg-blue-600/5"
-                  : "border-blue-500/30 bg-blue-600/5"
+                ? "border-blue-500/20 bg-blue-600/5"
+                : "border-blue-500/30 bg-blue-600/5"
                 }`}
             >
-              <span className="text-xs font-bold uppercase tracking-[0.3em] text-blue-500 mb-6 block">
-                {t.mission_page.core_goal}
+              <span className="text-xs font-bold uppercase tracking-[0.3em] text-black mb-6 block">
+                Core Goal
               </span>
-              <p className="text-2xl font-serif font-black uppercase mb-8 italic">
-                {t.mission_page.sustainability_thread}
+              <p className="text-2xl font-serif font-black uppercase mb-8 italic text-black">
+                Sustainability integrated into every thread.
               </p>
               <p
-                className={`text-sm font-medium leading-relaxed mb-8 ${theme === "white" ? "text-black/40" : "text-white/40"
+                className={`text-sm font-medium leading-relaxed mb-8 ${theme === "white" ? "text-black/40" : "text-white"
                   }`}
               >
-                {t.mission_page.commitment}
+                We are committed to fostering trust and building long-term relationships through innovative and sustainable solutions.
               </p>
               <div
                 className={`w-full h-[1px] mb-8 ${theme === "white" ? "bg-black/10" : "bg-white/10"
                   }`}
               ></div>
-              <p className="text-[10px] uppercase font-bold tracking-widest text-blue-400">
-                {t.mission_page.circular_culture}
+              <p className="text-[10px] uppercase font-bold tracking-widest text-black">
+                #CircularCulture
               </p>
             </div>
           </div>

@@ -15,7 +15,7 @@ export default function Brands() {
 
   return (
     <main
-      className={`min-h-screen transition-colors ${theme === "white" ? "bg-[#F8FAFC] text-black" : "bg-[#0A1128] text-white"
+      className={`min-h-screen transition-colors ${theme === "white" ? "bg-[#F8FAFC] text-black" : "bg-[#14A3C7] text-white"
         }`}
     >
       {/* Header */}
@@ -41,9 +41,9 @@ export default function Brands() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-[10rem] font-serif font-black uppercase tracking-tighter leading-[0.85] mb-12">
-              {t.brands_page.title_brand} <br />{" "}
+              Brand <br />{" "}
               <span className="text-blue-500 italic">
-                {t.brands_page.title_partners}
+                Partners.
               </span>
             </h1>
           </motion.div>
@@ -64,40 +64,40 @@ export default function Brands() {
                 </div>
                 <div>
                   <h2 className="text-3xl font-serif font-bold uppercase leading-none">
-                    {t.brands_page.make_in_india}
+                    Make In India
                   </h2>
                   <p className="text-xs font-bold tracking-[0.3em] text-blue-400 uppercase mt-2">
-                    {t.brands_page.collab}
+                    Collab Association
                   </p>
                 </div>
               </div>
 
               <div className="space-y-6">
                 <div
-                  className={`flex items-center gap-4 ${theme === "white" ? "text-black/40" : "text-white/40"
+                  className={`flex items-center gap-4 ${theme === "white" ? "text-black/40" : "text-white"
                     }`}
                 >
                   <MapPin size={18} className="text-blue-500" />
                   <span className="text-xs font-bold uppercase tracking-widest">
-                    {t.brands_page.across_india}
+                    Across India
                   </span>
                 </div>
                 <div
-                  className={`flex items-center gap-4 ${theme === "white" ? "text-black/40" : "text-white/40"
+                  className={`flex items-center gap-4 ${theme === "white" ? "text-black/40" : "text-white"
                     }`}
                 >
                   <Award size={18} className="text-blue-500" />
                   <span className="text-xs font-bold uppercase tracking-widest">
-                    {t.brands_page.certified}
+                    Certified Partners
                   </span>
                 </div>
               </div>
 
               <p
-                className={`text-sm font-medium leading-relaxed italic ${theme === "white" ? "text-black/30" : "text-white/30"
+                className={`text-sm font-medium leading-relaxed italic ${theme === "white" ? "text-black/30" : "text-white/60"
                   }`}
               >
-                {t.brands_page.supporting_local}
+                Supporting local businesses and promoting indigenous talent through conscious production.
               </p>
             </div>
           </div>
@@ -107,13 +107,13 @@ export default function Brands() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-8">
                   <h3 className="text-4xl md:text-5xl font-serif font-black uppercase tracking-tighter text-blue-500 italic leading-tight">
-                    {t.brands_page.supporting_exc}
+                    Supporting Local Excellence.
                   </h3>
                   <p
-                    className={`text-xl font-light leading-relaxed text-justify ${theme === "white" ? "text-black/60" : "text-white/60"
+                    className={`text-xl font-light leading-relaxed text-justify ${theme === "white" ? "text-black/60" : "text-white"
                       }`}
                   >
-                    {t.brands_page.collab_announce}
+                    We are thrilled to announce our collaboration with "Make in India" and various "Made in India" brands, bringing you an exceptional range of products that celebrate the spirit of Indian craftsmanship and innovation.
                   </p>
                 </div>
                 <div
@@ -128,19 +128,33 @@ export default function Brands() {
                     className="object-cover transition-transform duration-1000 group-hover:scale-110"
                   />
                   <div
-                    className={`absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-60 ${theme === "white" ? "from-[#F8FAFC]" : "from-[#0A1128]"
+                    className={`absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-60 ${theme === "white" ? "from-[#F8FAFC]" : "from-[#14A3C7]"
                       }`}
                   ></div>
                 </div>
               </div>
 
               <div className="space-y-8">
-                <p
+                <div
                   className={`text-xl md:text-2xl font-light leading-relaxed text-justify ${theme === "white" ? "text-black/60" : "text-white/60"
                     }`}
                 >
-                  {t.brands_page.partnership_commit}
-                </p>
+                  {/* Indian Craftsmanship */}
+                  <div className="md:hidden">
+                    <p className={`text-xl md:text-2xl font-light leading-relaxed text-justify mb-8 ${theme === "white" ? "text-black/60" : "text-white"}`}>
+                      This partnership underscores our commitment to supporting local businesses and promoting indigenous talent.
+                    </p>
+                  </div>
+                  {/* Desktop view for Indian Craftsmanship/Partnership commitment */}
+                  <div className="hidden md:block">
+                    <p
+                      className={`text-xl md:text-2xl font-light leading-relaxed text-justify ${theme === "white" ? "text-black/60" : "text-white"
+                        }`}
+                    >
+                      This partnership underscores our commitment to supporting local businesses and promoting indigenous talent.
+                    </p>
+                  </div>
+                </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -154,13 +168,13 @@ export default function Brands() {
                     className={`text-xl font-serif font-bold uppercase mb-4 group-hover:text-blue-400 transition-colors ${theme === "white" ? "text-black" : "text-white"
                       }`}
                   >
-                    {t.brands_page.indian_spirit}
+                    Indian Spirit
                   </h4>
                   <p
-                    className={`text-sm leading-relaxed uppercase tracking-widest font-bold ${theme === "white" ? "text-black/40" : "text-white/40"
+                    className={`text-sm leading-relaxed uppercase tracking-widest font-bold ${theme === "white" ? "text-black/40" : "text-white"
                       }`}
                   >
-                    {t.brands_page.spirit_desc}
+                    Celebrating craftsmanship and innovation at the grassroot levels.
                   </p>
                 </div>
                 <div
@@ -173,29 +187,29 @@ export default function Brands() {
                     className={`text-xl font-serif font-bold uppercase mb-4 group-hover:text-blue-400 transition-colors ${theme === "white" ? "text-black" : "text-white"
                       }`}
                   >
-                    {t.brands_page.indigenous}
+                    Indigenous Talent
                   </h4>
                   <p
-                    className={`text-sm leading-relaxed uppercase tracking-widest font-bold ${theme === "white" ? "text-black/40" : "text-white/40"
+                    className={`text-sm leading-relaxed uppercase tracking-widest font-bold ${theme === "white" ? "text-black/40" : "text-white"
                       }`}
                   >
-                    {t.brands_page.indigenous_desc}
+                    Providing a platform for Indian artisans to showcase their skill globally.
                   </p>
                 </div>
               </div>
 
               <div className="space-y-8">
                 <p
-                  className={`text-lg leading-relaxed text-justify ${theme === "white" ? "text-black/50" : "text-white/50"
+                  className={`text-lg leading-relaxed text-justify ${theme === "white" ? "text-black/50" : "text-white"
                     }`}
                 >
-                  {t.brands_page.legacy_desc}
+                  Whether it's traditional handicrafts, contemporary fashion, or cutting-edge technology, our curated selection ensures that you experience the best of what India has to offer. Each product in our collection is a testament to the dedication and skill of Indian artisans and entrepreneurs.
                 </p>
                 <p
-                  className={`text-lg leading-relaxed text-justify ${theme === "white" ? "text-black/50" : "text-white/50"
+                  className={`text-lg leading-relaxed text-justify ${theme === "white" ? "text-black/50" : "text-white"
                     }`}
                 >
-                  {t.brands_page.stay_tuned}
+                  Stay tuned as we unveil an exciting array of products designed and manufactured in India, showcasing the perfect blend of tradition and modernity. Your support not only helps preserve India's rich cultural legacy but also drives innovation and growth within the local economy.
                 </p>
               </div>
             </div>

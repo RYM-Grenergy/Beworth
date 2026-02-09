@@ -15,7 +15,7 @@ export default function OurVision() {
 
   return (
     <main
-      className={`min-h-screen transition-colors ${theme === "white" ? "bg-[#F8FAFC] text-black" : "bg-[#0A1128] text-white"
+      className={`min-h-screen transition-colors ${theme === "white" ? "bg-[#F8FAFC] text-black" : "bg-[#14A3C7] text-white"
         }`}
     >
       {/* Header */}
@@ -38,9 +38,9 @@ export default function OurVision() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-[10rem] font-serif font-black uppercase tracking-tighter leading-[0.85] mb-12">
-              {t.vision_page.title_our} <br />{" "}
+              Our <br />{" "}
               <span className="text-transparent outline-text !-webkit-text-stroke-blue-500 italic">
-                {t.vision_page.title_vision}
+                Vision.
               </span>
             </h1>
           </motion.div>
@@ -62,13 +62,13 @@ export default function OurVision() {
                 <Globe size={32} />
               </div>
               <h2 className="text-4xl md:text-6xl font-serif font-black uppercase tracking-tighter leading-none">
-                {t.vision_page.global_win} <br /> {t.vision_page.win_scenario}
+                A Global <br /> Win-Win Scenario.
               </h2>
               <p
-                className={`text-xl md:text-2xl font-light leading-relaxed text-justify ${theme === "white" ? "text-black/50" : "text-white/50"
+                className={`text-xl md:text-2xl font-light leading-relaxed text-justify ${theme === "white" ? "text-black/50" : "text-white"
                   }`}
               >
-                {t.vision_page.vision_desc}
+                BWorth Technologies Private Limited envisions creating a sustainable ecosystem within the fashion marketplace, where both consumers and sellers benefit in a win-win scenario. Our goal is to transform the fast fashion industry by promoting sustainability and environmental consciousness.
               </p>
             </div>
             <div className="relative aspect-square rounded-[4rem] overflow-hidden group shadow-2xl">
@@ -81,7 +81,7 @@ export default function OurVision() {
               />
               <div className="absolute inset-0 bg-blue-900/40 group-hover:bg-blue-900/20 transition-colors"></div>
               <p className="absolute bottom-12 left-12 right-12 text-5xl font-serif font-black uppercase tracking-tighter italic text-white opacity-40">
-                {t.vision_page.transformation}
+                Global Transformation
               </p>
             </div>
           </div>
@@ -98,7 +98,7 @@ export default function OurVision() {
               />
               <div className="absolute inset-0 bg-blue-900/40 group-hover:bg-blue-900/20 transition-colors"></div>
               <p className="absolute bottom-12 left-12 right-12 text-5xl font-serif font-black uppercase tracking-tighter italic text-white opacity-40">
-                {t.vision_page.responsibility}
+                Responsible Fashion
               </p>
             </div>
             <div className="order-1 lg:order-2 space-y-8">
@@ -111,14 +111,14 @@ export default function OurVision() {
                 <Sparkles size={32} />
               </div>
               <h2 className="text-4xl md:text-6xl font-serif font-black uppercase tracking-tighter leading-none">
-                {t.vision_page.resp_consumption} <br />{" "}
-                {t.vision_page.consumption}
+                Responsible <br />{" "}
+                Consumption.
               </h2>
               <p
-                className={`text-xl md:text-2xl font-light leading-relaxed text-justify ${theme === "white" ? "text-black/50" : "text-white/50"
+                className={`text-xl md:text-2xl font-light leading-relaxed text-justify ${theme === "white" ? "text-black/50" : "text-white"
                   }`}
               >
-                {t.vision_page.resp_desc}
+                By addressing the common issue of overfilled wardrobes with clothes that are no longer worn but not entirely discarded, we aim to provide a solution that not only helps individuals manage their wardrobe efficiently but also contributes to environmental sustainability. Our vision is to make fashion consumption more responsible and to instill a sense of value in every garment purchased.
               </p>
             </div>
           </div>

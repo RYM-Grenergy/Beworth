@@ -14,7 +14,7 @@ export default function TermsOfUse() {
 
     return (
         <main
-            className={`min-h-screen transition-colors ${theme === "white" ? "bg-[#F8FAFC] text-black" : "bg-[#0A1128] text-white"
+            className={`min-h-screen transition-colors ${theme === "white" ? "bg-[#F8FAFC] text-black" : "bg-[#14A3C7] text-white"
                 }`}
         >
             <section className="relative pt-40 pb-24 px-6 md:px-12">
@@ -106,14 +106,14 @@ export default function TermsOfUse() {
 
                         <div
                             className={`pt-12 border-t ${theme === "white"
-                                    ? "border-black/10"
-                                    : "border-white/10"
+                                ? "border-black/10"
+                                : "border-white/10"
                                 }`}
                         >
                             <p
                                 className={`text-sm ${theme === "white"
-                                        ? "text-black/40"
-                                        : "text-white/40"
+                                    ? "text-black/40"
+                                    : "text-white/40"
                                     }`}
                             >
                                 {t.terms_page.last_updated}

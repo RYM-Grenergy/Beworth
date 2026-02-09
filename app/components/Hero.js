@@ -116,7 +116,7 @@ export default function Hero() {
                         </div>
 
                         <div
-                            className={`text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-black uppercase leading-[0.85] tracking-tighter ${theme === "white" ? "text-black" : "text-white"
+                            className={`text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-black uppercase leading-[0.85] tracking-tighter ${theme === "white" ? "text-black" : "text-black"
                                 }`}
                         >
                             <GsapTextReveal
@@ -127,7 +127,7 @@ export default function Hero() {
                                 text={t.hero_component.sustainable}
                                 delay={0.6}
                             />
-                            <div className="italic text-blue-500">
+                            <div className={`italic ${theme === "white" ? "text-blue-500" : "text-black"}`}>
                                 <GsapTextReveal
                                     text={t.hero_component.fashion}
                                     delay={0.8}

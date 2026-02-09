@@ -25,7 +25,7 @@ export default function Footer() {
     <footer
       className={`pt-24 pb-12 px-6 md:px-12 border-t transition-colors ${theme === "white"
         ? "bg-[#F8FAFC] text-black border-black/10"
-        : "bg-[#0A1128] text-white border-white/5"
+        : "bg-[#14A3C7] text-white border-white/5"
         }`}
     >
       <div className="max-w-7xl mx-auto">
@@ -43,7 +43,7 @@ export default function Footer() {
               />
             </Link>
             <p
-              className={`text-xl font-medium leading-relaxed mb-10 max-w-sm ${theme === "white" ? "text-black/50" : "text-white/40"
+              className={`text-xl font-medium leading-relaxed mb-10 max-w-sm ${theme === "white" ? "text-black/50" : "text-white"
                 }`}
             >
               {t.footer.desc}
@@ -66,7 +66,7 @@ export default function Footer() {
 
           <div className="lg:col-span-3">
             <h4
-              className={`text-xs font-bold uppercase tracking-[0.3em] mb-8 ${theme === "white" ? "text-black/30" : "text-white/20"
+              className={`text-xs font-bold uppercase tracking-[0.3em] mb-8 ${theme === "white" ? "text-black/30" : "text-white"
                 }`}
             >
               {t.footer.navigation}
@@ -92,19 +92,19 @@ export default function Footer() {
           <div className="lg:col-span-4 flex flex-col justify-between">
             <div className="space-y-4">
               <h4
-                className={`text-xs font-bold uppercase tracking-[0.3em] mb-6 ${theme === "white" ? "text-black/30" : "text-white/20"
+                className={`text-xs font-bold uppercase tracking-[0.3em] mb-6 ${theme === "white" ? "text-black/30" : "text-white"
                   }`}
               >
                 {t.footer.contact_details}
               </h4>
               <div className="space-y-2">
                 <p
-                  className={`text-2xl font-serif font-bold ${theme === "white" ? "text-black/80" : "text-white/80"
+                  className={`text-2xl font-serif font-bold ${theme === "white" ? "text-black/80" : "text-white"
                     }`}
                 >
                   +91 8826668050
                 </p>
-                <p className="text-lg font-medium text-blue-500 underline decoration-blue-500/30 underline-offset-8">
+                <p className={`text-lg font-medium underline decoration-white/30 underline-offset-8 ${theme === "white" ? "text-blue-500 decoration-blue-500/30" : "text-white"}`}>
                   info@bworth.co.in
                 </p>
               </div>
@@ -112,13 +112,13 @@ export default function Footer() {
 
             <div className="mt-12 lg:mt-0">
               <h4
-                className={`text-xs font-bold uppercase tracking-[0.3em] mb-4 ${theme === "white" ? "text-black/30" : "text-white/20"
+                className={`text-xs font-bold uppercase tracking-[0.3em] mb-4 ${theme === "white" ? "text-black/30" : "text-white"
                   }`}
               >
                 {t.footer.location}
               </h4>
               <p
-                className={`text-sm font-bold tracking-widest uppercase ${theme === "white" ? "text-black/40" : "text-white/40"
+                className={`text-sm font-bold tracking-widest uppercase ${theme === "white" ? "text-black/40" : "text-white"
                   }`}
               >
                 {t.footer.address}
@@ -132,13 +132,13 @@ export default function Footer() {
             }`}
         >
           <p
-            className={`text-[10px] font-bold tracking-[0.5em] uppercase ${theme === "white" ? "text-black/20" : "text-white/20"
+            className={`text-[10px] font-bold tracking-[0.5em] uppercase ${theme === "white" ? "text-black/20" : "text-white"
               }`}
           >
             © {currentYear} {t.footer.rights}
           </p>
           <div
-            className={`flex gap-8 text-[10px] font-bold tracking-[0.5em] uppercase ${theme === "white" ? "text-black/20" : "text-white/20"
+            className={`flex gap-8 text-[10px] font-bold tracking-[0.5em] uppercase ${theme === "white" ? "text-black/20" : "text-white"
               }`}
           >
             <Link

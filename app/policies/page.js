@@ -41,7 +41,7 @@ export default function Policies() {
 
   return (
     <main
-      className={`min-h-screen transition-colors ${theme === "white" ? "bg-[#F8FAFC] text-black" : "bg-[#0A1128] text-white"
+      className={`min-h-screen transition-colors ${theme === "white" ? "bg-[#F8FAFC] text-black" : "bg-[#14A3C7] text-white"
         }`}
     >
       <section className="relative pt-40 pb-24 px-6 md:px-12">
@@ -65,8 +65,8 @@ export default function Policies() {
 
       <section
         className={`py-24 px-6 md:px-12 border-t transition-colors ${theme === "white"
-            ? "border-black/5 bg-black/[0.01]"
-            : "border-white/5 bg-white/[0.01]"
+          ? "border-black/5 bg-black/[0.01]"
+          : "border-white/5 bg-white/[0.01]"
           }`}
       >
         <div className="max-w-7xl mx-auto">
@@ -76,8 +76,8 @@ export default function Policies() {
                 href={cat.href}
                 key={i}
                 className={`p-10 border rounded-[2.5rem] hover:border-blue-500/30 transition-all duration-500 group block ${theme === "white"
-                    ? "bg-black/5 border-black/5"
-                    : "bg-white/5 border-white/5"
+                  ? "bg-black/5 border-black/5"
+                  : "bg-white/5 border-white/5"
                   }`}
               >
                 <div className="w-12 h-12 bg-blue-600/10 text-blue-500 rounded-xl flex items-center justify-center mb-8 group-hover:bg-blue-600 group-hover:text-white transition-all">

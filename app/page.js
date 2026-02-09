@@ -127,11 +127,11 @@ export default function Home() {
         id="mission-section"
         className={`py-32 px-6 md:px-12 overflow-hidden relative border-t transition-colors ${theme === "white"
           ? "bg-[#F8FAFC] text-black border-black/[0.05]"
-          : "bg-[#020610] text-white border-white/[0.05]"
+          : "bg-[#14A3C7] text-white border-white/[0.05]"
           }`}
       >
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row gap-20 items-center mb-24">
+          <div className="flex flex-col lg:flex-row gap-20 items-start mb-24">
             <div className="flex-1">
               <h2 className="mission-title text-5xl md:text-8xl font-serif font-black uppercase tracking-tighter leading-none mb-12">
                 {t.hero.mission_title_our} <br />{" "}
@@ -144,7 +144,7 @@ export default function Home() {
                 <GsapTextReveal
                   text={t.hero.mission_heading}
                   y={-20}
-                  className="text-2xl md:text-3xl font-serif italic text-blue-500 mb-8"
+                  className="text-2xl md:text-3xl font-serif italic text-black mb-8"
                 />
 
                 <p
@@ -156,7 +156,7 @@ export default function Home() {
               </div>
 
               <div
-                className={`grid grid-cols-2 gap-6 md:gap-12 border-t pt-12 ${theme === "white" ? "border-black/10" : "border-white/10"
+                className={`grid grid-cols-2 gap-6 md:gap-12 border-t pt-6 ${theme === "white" ? "border-black/10" : "border-white/10"
                   }`}
               >
                 <div
@@ -196,6 +196,25 @@ export default function Home() {
                   </span>
                 </div>
               </div>
+              <div
+                className={`mission-footer border-t pt-6 mt-6 ${theme === "white" ? "border-black/10" : "border-white/10"
+                  }`}
+              >
+                <p
+                  className={`text-xl md:text-2xl font-light leading-relaxed max-w-4xl ${theme === "white" ? "text-black/80" : "text-black/80"
+                    }`}
+                >
+                  {t.hero.mission_footer_desc}
+                </p>
+                <Link
+                  href="/our-mission"
+                  className={`font-bold uppercase tracking-[0.2em] flex items-center gap-4 hover:gap-6 transition-all group pt-8 ${theme === "white" ? "text-blue-500" : "text-black"
+                    }`}
+                >
+                  {t.hero.read_story}
+                  <span className={`w-12 h-[1px] group-hover:w-20 transition-all ${theme === "white" ? "bg-blue-500" : "bg-black"}`}></span>
+                </Link>
+              </div>
             </div>
 
             <div className="flex-1 relative">
@@ -214,24 +233,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div
-            className={`mission-footer border-t pt-12 ${theme === "white" ? "border-black/10" : "border-white/10"
-              }`}
-          >
-            <p
-              className={`text-xl md:text-2xl font-light leading-relaxed max-w-4xl ${theme === "white" ? "text-black/80" : "text-white/80"
-                }`}
-            >
-              {t.hero.mission_footer_desc}
-            </p>
-            <Link
-              href="/our-mission"
-              className="text-blue-500 font-bold uppercase tracking-[0.2em] flex items-center gap-4 hover:gap-6 transition-all group pt-8"
-            >
-              {t.hero.read_story}
-              <span className="w-12 h-[1px] bg-blue-500 group-hover:w-20 transition-all"></span>
-            </Link>
-          </div>
+
         </div>
       </section>
 
@@ -267,9 +269,9 @@ export default function Home() {
 
               <Link
                 href="/our-vision"
-                className={`inline-block text-xs font-bold uppercase tracking-widest border-b border-blue-500 pb-2 text-blue-500 transition-colors ${theme === "white"
-                  ? "hover:text-black hover:border-black"
-                  : "hover:text-white hover:border-white"
+                className={`inline-block text-xs font-bold uppercase tracking-widest border-b pb-2 transition-colors ${theme === "white"
+                  ? "text-blue-500 border-blue-500 hover:text-black hover:border-black"
+                  : "text-black border-black hover:text-white hover:border-white"
                   }`}
               >
                 {t.hero.explore_vision}
@@ -291,7 +293,7 @@ export default function Home() {
                 <div
                   className={`absolute inset-0 bg-gradient-to-t transition-opacity group-hover:opacity-70 ${theme === "white"
                     ? "from-[#F8FAFC] via-transparent to-transparent opacity-90"
-                    : "from-[#020610] via-transparent to-transparent opacity-90"
+                    : "from-[#14A3C7] via-transparent to-transparent opacity-90"
                     }`}
                 ></div>
 
