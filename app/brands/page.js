@@ -124,6 +124,7 @@ export default function Brands() {
                     src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=800&auto=format&fit=crop"
                     alt="Indian Craftsmanship"
                     fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover transition-transform duration-1000 group-hover:scale-110"
                   />
                   <div

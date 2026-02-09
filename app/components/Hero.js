@@ -150,9 +150,9 @@ export default function Hero() {
                                 <Image
                                     src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop"
                                     alt="Sustainable Fashion Editorial"
-                                    layout="fill"
-                                    objectFit="cover"
-                                    className="transition-transform duration-1000 group-hover:scale-110"
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    className="object-cover transition-transform duration-1000 group-hover:scale-110"
                                     priority
                                 />
                             </div>

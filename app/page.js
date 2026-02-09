@@ -207,6 +207,7 @@ export default function Home() {
                   src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=800&q=80"
                   alt="Sustainable Fashion Concept"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                   className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
                 />
               </div>
@@ -284,6 +285,7 @@ export default function Home() {
                   src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop"
                   alt="Sustainable Fashion Elite"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                   className="object-cover transition-all duration-1000 group-hover:scale-110"
                 />
                 <div

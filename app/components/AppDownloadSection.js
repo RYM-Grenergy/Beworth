@@ -218,13 +218,13 @@ export default function AppDownloadSection() {
                                 <span className="text-xs font-bold text-white/60 mb-4 block uppercase tracking-widest">{t.app_download.picks}</span>
                                 <div className="flex gap-4">
                                     <div className="w-24 h-32 bg-white/5 rounded-xl border border-white/10 overflow-hidden relative">
-                                        <Image src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=200&h=300&fit=crop&q=80" fill className="object-cover opacity-80" alt="Sustainable Shirts" />
+                                        <Image src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=200&h=300&fit=crop&q=80" fill sizes="150px" className="object-cover opacity-80" alt="Sustainable Shirts" />
                                     </div>
                                     <div className="w-24 h-32 bg-white/5 rounded-xl border border-white/10 overflow-hidden relative">
-                                        <Image src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=200&h=300&fit=crop&q=80" fill className="object-cover opacity-80" alt="Sustainable Jacket" />
+                                        <Image src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=200&h=300&fit=crop&q=80" fill sizes="150px" className="object-cover opacity-80" alt="Sustainable Jacket" />
                                     </div>
                                     <div className="w-24 h-32 bg-white/5 rounded-xl border border-white/10 overflow-hidden relative">
-                                        <Image src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=200&h=300&fit=crop&q=80" fill className="object-cover opacity-80" alt="Sustainable Jeans" />
+                                        <Image src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=200&h=300&fit=crop&q=80" fill sizes="150px" className="object-cover opacity-80" alt="Sustainable Jeans" />
                                     </div>
                                 </div>
                             </div>
