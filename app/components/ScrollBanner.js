@@ -1,44 +1,58 @@
 "use client";
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 import { useLanguage } from "../context/LanguageContext";
 import { useTheme } from "../context/ThemeContext";
 import { translations } from "../utils/translations";
 
+gsap.registerPlugin(useGSAP);
+
 export default function ScrollBanner() {
   const { language } = useLanguage();
   const { theme } = useTheme();
   const t = translations[language];
+  const containerRef = useRef(null);
   const text = t.scroll_banner.text;
-  const items = Array(10).fill(text);
+
+  // Create enough items to fill widely and loop seamlessly
+  const items = Array(12).fill(text);
+
+  useGSAP(
+    () => {
+      const totalWidth = containerRef.current.scrollWidth / 2; // Half because we duplicate the content
+
+      gsap.to(".marquee-content", {
+        x: -totalWidth,
+        duration: 100,
+        ease: "none",
+        repeat: -1,
+      });
+    },
+    { scope: containerRef }
+  );
 
   return (
     <div
       className={`py-6 md:py-8 overflow-hidden transform md:-rotate-1 relative z-10 my-24 border-y shadow-2xl transition-colors ${theme === "white"
-          ? "bg-white text-black border-black/10"
-          : "bg-black text-white border-white/10"
+        ? "bg-white text-black border-black/10"
+        : "bg-black text-white border-white/10"
         }`}
     >
-      <div className="flex relative items-center">
-        <motion.div
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{
-            repeat: Infinity,
-            duration: 20,
-            ease: "linear",
-          }}
-          className="flex whitespace-nowrap"
-        >
+      <div className="flex relative items-center overflow-hidden" ref={containerRef}>
+        <div className="marquee-content flex whitespace-nowrap will-change-transform">
           {[...items, ...items].map((item, index) => (
-            <div key={index} className="flex items-center">
+            <div key={index} className="flex items-center shrink-0">
               <span className="text-3xl md:text-6xl font-serif font-black tracking-tighter mx-4 md:mx-12">
                 {item}
               </span>
               <div className="w-4 h-4 md:w-6 md:h-6 bg-blue-500 rotate-45 mx-4 shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </div>
   );
 }
+

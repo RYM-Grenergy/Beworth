@@ -1,20 +1,23 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useRef, useState, useEffect } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import Link from "next/link";
 import { ArrowDownRight, Sparkles, Leaf, Recycle } from "lucide-react";
-import { useState, useEffect } from "react";
 import { useLanguage } from "../context/LanguageContext";
 import { useTheme } from "../context/ThemeContext";
 import { translations } from "../utils/translations";
 
-import BlurText from "./BlurText";
+import GsapTextReveal from "./GsapTextReveal";
+
+gsap.registerPlugin(useGSAP);
 
 export default function Hero() {
     const { language } = useLanguage();
     const { theme } = useTheme();
     const t = translations[language];
     const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+    const containerRef = useRef(null);
 
     useEffect(() => {
         const handleMouseMove = (e) => {
@@ -30,8 +33,42 @@ export default function Hero() {
         { icon: <Sparkles size={18} />, initialX: "15%", initialY: "75%", delay: 1 },
     ];
 
+    useGSAP(() => {
+        // Floating items animation
+        floatingItems.forEach((_, i) => {
+            gsap.to(`.floating-item-${i}`, {
+                y: 20,
+                rotation: 10,
+                duration: 4 + i,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+                delay: i * 0.5
+            });
+        });
+
+        // Image card entrance
+        gsap.from(".hero-image-card", {
+            x: 100,
+            opacity: 0,
+            duration: 1.2,
+            ease: "power3.out",
+            delay: 0.5
+        });
+
+        // Content entrance
+        gsap.from(".hero-desc-content", {
+            opacity: 0,
+            y: 30,
+            duration: 1,
+            delay: 0.8,
+            ease: "power2.out"
+        });
+
+    }, { scope: containerRef });
+
     return (
-        <section className="relative min-h-screen flex flex-col justify-end px-6 md:px-12 pb-12 pt-32 lg:pt-0 lg:justify-center">
+        <section ref={containerRef} className="relative min-h-screen flex flex-col justify-end px-6 md:px-12 pb-12 pt-32 lg:pt-0 lg:justify-center overflow-hidden">
             {/* Interactive Mouse Glow */}
             <div
                 className="pointer-events-none fixed inset-0 z-10 opacity-30 transition-opacity duration-300 pointer-events-none"
@@ -42,25 +79,17 @@ export default function Hero() {
 
             {/* Floating Interactive Elements */}
             {floatingItems.map((item, i) => (
-                <motion.div
+                <div
                     key={i}
-                    className="absolute text-blue-500/10 pointer-events-none z-0 hidden lg:block"
+                    className={`absolute text-blue-500/10 pointer-events-none z-0 hidden lg:block floating-item-${i}`}
                     style={{
                         left: item.initialX,
                         top: item.initialY,
                         transform: `translateX(${(mousePos.x - 500) / 60}px)`
                     }}
-                    animate={{
-                        y: ["-20px", "20px"],
-                        rotate: [0, 10, -10, 0],
-                    }}
-                    transition={{
-                        y: { duration: 4, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: item.delay },
-                        rotate: { duration: 6, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: item.delay },
-                    }}
                 >
                     {item.icon}
-                </motion.div>
+                </div>
             ))}
 
             {/* Background Decorative Element - Subtler Neutral Glow */}
@@ -70,66 +99,50 @@ export default function Hero() {
             ></div>
             <div className="absolute bottom-1/4 left-0 w-1/3 h-1/3 bg-blue-600/[0.03] rounded-full blur-[100px] -z-10"></div>
 
-            <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-20">
                 <div className="lg:col-span-7">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                    >
+                    <div>
                         <div
                             className={`text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-6 block ${theme === "white"
-                                    ? "text-black/40"
-                                    : "text-white/40"
+                                ? "text-black/40"
+                                : "text-white/40"
                                 }`}
                         >
-                            <BlurText
+                            <GsapTextReveal
                                 text={t.hero_component.subheading}
-                                delay={100}
-                                animateBy="words"
+                                delay={0.2}
                             />
                         </div>
 
                         <div
-                            className={`text-5xl md:text-7xl lg:text-[7.5rem] font-serif font-black uppercase leading-[0.85] tracking-tighter ${theme === "white" ? "text-black" : "text-white"
+                            className={`text-5xl md:text-7xl lg:text-8xl font-serif font-black uppercase leading-[0.85] tracking-tighter ${theme === "white" ? "text-black" : "text-white"
                                 }`}
                         >
-                            <BlurText
+                            <GsapTextReveal
                                 text={t.hero_component.creating}
-                                delay={150}
-                                animateBy="words"
+                                delay={0.4}
                             />
-                            <BlurText
+                            <GsapTextReveal
                                 text={t.hero_component.sustainable}
-                                delay={150}
-                                animateBy="words"
+                                delay={0.6}
                             />
-                            <BlurText
-                                text={t.hero_component.fashion}
-                                delay={150}
-                                animateBy="words"
-                                className="italic text-blue-500"
-                            />
+                            <div className="italic text-blue-500">
+                                <GsapTextReveal
+                                    text={t.hero_component.fashion}
+                                    delay={0.8}
+                                />
+                            </div>
                         </div>
-                    </motion.div>
+                    </div>
                 </div>
 
                 <div className="lg:col-span-5">
-                    <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{
-                            duration: 0.8,
-                            delay: 0.2,
-                            ease: [0.22, 1, 0.36, 1],
-                        }}
-                        className="space-y-8"
-                    >
+                    <div className="space-y-8">
                         {/* Premium Unsplash Image Card */}
                         <div
-                            className={`relative group overflow-hidden rounded-[2.5rem] border shadow-2xl shadow-blue-500/5 max-w-sm lg:ml-auto ${theme === "white"
-                                    ? "border-black/10"
-                                    : "border-white/10"
+                            className={`hero-image-card relative group overflow-hidden rounded-[2.5rem] border shadow-2xl shadow-blue-500/5 max-w-sm lg:ml-auto ${theme === "white"
+                                ? "border-black/10"
+                                : "border-white/10"
                                 }`}
                         >
                             <div className="aspect-[3/4] overflow-hidden">
@@ -153,11 +166,11 @@ export default function Hero() {
                             </div>
                         </div>
 
-                        <div className="space-y-6 max-w-md lg:ml-auto text-left">
+                        <div className="hero-desc-content space-y-6 max-w-md lg:ml-auto text-left">
                             <p
                                 className={`text-lg font-medium leading-relaxed ${theme === "white"
-                                        ? "text-black/50"
-                                        : "text-white/50"
+                                    ? "text-black/50"
+                                    : "text-white/50"
                                     }`}
                             >
                                 {t.hero_component.desc}
@@ -167,8 +180,8 @@ export default function Hero() {
                                 <Link
                                     href="#ecosystem"
                                     className={`px-8 py-5 rounded-full font-bold flex items-center gap-2 group hover:bg-blue-600 hover:text-white transition-all active:scale-95 shadow-xl text-sm ${theme === "white"
-                                            ? "bg-black text-white shadow-black/5"
-                                            : "bg-white text-black shadow-white/5"
+                                        ? "bg-black text-white shadow-black/5"
+                                        : "bg-white text-black shadow-white/5"
                                         }`}
                                 >
                                     {t.hero_component.explore}
@@ -180,23 +193,20 @@ export default function Hero() {
                                 <Link
                                     href="#how-it-works"
                                     className={`px-8 py-5 rounded-full font-bold border transition-colors text-sm ${theme === "white"
-                                            ? "border-black/10 text-black hover:bg-black/5"
-                                            : "border-white/10 text-white hover:bg-white/5"
+                                        ? "border-black/10 text-black hover:bg-black/5"
+                                        : "border-white/10 text-white hover:bg-white/5"
                                         }`}
                                 >
                                     {t.hero_component.how_it_works}
                                 </Link>
                             </div>
                         </div>
-                    </motion.div>
+                    </div>
                 </div>
             </div>
 
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1, duration: 1 }}
-                className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-20 hidden md:flex"
+            <div
+                className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-50 hidden md:flex"
             >
                 <div
                     className={`w-[1px] h-12 ${theme === "white" ? "bg-black" : "bg-white"
@@ -208,7 +218,7 @@ export default function Hero() {
                 >
                     {t.hero_component.scroll}
                 </span>
-            </motion.div>
+            </div>
 
             <style jsx>{`
         .outline-text {

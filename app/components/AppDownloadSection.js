@@ -41,8 +41,8 @@ export default function AppDownloadSection() {
                             {t.app_download.pocket_title_bworth} <br />{" "}
                             <span
                                 className={`italic outline-text !-webkit-text-stroke-white ${theme === "white"
-                                        ? "text-black/10"
-                                        : "text-white/20"
+                                    ? "text-black/10"
+                                    : "text-white/20"
                                     }`}
                             >
                                 {t.app_download.pocket_title_pocket}
@@ -50,8 +50,8 @@ export default function AppDownloadSection() {
                         </h2>
                         <p
                             className={`text-xl font-light leading-relaxed max-w-xl ${theme === "white"
-                                    ? "text-black/50"
-                                    : "text-white/50"
+                                ? "text-black/50"
+                                : "text-white/50"
                                 }`}
                         >
                             {t.app_download.desc}
@@ -63,8 +63,8 @@ export default function AppDownloadSection() {
                             <div key={i} className="flex gap-4 group">
                                 <div
                                     className={`w-12 h-12 border rounded-xl flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all ${theme === "white"
-                                            ? "bg-black/5 border-black/10"
-                                            : "bg-white/5 border-white/10"
+                                        ? "bg-black/5 border-black/10"
+                                        : "bg-white/5 border-white/10"
                                         }`}
                                 >
                                     {feature.icon}
@@ -72,16 +72,16 @@ export default function AppDownloadSection() {
                                 <div>
                                     <h4
                                         className={`font-serif font-bold uppercase tracking-tight ${theme === "white"
-                                                ? "text-black"
-                                                : "text-white"
+                                            ? "text-black"
+                                            : "text-white"
                                             }`}
                                     >
                                         {feature.title}
                                     </h4>
                                     <p
                                         className={`text-sm ${theme === "white"
-                                                ? "text-black/40"
-                                                : "text-white/30"
+                                            ? "text-black/40"
+                                            : "text-white/30"
                                             }`}
                                     >
                                         {feature.desc}
@@ -97,8 +97,8 @@ export default function AppDownloadSection() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className={`px-10 py-6 rounded-full font-bold uppercase tracking-widest flex items-center gap-4 hover:bg-blue-600 hover:text-white transition-all shadow-2xl group ${theme === "white"
-                                    ? "bg-black text-white shadow-black/5"
-                                    : "bg-white text-black shadow-white/5"
+                                ? "bg-black text-white shadow-black/5"
+                                : "bg-white text-black shadow-white/5"
                                 }`}
                         >
                             <div className="flex flex-col items-start leading-none">
@@ -119,16 +119,16 @@ export default function AppDownloadSection() {
                             <div className="text-center">
                                 <span
                                     className={`block text-2xl font-serif font-bold leading-none ${theme === "white"
-                                            ? "text-black"
-                                            : "text-white"
+                                        ? "text-black"
+                                        : "text-white"
                                         }`}
                                 >
                                     50+
                                 </span>
                                 <span
                                     className={`text-[10px] uppercase tracking-widest font-bold ${theme === "white"
-                                            ? "text-black/40"
-                                            : "text-white/40"
+                                        ? "text-black/40"
+                                        : "text-white/40"
                                         }`}
                                 >
                                     {t.app_download.downloads}
@@ -137,16 +137,16 @@ export default function AppDownloadSection() {
                             <div className="text-center">
                                 <span
                                     className={`block text-2xl font-serif font-bold leading-none ${theme === "white"
-                                            ? "text-black"
-                                            : "text-white"
+                                        ? "text-black"
+                                        : "text-white"
                                         }`}
                                 >
                                     18+
                                 </span>
                                 <span
                                     className={`text-[10px] uppercase tracking-widest font-bold ${theme === "white"
-                                            ? "text-black/40"
-                                            : "text-white/40"
+                                        ? "text-black/40"
+                                        : "text-white/40"
                                         }`}
                                 >
                                     {t.app_download.rated}
@@ -157,8 +157,8 @@ export default function AppDownloadSection() {
 
                     <p
                         className={`text-[10px] font-bold uppercase tracking-[0.2em] flex items-center gap-2 ${theme === "white"
-                                ? "text-black/20"
-                                : "text-white/20"
+                            ? "text-black/20"
+                            : "text-white/20"
                             }`}
                     >
                         <Smartphone size={12} /> {t.app_download.available_msg}
@@ -238,13 +238,7 @@ export default function AppDownloadSection() {
                         </div>
                     </div>
 
-                    {/* Floating Elements */}
-                    <div className="absolute -right-6 top-1/4 p-4 bg-white/[0.03] backdrop-blur-xl border border-white/[0.05] rounded-2xl shadow-2xl animate-bounce-slow">
-                        <div className="flex items-center gap-3">
-                            <ShieldCheck size={16} className="text-blue-500" />
-                            <span className="text-[10px] font-bold text-white/60 tracking-widest uppercase">{t.app_download.secured}</span>
-                        </div>
-                    </div>
+
                 </div>
             </div>
 
