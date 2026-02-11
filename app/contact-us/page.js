@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, Phone, Mail, MapPin, Send } from "lucide-react";
 import Footer from "../components/Footer";
 import { useLanguage } from "../context/LanguageContext";
@@ -26,7 +27,7 @@ export default function ContactUs() {
         <div className="max-w-7xl mx-auto">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-blue-400 font-bold tracking-widest text-xs uppercase mb-12 group"
+            className="inline-flex items-center gap-2 font-bold tracking-widest text-xs uppercase mb-12 group"
           >
             <ArrowLeft
               size={16}
@@ -41,10 +42,7 @@ export default function ContactUs() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-[10rem] font-serif font-black uppercase tracking-tighter leading-[0.85] mb-12">
-              Let's start a <br />{" "}
-              <span className="text-blue-500 italic">
-                conversation.
-              </span>
+              Let's start a <br /> conversation.
             </h1>
           </motion.div>
         </div>
@@ -58,8 +56,15 @@ export default function ContactUs() {
           {/* Left: Contact Info */}
           <div className="lg:col-span-5 space-y-16">
             <div className="space-y-8">
+              <Image
+                src="/logo.png"
+                alt="Bworth Logo"
+                width={150}
+                height={50}
+                className={`mb-8 ${theme === "white" ? "" : "invert hue-rotate-180"}`}
+              />
               <p
-                className={`font-medium leading-relaxed max-w-sm ${theme === "white" ? "text-black/40" : "text-white"
+                className={`font-medium leading-relaxed max-w-sm ${theme === "white" ? "text-black" : "text-white"
                   }`}
               >
                 Have questions about our buyback program or want to partner with us? We're here to help revolutionize fashion together.
@@ -76,7 +81,7 @@ export default function ContactUs() {
                 </div>
                 <div>
                   <span
-                    className={`text-[10px] uppercase tracking-[0.2em] font-bold block mb-1 ${theme === "white" ? "text-black/20" : "text-white"
+                    className={`text-[10px] uppercase tracking-[0.2em] font-bold block mb-1 ${theme === "white" ? "text-black" : "text-white"
                       }`}
                   >
                     Phone
@@ -94,7 +99,7 @@ export default function ContactUs() {
                 </div>
                 <div>
                   <span
-                    className={`text-[10px] uppercase tracking-[0.2em] font-bold block mb-1 ${theme === "white" ? "text-black/20" : "text-white"
+                    className={`text-[10px] uppercase tracking-[0.2em] font-bold block mb-1 ${theme === "white" ? "text-black" : "text-white"
                       }`}
                   >
                     Email
@@ -114,7 +119,7 @@ export default function ContactUs() {
                 </div>
                 <div>
                   <span
-                    className={`text-[10px] uppercase tracking-[0.2em] font-bold block mb-1 ${theme === "white" ? "text-black/20" : "text-white"
+                    className={`text-[10px] uppercase tracking-[0.2em] font-bold block mb-1 ${theme === "white" ? "text-black" : "text-white"
                       }`}
                   >
                     Location
@@ -138,7 +143,7 @@ export default function ContactUs() {
                   <div className="space-y-2">
                     <label
                       htmlFor="name"
-                      className={`text-[10px] font-bold uppercase tracking-widest ml-1 ${theme === "white" ? "text-black/30" : "text-white"
+                      className={`text-[10px] font-bold uppercase tracking-widest ml-1 ${theme === "white" ? "text-black" : "text-white"
                         }`}
                     >
                       Your Name *
@@ -154,7 +159,7 @@ export default function ContactUs() {
                       pattern="[a-zA-Z\s]+"
                       title="Name should only contain letters and spaces."
                       className={`w-full border-b p-4 focus:border-blue-500 outline-none transition-colors font-bold ${theme === "white"
-                        ? "bg-black/5 border-black/10 placeholder:text-black/20"
+                        ? "bg-black/5 border-black/10 placeholder:text-black/50 text-black"
                         : "bg-white/5 border-white/10 placeholder:text-white/40 text-white"
                         }`}
                       required
@@ -163,7 +168,7 @@ export default function ContactUs() {
                   <div className="space-y-2">
                     <label
                       htmlFor="email"
-                      className={`text-[10px] font-bold uppercase tracking-widest ml-1 ${theme === "white" ? "text-black/30" : "text-white"
+                      className={`text-[10px] font-bold uppercase tracking-widest ml-1 ${theme === "white" ? "text-black" : "text-white"
                         }`}
                     >
                       Your Email *
@@ -177,7 +182,7 @@ export default function ContactUs() {
                       pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                       title="Please enter a valid email address."
                       className={`w-full border-b p-4 focus:border-blue-500 outline-none transition-colors font-bold ${theme === "white"
-                        ? "bg-black/5 border-black/10 placeholder:text-black/20"
+                        ? "bg-black/5 border-black/10 placeholder:text-black/50 text-black"
                         : "bg-white/5 border-white/10 placeholder:text-white/40 text-white"
                         }`}
                       required
@@ -187,7 +192,7 @@ export default function ContactUs() {
                 <div className="space-y-2">
                   <label
                     htmlFor="tel"
-                    className={`text-[10px] font-bold uppercase tracking-widest ml-1 ${theme === "white" ? "text-black/30" : "text-white"
+                    className={`text-[10px] font-bold uppercase tracking-widest ml-1 ${theme === "white" ? "text-black" : "text-white"
                       }`}
                   >
                     Mobile Number *
@@ -201,7 +206,7 @@ export default function ContactUs() {
                     pattern="[+]?[0-9]{10,14}"
                     title="Phone number should be 10-14 digits, optionally starting with +."
                     className={`w-full border-b p-4 focus:border-blue-500 outline-none transition-colors font-bold ${theme === "white"
-                      ? "bg-black/5 border-black/10 placeholder:text-black/20"
+                      ? "bg-black/5 border-black/10 placeholder:text-black/50 text-black"
                       : "bg-white/5 border-white/10 placeholder:text-white/40 text-white"
                       }`}
                     required
@@ -210,7 +215,7 @@ export default function ContactUs() {
                 <div className="space-y-2">
                   <label
                     htmlFor="comments"
-                    className={`text-[10px] font-bold uppercase tracking-widest ml-1 ${theme === "white" ? "text-black/30" : "text-white"
+                    className={`text-[10px] font-bold uppercase tracking-widest ml-1 ${theme === "white" ? "text-black" : "text-white"
                       }`}
                   >
                     Comments *
@@ -223,7 +228,7 @@ export default function ContactUs() {
                     maxLength={1000}
                     placeholder="HOW CAN WE HELP?"
                     className={`w-full border-b p-4 focus:border-blue-500 outline-none transition-colors font-bold resize-none ${theme === "white"
-                      ? "bg-black/5 border-black/10 placeholder:text-black/20"
+                      ? "bg-black/5 border-black/10 placeholder:text-black/50 text-black"
                       : "bg-white/5 border-white/10 placeholder:text-white/40 text-white"
                       }`}
                     required

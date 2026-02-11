@@ -46,7 +46,7 @@ export default function Policies() {
     >
       <section className="relative pt-40 pb-24 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
-          <Link href="/" className="inline-flex items-center gap-2 text-blue-400 font-bold tracking-widest text-xs uppercase mb-12 group">
+          <Link href="/" className="inline-flex items-center gap-2 font-bold tracking-widest text-xs uppercase mb-12 group">
             <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
             {t.common.back_home}
           </Link>

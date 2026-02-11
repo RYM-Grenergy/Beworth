@@ -23,7 +23,7 @@ export default function OurVision() {
         <div className="max-w-7xl mx-auto">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-blue-400 font-bold tracking-widest text-xs uppercase mb-12 group"
+            className="inline-flex items-center gap-2 font-bold tracking-widest text-xs uppercase mb-12 group"
           >
             <ArrowLeft
               size={16}
@@ -38,10 +38,7 @@ export default function OurVision() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-[10rem] font-serif font-black uppercase tracking-tighter leading-[0.85] mb-12">
-              Our <br />{" "}
-              <span className="text-transparent outline-text !-webkit-text-stroke-blue-500 italic">
-                Vision.
-              </span>
+              Our <br /> Vision.
             </h1>
           </motion.div>
         </div>
@@ -58,9 +55,7 @@ export default function OurVision() {
           {/* Block 1 */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="space-y-8">
-              <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center text-white shadow-xl shadow-blue-500/20 rotate-3">
-                <Globe size={32} />
-              </div>
+
               <h2 className="text-4xl md:text-6xl font-serif font-black uppercase tracking-tighter leading-none">
                 A Global <br /> Win-Win Scenario.
               </h2>
@@ -102,14 +97,7 @@ export default function OurVision() {
               </p>
             </div>
             <div className="order-1 lg:order-2 space-y-8">
-              <div
-                className={`w-16 h-16 border rounded-2xl flex items-center justify-center text-blue-500 -rotate-3 ${theme === "white"
-                  ? "bg-black/5 border-black/10"
-                  : "bg-white/5 border-white/10"
-                  }`}
-              >
-                <Sparkles size={32} />
-              </div>
+
               <h2 className="text-4xl md:text-6xl font-serif font-black uppercase tracking-tighter leading-none">
                 Responsible <br />{" "}
                 Consumption.

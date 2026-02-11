@@ -21,7 +21,7 @@ export default function TermsOfUse() {
                 <div className="max-w-4xl mx-auto">
                     <Link
                         href="/"
-                        className="inline-flex items-center gap-2 text-blue-400 font-bold tracking-widest text-xs uppercase mb-12 group"
+                        className="inline-flex items-center gap-2 font-bold tracking-widest text-xs uppercase mb-12 group"
                     >
                         <ArrowLeft
                             size={16}

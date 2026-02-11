@@ -1,18 +1,20 @@
-import { Space_Grotesk, Playfair_Display } from "next/font/google";
+import { Poppins, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import CustomCursor from "./components/CustomCursor";
 import { LanguageProvider } from "./context/LanguageContext";
 import { ThemeProvider } from "./context/ThemeContext";
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata = {
@@ -44,11 +46,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${spaceGrotesk.variable} ${playfair.variable} antialiased font-sans`}
+        className={`${poppins.variable} ${playfair.variable} antialiased font-sans cursor-none`}
         suppressHydrationWarning
       >
         <LanguageProvider>
           <ThemeProvider>
+            <CustomCursor />
             <Navbar />
             {children}
           </ThemeProvider>

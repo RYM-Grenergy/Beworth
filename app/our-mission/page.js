@@ -40,7 +40,7 @@ export default function OurMission() {
           }`}
       >
         <div className="max-w-7xl mx-auto">
-          <Link href="/" className="inline-flex items-center gap-2 text-blue-400 font-bold tracking-widest text-xs uppercase mb-12 group">
+          <Link href="/" className="inline-flex items-center gap-2 font-bold tracking-widest text-xs uppercase mb-12 group">
             <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
             {t.common.back_home}
           </Link>
@@ -51,7 +51,7 @@ export default function OurMission() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-serif font-black uppercase tracking-tighter leading-[0.85] mb-12">
-              {t.mission_page.title_our} <br /> <span className="text-blue-500 italic">{t.mission_page.title_mission}</span>
+              {t.mission_page.title_our} <br /> {t.mission_page.title_mission}
             </h1>
           </motion.div>
         </div>

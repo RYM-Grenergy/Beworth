@@ -269,8 +269,8 @@ export default function Navbar() {
                             {link.count}
                           </span>
                           <span
-                            className={`text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-serif font-black uppercase tracking-tighter transition-all group-hover:scale-[1.01] inline-block ${isActive
-                              ? "italic text-blue-600"
+                            className={`text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-serif font-black uppercase tracking-tight transition-all group-hover:scale-[1.01] inline-block ${isActive
+                              ? "text-blue-600"
                               : theme === "white"
                                 ? "text-black/80 group-hover:text-black"
                                 : "text-white group-hover:text-white"

@@ -28,7 +28,7 @@ export default function AboutUs() {
         <div className="max-w-7xl mx-auto">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-blue-400 font-bold tracking-widest text-xs uppercase mb-12 group"
+            className="inline-flex items-center gap-2 font-bold tracking-widest text-xs uppercase mb-12 group"
           >
             <ArrowLeft
               size={16}
@@ -44,7 +44,7 @@ export default function AboutUs() {
           >
             <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-serif font-black uppercase tracking-tighter leading-[0.85] mb-12">
               {t.hero.mission_title_our} <br />{" "}
-              <span className="text-blue-500 italic">
+              <span>
                 {t.about_page.genesis}
               </span>
             </h1>

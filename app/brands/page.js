@@ -26,7 +26,7 @@ export default function Brands() {
         <div className="max-w-7xl mx-auto">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-blue-400 font-bold tracking-widest text-xs uppercase mb-12 group"
+            className="inline-flex items-center gap-2 font-bold tracking-widest text-xs uppercase mb-12 group"
           >
             <ArrowLeft
               size={16}
@@ -41,10 +41,7 @@ export default function Brands() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-[10rem] font-serif font-black uppercase tracking-tighter leading-[0.85] mb-12">
-              Brand <br />{" "}
-              <span className="text-blue-500 italic">
-                Partners.
-              </span>
+              Brand <br /> Partners.
             </h1>
           </motion.div>
         </div>
@@ -106,7 +103,7 @@ export default function Brands() {
             <div className="space-y-16">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-8">
-                  <h3 className="text-4xl md:text-5xl font-serif font-black uppercase tracking-tighter text-blue-500 italic leading-tight">
+                  <h3 className={`text-4xl md:text-5xl font-serif font-black uppercase tracking-tighter italic leading-tight ${theme === "white" ? "text-black" : "text-white"}`}>
                     Supporting Local Excellence.
                   </h3>
                   <p
