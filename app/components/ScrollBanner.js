@@ -35,16 +35,16 @@ export default function ScrollBanner() {
 
   return (
     <div
-      className={`py-6 md:py-8 overflow-hidden transform md:-rotate-1 relative z-10 my-24 border-y shadow-2xl transition-colors ${theme === "white"
+      className={`py-8 md:py-12 overflow-hidden transform md:-rotate-1 relative z-10 my-24 border-y shadow-2xl transition-colors ${theme === "white"
         ? "bg-white text-black border-black/10"
         : "bg-black text-white border-white/10"
         }`}
     >
       <div className="flex relative items-center overflow-hidden" ref={containerRef}>
-        <div className="marquee-content flex whitespace-nowrap will-change-transform">
+        <div className="marquee-content flex whitespace-nowrap will-change-transform py-2">
           {[...items, ...items].map((item, index) => (
             <div key={index} className="flex items-center shrink-0">
-              <span className="text-3xl md:text-6xl font-serif font-black tracking-tighter mx-4 md:mx-12">
+              <span className={`text-3xl md:text-6xl font-serif font-black tracking-tighter mx-4 md:mx-12 ${language === 'hi' ? 'leading-[1.4] py-2' : ''}`}>
                 {item}
               </span>
               <div className="w-4 h-4 md:w-6 md:h-6 bg-blue-500 rotate-45 mx-4 shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>

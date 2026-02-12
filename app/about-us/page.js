@@ -42,7 +42,7 @@ export default function AboutUs() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-[10rem] font-serif font-black uppercase tracking-tighter leading-[0.85] mb-8 md:mb-12">
+            <h1 className={`text-4xl sm:text-6xl md:text-8xl lg:text-[10rem] font-serif font-black uppercase tracking-tighter mb-8 md:mb-12 ${language === "hi" ? "leading-tight" : "leading-[0.85]"}`}>
               {t.hero.mission_title_our} <br />{" "}
               <span className={theme === "white" ? "text-[#14A3C7]" : "text-black"}>
                 {t.about_page.genesis}

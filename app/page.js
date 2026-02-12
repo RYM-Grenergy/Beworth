@@ -133,9 +133,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-20 items-start mb-24">
             <div className="flex-1">
-              <h2 className="mission-title text-5xl md:text-8xl font-serif font-black uppercase tracking-tighter leading-none mb-12">
+              <h2 className={`mission-title text-5xl md:text-8xl font-serif font-black uppercase tracking-tighter mb-12 ${language === "hi" ? "leading-tight" : "leading-none"}`}>
                 {t.hero.mission_title_our} <br />{" "}
-                <span className={`text-5xl md:text-8xl font-serif font-black uppercase tracking-tighter leading-none mb-12 ${theme === "white" ? "text-[#14A3C7]" : "text-black"}`}>
+                <span className={`text-5xl md:text-8xl font-serif font-black uppercase tracking-tighter mb-12 ${theme === "white" ? "text-[#14A3C7]" : "text-black"} ${language === "hi" ? "leading-tight" : "leading-none"}`}>
                   {t.hero.mission_title_mission}
                 </span>
               </h2>
@@ -151,7 +151,7 @@ export default function Home() {
                   className={`text-xl md:text-2xl font-light leading-relaxed mb-2 ${theme === "white" ? "text-black" : "text-white/80"
                     }`}
                 >
-                  Our mission is to revolutionize the fashion industry through a unique <span className={theme === "white" ? "text-black" : "text-black"}>buyback program</span> that allows consumers to return their clothes after a period of use.
+                  {t.hero.mission_desc}
                 </p>
               </div>
 
@@ -210,8 +210,7 @@ export default function Home() {
               <div className="space-y-8">
 
                 <h2
-                  className={`text-5xl md:text-7xl font-serif font-black uppercase tracking-tighter leading-[0.9] ${theme === "white" ? "text-black" : "text-white"
-                    }`}
+                  className={`text-5xl md:text-7xl font-serif font-black uppercase tracking-tighter ${theme === "white" ? "text-black" : "text-white"} ${language === "hi" ? "leading-tight" : "leading-[0.9]"}`}
                 >
                   {t.hero.win_win_title_global} <br />{" "}
                   {language === 'en' ? (

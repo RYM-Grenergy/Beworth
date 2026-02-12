@@ -37,7 +37,9 @@ export default function OurVision() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {t.vision_page.title_our} <br /> <span className={theme === "white" ? "text-[#14A3C7]" : "text-black"}>{t.vision_page.title_vision}</span>
+            <h1 className={`text-4xl sm:text-6xl md:text-8xl lg:text-[10rem] font-serif font-black uppercase tracking-tighter mb-8 md:mb-12 ${language === "hi" ? "leading-tight" : "leading-[0.85]"}`}>
+              {t.vision_page.title_our} <br /> <span className={theme === "white" ? "text-[#14A3C7]" : "text-black"}>{t.vision_page.title_vision}</span>
+            </h1>
           </motion.div>
         </div>
       </section>
@@ -54,7 +56,7 @@ export default function OurVision() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="space-y-8">
 
-              <h2 className="text-4xl md:text-6xl font-serif font-black uppercase tracking-tighter leading-none">
+              <h2 className={`text-4xl md:text-6xl font-serif font-black uppercase tracking-tighter ${language === "hi" ? "leading-tight" : "leading-none"}`}>
                 {t.vision_page.global_win} <br /> <span className={theme === "white" ? "text-[#14A3C7]" : "text-black"}>{t.vision_page.win_scenario}</span>
               </h2>
               <p
@@ -96,7 +98,7 @@ export default function OurVision() {
             </div>
             <div className="order-1 lg:order-2 space-y-8">
 
-              <h2 className="text-4xl md:text-6xl font-serif font-black uppercase tracking-tighter leading-none">
+              <h2 className={`text-4xl md:text-6xl font-serif font-black uppercase tracking-tighter ${language === "hi" ? "leading-tight" : "leading-none"}`}>
                 {t.vision_page.resp_consumption} <br />{" "}
                 <span className={theme === "white" ? "text-[#14A3C7]" : "text-black"}>{t.vision_page.consumption}</span>
               </h2>

@@ -314,7 +314,7 @@ export const translations = {
             scroll: "अन्वेषण के लिए स्क्रॉल करें"
         },
         scroll_banner: {
-            text: "संतुलित भविष्य"
+            text: "संधारणीय भविष्य"
         },
         features: {
             tech_fashion: "प्रौद्योगिकी और फैशन",

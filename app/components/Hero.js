@@ -88,8 +88,8 @@ export default function Hero() {
                         </div>
 
                         <div
-                            className={`text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-black uppercase leading-[0.85] tracking-tighter ${theme === "white" ? "text-black" : "text-white"
-                                }`}
+                            className={`text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-black uppercase tracking-tighter ${theme === "white" ? "text-black" : "text-white"
+                                } ${language === "hi" ? "leading-tight" : "leading-[0.85]"}`}
                         >
                             <GsapTextReveal
                                 text={t.hero_component.creating}
