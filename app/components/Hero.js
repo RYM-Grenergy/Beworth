@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowDownRight, Sparkles, Leaf, Recycle } from "lucide-react";
+import { ArrowDownRight } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import { useTheme } from "../context/ThemeContext";
 import { translations } from "../utils/translations";
@@ -28,25 +28,10 @@ export default function Hero() {
         return () => window.removeEventListener("mousemove", handleMouseMove);
     }, []);
 
-    const floatingItems = [
-        { icon: <Leaf size={20} />, initialX: "5%", initialY: "15%", delay: 0 },
-        { icon: <Recycle size={24} />, initialX: "90%", initialY: "25%", delay: 0.5 },
-        { icon: <Sparkles size={18} />, initialX: "15%", initialY: "75%", delay: 1 },
-    ];
+
 
     useGSAP(() => {
-        // Floating items animation
-        floatingItems.forEach((_, i) => {
-            gsap.to(`.floating-item-${i}`, {
-                y: 20,
-                rotation: 10,
-                duration: 4 + i,
-                repeat: -1,
-                yoyo: true,
-                ease: "sine.inOut",
-                delay: i * 0.5
-            });
-        });
+
 
         // Image card entrance
         gsap.from(".hero-image-card", {
@@ -78,20 +63,7 @@ export default function Hero() {
                 }}
             />
 
-            {/* Floating Interactive Elements */}
-            {floatingItems.map((item, i) => (
-                <div
-                    key={i}
-                    className={`absolute text-blue-500/10 pointer-events-none z-0 hidden lg:block floating-item-${i}`}
-                    style={{
-                        left: item.initialX,
-                        top: item.initialY,
-                        transform: `translateX(${(mousePos.x - 500) / 60}px)`
-                    }}
-                >
-                    {item.icon}
-                </div>
-            ))}
+
 
             {/* Background Decorative Element - Subtler Neutral Glow */}
             <div
