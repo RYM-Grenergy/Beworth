@@ -19,7 +19,7 @@ export default function ContactUs() {
         }`}
     >
       <section
-        className={`relative pt-40 pb-24 px-6 md:px-12 transition-colors ${theme === "white"
+        className={`relative pt-32 pb-16 md:pt-40 md:pb-24 px-6 md:px-12 border-b transition-colors ${theme === "white"
           ? "bg-black/[0.02] border-b border-black/5"
           : "bg-white/[0.02] border-b border-white/5"
           }`}
@@ -27,7 +27,7 @@ export default function ContactUs() {
         <div className="max-w-7xl mx-auto">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 font-bold tracking-widest text-xs uppercase mb-12 group"
+            className="inline-flex items-center gap-2 font-bold tracking-widest text-xs uppercase mb-8 md:mb-12 group"
           >
             <ArrowLeft
               size={16}
@@ -41,15 +41,15 @@ export default function ContactUs() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-[10rem] font-serif font-black uppercase tracking-tighter leading-[0.85] mb-12">
-              Let's start a <br /> conversation.
+            <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-[10rem] font-serif font-black uppercase tracking-tighter leading-[0.85] mb-8 md:mb-12">
+              {t.contact_page.start_convo} <br /> <span className={theme === "white" ? "text-[#14A3C7]" : "text-black"}>{t.contact_page.conversation}</span>
             </h1>
           </motion.div>
         </div>
       </section>
 
       <section
-        className={`py-24 px-6 md:px-12 border-t transition-colors ${theme === "white" ? "border-black/5" : "border-white/5"
+        className={`py-16 md:py-24 px-6 md:px-12 border-t transition-colors ${theme === "white" ? "border-black/5" : "border-white/5"
           }`}
       >
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-20">
@@ -61,20 +61,20 @@ export default function ContactUs() {
                 alt="Bworth Logo"
                 width={150}
                 height={50}
-                className={`mb-8 ${theme === "white" ? "" : "invert hue-rotate-180"}`}
+                className={`mb-8 ${theme === "white" ? "" : "brightness-0 invert"}`}
               />
               <p
                 className={`font-medium leading-relaxed max-w-sm ${theme === "white" ? "text-black" : "text-white"
                   }`}
               >
-                Have questions about our buyback program or want to partner with us? We're here to help revolutionize fashion together.
+                {t.contact_page.help_desc}
               </p>
             </div>
 
             <div className="space-y-10">
               <div className="flex gap-6 group">
                 <div
-                  className={`w-14 h-14 rounded-2xl flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 ${theme === "white" ? "bg-black/5" : "bg-white/5"
+                  className={`w-14 h-14 rounded-2xl flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 ${theme === "white" ? "bg-black/5 text-blue-500" : "bg-white/5 text-white"
                     }`}
                 >
                   <Phone size={24} />
@@ -84,7 +84,7 @@ export default function ContactUs() {
                     className={`text-[10px] uppercase tracking-[0.2em] font-bold block mb-1 ${theme === "white" ? "text-black" : "text-white"
                       }`}
                   >
-                    Phone
+                    {t.contact_page.phone}
                   </span>
                   <p className="text-xl font-bold">+91 8826668050</p>
                 </div>
@@ -102,7 +102,7 @@ export default function ContactUs() {
                     className={`text-[10px] uppercase tracking-[0.2em] font-bold block mb-1 ${theme === "white" ? "text-black" : "text-white"
                       }`}
                   >
-                    Email
+                    {t.contact_page.email}
                   </span>
                   <p className="text-xl font-bold underline decoration-blue-500/30 underline-offset-8">
                     info@bworth.co.in
@@ -122,9 +122,9 @@ export default function ContactUs() {
                     className={`text-[10px] uppercase tracking-[0.2em] font-bold block mb-1 ${theme === "white" ? "text-black" : "text-white"
                       }`}
                   >
-                    Location
+                    {t.contact_page.location}
                   </span>
-                  <p className="text-xl font-bold">Gurugram, Haryana, India</p>
+                  <p className="text-xl font-bold">{t.contact_page.address}</p>
                 </div>
               </div>
             </div>
@@ -146,13 +146,13 @@ export default function ContactUs() {
                       className={`text-[10px] font-bold uppercase tracking-widest ml-1 ${theme === "white" ? "text-black" : "text-white"
                         }`}
                     >
-                      Your Name *
+                      {t.contact_page.your_name}
                     </label>
                     <input
                       id="name"
                       name="name"
                       type="text"
-                      placeholder="NAME"
+                      placeholder={t.contact_page.ph_name}
                       autoComplete="name"
                       minLength={2}
                       maxLength={50}
@@ -171,13 +171,13 @@ export default function ContactUs() {
                       className={`text-[10px] font-bold uppercase tracking-widest ml-1 ${theme === "white" ? "text-black" : "text-white"
                         }`}
                     >
-                      Your Email *
+                      {t.contact_page.your_email}
                     </label>
                     <input
                       id="email"
                       name="email"
                       type="email"
-                      placeholder="EMAIL"
+                      placeholder={t.contact_page.ph_email}
                       autoComplete="email"
                       pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                       title="Please enter a valid email address."
@@ -195,7 +195,7 @@ export default function ContactUs() {
                     className={`text-[10px] font-bold uppercase tracking-widest ml-1 ${theme === "white" ? "text-black" : "text-white"
                       }`}
                   >
-                    Mobile Number *
+                    {t.contact_page.mobile}
                   </label>
                   <input
                     id="tel"
@@ -218,7 +218,7 @@ export default function ContactUs() {
                     className={`text-[10px] font-bold uppercase tracking-widest ml-1 ${theme === "white" ? "text-black" : "text-white"
                       }`}
                   >
-                    Comments *
+                    {t.contact_page.comments}
                   </label>
                   <textarea
                     id="comments"
@@ -226,7 +226,7 @@ export default function ContactUs() {
                     rows="4"
                     minLength={10}
                     maxLength={1000}
-                    placeholder="HOW CAN WE HELP?"
+                    placeholder={t.contact_page.ph_comments}
                     className={`w-full border-b p-4 focus:border-blue-500 outline-none transition-colors font-bold resize-none ${theme === "white"
                       ? "bg-black/5 border-black/10 placeholder:text-black/50 text-black"
                       : "bg-white/5 border-white/10 placeholder:text-white/40 text-white"
@@ -238,7 +238,7 @@ export default function ContactUs() {
                   type="submit"
                   className="w-full bg-blue-600 text-white p-6 rounded-full font-bold uppercase tracking-widest hover:bg-blue-500 transition-all flex items-center justify-center gap-3 shadow-xl shadow-blue-500/20 group"
                 >
-                  Send Message
+                  {t.contact_page.send}
                   <Send
                     size={18}
                     className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"

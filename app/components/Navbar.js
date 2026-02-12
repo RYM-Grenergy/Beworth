@@ -64,7 +64,7 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className={`fixed top-0 w-full z-[80] transition-all duration-300 px-6 py-4 md:px-12 md:py-6 ${scrolled
+        className={`fixed top-0 left-0 right-0 z-[80] transition-all duration-300 px-4 md:px-12 py-4 md:py-6 ${scrolled
           ? theme === "white"
             ? "bg-white/90 backdrop-blur-md border-b border-black/[0.05]"
             : "bg-[#14A3C7]/90 backdrop-blur-md border-b border-white/[0.05]"
@@ -72,22 +72,22 @@ export default function Navbar() {
           }`}
       >
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <Link href="/" className="group flex items-center gap-3">
+          <Link href="/" className="group flex items-center gap-3 shrink-0">
             <Image
               src="/logo.png"
               alt="Bworth Logo"
               width={0}
               height={0}
               sizes="100vw"
-              className={`h-10 w-auto object-contain transition-all ${theme === "white" ? "" : "invert hue-rotate-180"
+              className={`h-8 md:h-10 w-auto object-contain transition-all ${theme === "white" ? "" : "brightness-0 invert"
                 }`}
             />
           </Link>
 
-          <div className="flex items-center gap-6 md:gap-10">
+          <div className="flex items-center gap-4 md:gap-10 shrink-0">
             <button
               onClick={() => setIsOpen(true)}
-              className={`flex items-center gap-3 px-5 py-2.5 rounded-full hover:bg-blue-600 hover:text-white transition-all active:scale-95 group shadow-xl ${theme === "white"
+              className={`flex items-center gap-2 md:gap-3 px-4 md:px-5 py-2 md:py-2.5 rounded-full hover:bg-blue-600 hover:text-white transition-all active:scale-95 group shadow-xl ${theme === "white"
                 ? "bg-black text-white shadow-black/5"
                 : "bg-white text-black shadow-white/5"
                 }`}
@@ -129,7 +129,7 @@ export default function Navbar() {
                     width={0}
                     height={0}
                     sizes="100vw"
-                    className={`h-16 w-auto object-contain mb-6 ${theme === "white" ? "" : "invert hue-rotate-180"
+                    className={`h-16 w-auto object-contain mb-6 ${theme === "white" ? "" : "brightness-0 invert"
                       }`}
                   />
                 </Link>
@@ -173,8 +173,7 @@ export default function Navbar() {
                 </div>
 
                 <div
-                  className={`text-[10px] uppercase tracking-[0.2em] font-bold ${theme === "white" ? "text-black/20" : "text-white"
-                    }`}
+                  className={`text-[10px] uppercase tracking-[0.2em] font-bold text-black`}
                 >
                   © {new Date().getFullYear()} BEWORTH TECHNOLOGIES
                 </div>
@@ -194,7 +193,7 @@ export default function Navbar() {
                     width={0}
                     height={0}
                     sizes="100vw"
-                    className={`h-10 w-auto object-contain ${theme === "white" ? "" : "invert hue-rotate-180"
+                    className={`h-10 w-auto object-contain ${theme === "white" ? "" : "brightness-0 invert"
                       }`}
                   />
                 </div>

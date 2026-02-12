@@ -42,9 +42,9 @@ export default function AboutUs() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-serif font-black uppercase tracking-tighter leading-[0.85] mb-12">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-[10rem] font-serif font-black uppercase tracking-tighter leading-[0.85] mb-8 md:mb-12">
               {t.hero.mission_title_our} <br />{" "}
-              <span>
+              <span className={theme === "white" ? "text-[#14A3C7]" : "text-black"}>
                 {t.about_page.genesis}
               </span>
             </h1>
@@ -53,18 +53,18 @@ export default function AboutUs() {
       </section>
 
       {/* Main Content Section */}
-      <section className="py-24 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+      <section className="py-16 md:py-32 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
           <div className="lg:col-span-5">
             <div className="sticky top-40 space-y-8">
-              <span className={`text-sm font-bold tracking-[0.3em] block uppercase italic ${theme === "white" ? "text-black" : "text-blue-500"}`}>
+              <span className={`text-sm font-bold tracking-[0.3em] block uppercase italic text-black`}>
                 {t.about_page.company_name}
               </span>
               <h2 className="text-4xl md:text-5xl font-serif font-bold uppercase leading-tight tracking-tighter">
                 {t.about_page.repurposing}
               </h2>
-              <div className={`w-20 h-20 border-2 rounded-full flex items-center justify-center animate-spin-slow ${theme === "white" ? "border-black" : "border-blue-500"}`}>
-                <ShipWheel size={40} className={`${theme === "white" ? "text-black" : "text-blue-500"}`} />
+              <div className={`w-20 h-20 border-2 rounded-full flex items-center justify-center animate-spin-slow ${theme === "white" ? "border-black" : "border-black"}`}>
+                <ShipWheel size={40} className={`${theme === "white" ? "text-black" : "text-black"}`} />
               </div>
             </div>
           </div>
@@ -72,10 +72,10 @@ export default function AboutUs() {
           <div className="lg:col-span-7 prose prose-invert max-w-none">
             <div className="space-y-12">
               <p
-                className={`text-xl md:text-2xl font-medium leading-relaxed text-justify ${theme === "white" ? "text-black/80" : "text-white"
+                className={`text-xl md:text-2xl font-medium leading-relaxed ${theme === "white" ? "text-black/80" : "text-white"
                   }`}
               >
-                Founded in April 2024 in Gurugram, Bworth Technologies Pvt Ltd addresses the persistent problem of wardrobe clutter, for which no established solution exists. Without proper disposal methods, used apparel often ends up in landfills, releasing harmful carbon emissions that damage our environment.
+                {t.about_page.founding_story}
               </p>
 
               <div
@@ -88,22 +88,22 @@ export default function AboutUs() {
                   className={`text-xl font-bold leading-relaxed italic mb-0 ${theme === "white" ? "text-blue-900" : "text-white"
                     }`}
                 >
-                  "Bworth is more than just a company; it is a movement towards conscious consumerism. We strive to give every clothing item a second chance, significantly reducing environmental damage."
+                  {t.about_page.quote}
                 </p>
               </div>
 
               <p
-                className={`text-lg font-bold leading-relaxed text-justify ${theme === "white" ? "text-black" : "text-white"
+                className={`text-lg font-bold leading-relaxed ${theme === "white" ? "text-black" : "text-white"
                   }`}
               >
-                To mitigate this environmental impact, Bworth has developed an ecosystem where used apparel is repurposed through reuse, upcycling, and recycling methods. Our vision extends beyond environmental conservation to also address changing fashion trends.
+                {t.about_page.mitigation}
               </p>
 
               <p
-                className={`text-lg font-bold leading-relaxed text-justify ${theme === "white" ? "text-black" : "text-white"
+                className={`text-lg font-bold leading-relaxed ${theme === "white" ? "text-black" : "text-white"
                   }`}
               >
-                Our flagship Buyback program plays a crucial role in this by helping to reduce the fashion industry's carbon footprint and its environmental impact. This program allows consumers to participate in a circular economy, promoting the sustainable use of fashion. Our mission is to integrate sustainability into the fabric of fashion, thereby preserving the planet's beauty for future generations.
+                {t.about_page.flagship_start} <span className={theme === "white" ? "text-[#14A3C7]" : "text-black"}>{t.about_page.buyback_highlight}</span> {t.about_page.flagship_end}
               </p>
             </div>
           </div>
@@ -112,12 +112,12 @@ export default function AboutUs() {
 
       {/* Founder / Leadership Section */}
       <section
-        className={`py-24 px-6 md:px-12 border-t overflow-hidden transition-colors ${theme === "white"
+        className={`py-16 md:py-32 px-6 md:px-12 border-t overflow-hidden transition-colors ${theme === "white"
           ? "bg-[#F0F4F8] border-black/5"
           : "bg-[#14A3C7] border-white/5"
           }`}
       >
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-24 items-center">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -127,11 +127,11 @@ export default function AboutUs() {
           >
             <div className="w-full max-w-md mx-auto lg:ml-0">
               <ProfileCard
-                name="Dheeraj Anand"
-                title="Founder"
+                name={t.about_page.founder_name}
+                title={t.about_page.founder_title}
                 handle="dheerajanand"
-                status="18 Years Expertise"
-                contactText="Connect"
+                status={t.about_page.founder_status}
+                contactText={t.about_page.connect}
                 avatarUrl="/profile.jpeg"
                 miniAvatarUrl="/profile.jpeg"
                 showUserInfo={true}
@@ -157,16 +157,16 @@ export default function AboutUs() {
               Leadership
             </span>
             <h2
-              className={`text-4xl md:text-6xl font-serif font-black uppercase tracking-tighter leading-none ${theme === "white" ? "text-black" : "text-black"
+              className={`text-3xl sm:text-4xl md:text-6xl font-serif font-black uppercase tracking-tighter leading-none ${theme === "white" ? "text-black" : "text-white"
                 }`}
             >
               Visionary <br />{" "}
-              <span className="italic text-black">
+              <span className={`italic ${theme === "white" ? "text-[#14A3C7]" : "text-black"}`}>
                 Leadership.
               </span>
             </h2>
             <p
-              className={`text-lg md:text-xl font-bold leading-relaxed text-justify ${theme === "white" ? "text-black" : "text-black"
+              className={`text-lg md:text-xl leading-relaxed ${theme === "white" ? "text-black font-bold" : "text-white font-normal"
                 }`}
             >
               With 18 years of deep expertise in building businesses, Dheeraj Anand leads BWorth with a strategic vision to redefine sustainability in fashion. His leadership combines improved business acumen with a passion for environmental impact.

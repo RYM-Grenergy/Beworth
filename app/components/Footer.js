@@ -128,17 +128,16 @@ export default function Footer() {
         </div>
 
         <div
-          className={`flex flex-col md:flex-row justify-between items-center py-12 border-t gap-8 ${theme === "white" ? "border-black/5" : "border-white/5"
+          className={`flex flex-col md:flex-row justify-between items-center py-12 border-t gap-6 md:gap-8 ${theme === "white" ? "border-black/5" : "border-white/5"
             }`}
         >
           <p
-            className={`text-[10px] font-bold tracking-[0.5em] uppercase ${theme === "white" ? "text-black" : "text-white"
-              }`}
+            className={`text-[10px] font-bold tracking-[0.5em] uppercase text-black text-center md:text-left`}
           >
-            © {currentYear} {t.footer.rights}
+            © {currentYear} BEWORTH TECHNOLOGIES
           </p>
           <div
-            className={`flex gap-8 text-[10px] font-bold tracking-[0.5em] uppercase ${theme === "white" ? "text-black" : "text-white"
+            className={`flex flex-wrap justify-center gap-6 md:gap-8 text-[10px] font-bold tracking-[0.5em] uppercase ${theme === "white" ? "text-black" : "text-white"
               }`}
           >
             <Link

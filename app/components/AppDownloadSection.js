@@ -47,7 +47,7 @@ export default function AppDownloadSection() {
 
     return (
         <section
-            className={`py-32 px-6 md:px-12 relative overflow-hidden transition-colors ${theme === "white" ? "bg-white" : "bg-[#020610]"}`}
+            className={`py-32 px-6 md:px-12 relative overflow-hidden transition-colors ${theme === "white" ? "bg-white" : "bg-[#14A3C7]"}`}
         >
             {/* Ambient Background Elements */}
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
@@ -67,7 +67,7 @@ export default function AppDownloadSection() {
                             className="flex items-center gap-2"
                         >
                             <span className="w-8 h-[2px] bg-blue-500"></span>
-                            <span className="text-xs font-black tracking-[0.4em] text-blue-500 uppercase">
+                            <span className={`text-xs font-black tracking-[0.4em] uppercase ${theme === "white" ? "text-blue-500" : "text-white"}`}>
                                 {t.app_download.mobile_app}
                             </span>
                         </motion.div>
@@ -79,8 +79,8 @@ export default function AppDownloadSection() {
                             transition={{ delay: 0.1 }}
                             className={`text-5xl md:text-7xl font-serif font-black uppercase tracking-tighter leading-[0.9] ${theme === "white" ? "text-black" : "text-white"}`}
                         >
-                            BWorth in your<br />
-                            <span>Pocket.</span>
+                            BWorth in <span className={theme === "white" ? "text-[#14A3C7]" : "text-black"}>your</span><br />
+                            <span className={theme === "white" ? "text-[#14A3C7]" : "text-black"}>Pocket.</span>
                         </motion.h2>
 
                         <motion.p
@@ -88,7 +88,7 @@ export default function AppDownloadSection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.2 }}
-                            className={`text-lg md:text-xl font-medium leading-relaxed max-w-xl ${theme === "white" ? "text-black/60" : "text-white/50"}`}
+                            className={`text-lg md:text-xl leading-relaxed max-w-xl ${theme === "white" ? "font-medium text-black/60" : "font-normal text-white"}`}
                         >
                             {t.app_download.desc}
                         </motion.p>
@@ -110,10 +110,10 @@ export default function AppDownloadSection() {
                                     {feature.icon}
                                 </div>
                                 <div className="space-y-1">
-                                    <h4 className={`font-serif font-bold uppercase tracking-tight text-base ${theme === "white" ? "text-black" : "text-white"}`}>
+                                    <h4 className={`font-serif uppercase tracking-tight text-base ${theme === "white" ? "font-bold text-black" : "font-normal text-white"}`}>
                                         {feature.title}
                                     </h4>
-                                    <p className={`text-sm font-medium leading-snug ${theme === "white" ? "text-black/40" : "text-white/30"}`}>
+                                    <p className={`text-sm leading-snug ${theme === "white" ? "font-medium text-black/40" : "font-normal text-white"}`}>
                                         {feature.desc}
                                     </p>
                                 </div>
@@ -155,9 +155,7 @@ export default function AppDownloadSection() {
                             </div>
                         </div>
 
-                        <p className={`text-xs font-black uppercase tracking-[0.3em] flex items-center gap-3 ${theme === "white" ? "text-black/40" : "text-white/20"}`}>
-                            <Smartphone size={14} className="text-blue-500" /> {t.app_download.available_msg}
-                        </p>
+
                     </div>
                 </div>
 

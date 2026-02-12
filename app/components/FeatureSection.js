@@ -52,10 +52,14 @@ export default function FeatureSection() {
                             {t.features.tech_fashion}
                         </span>
                         <h2
-                            className={`text-5xl md:text-7xl font-serif font-black uppercase tracking-tighter leading-none ${theme === "white" ? "text-black" : "text-white"
+                            className={`text-2xl sm:text-4xl md:text-7xl font-serif font-black uppercase tracking-tighter leading-none ${theme === "white" ? "text-black" : "text-white"
                                 }`}
                         >
-                            {t.features.infrastructure}
+                            {language === 'en' ? (
+                                <>
+                                    The infrastructure <span className={theme === "white" ? "text-[#14A3C7]" : "text-black"}>for circularity.</span>
+                                </>
+                            ) : t.features.infrastructure}
                         </h2>
                     </div>
                     <p
@@ -77,7 +81,7 @@ export default function FeatureSection() {
                             whileHover={{ y: -5 }}
                             className={`p-10 border transition-all duration-500 group ${theme === "white"
                                 ? "border-black/[0.05] hover:bg-black/[0.05]"
-                                : "border-white/[0.05] hover:bg-white/[0.02]"
+                                : "border-white/[0.05] hover:bg-white"
                                 } ${i === 0
                                     ? "md:rounded-l-3xl"
                                     : i === features.length - 1
@@ -88,16 +92,16 @@ export default function FeatureSection() {
                             <motion.div
                                 className={`mb-8 p-3 w-fit rounded-lg transition-all ${theme === "white"
                                     ? "bg-black/[0.05] text-black group-hover:bg-black group-hover:text-white"
-                                    : "bg-white/[0.05] text-blue-500 group-hover:bg-blue-600 group-hover:text-white"
+                                    : "bg-white/[0.05] text-white group-hover:bg-white group-hover:text-black"
                                     }`}
                                 whileHover={{ scale: 1.1, rotate: 5 }}
                             >
                                 {f.icon}
                             </motion.div>
                             <h3
-                                className={`text-2xl font-serif font-bold uppercase mb-4 transition-colors group-hover:text-blue-500 ${theme === "white"
-                                    ? "text-black"
-                                    : "text-white"
+                                className={`text-2xl font-serif font-bold uppercase mb-4 transition-colors ${theme === "white"
+                                    ? "text-[#14A3C7] group-hover:text-blue-500"
+                                    : "text-white group-hover:text-black"
                                     }`}
                             >
                                 {f.title}
@@ -105,7 +109,7 @@ export default function FeatureSection() {
                             <p
                                 className={`text-sm font-medium leading-relaxed transition-colors ${theme === "white"
                                     ? "text-black/50 group-hover:text-black/70"
-                                    : "text-white/60 group-hover:text-white/80"
+                                    : "text-white/60 group-hover:text-black"
                                     }`}
                             >
                                 {f.desc}

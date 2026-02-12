@@ -115,7 +115,7 @@ export default function Home() {
   );
 
   return (
-    <main className="min-h-screen" ref={containerRef}>
+    <main className="min-h-screen overflow-x-hidden" ref={containerRef}>
       <Hero />
       <ScrollBanner />
       <div id="ecosystem">
@@ -135,7 +135,7 @@ export default function Home() {
             <div className="flex-1">
               <h2 className="mission-title text-5xl md:text-8xl font-serif font-black uppercase tracking-tighter leading-none mb-12">
                 {t.hero.mission_title_our} <br />{" "}
-                <span className="text-5xl md:text-8xl font-serif font-black uppercase tracking-tighter leading-none mb-12">
+                <span className={`text-5xl md:text-8xl font-serif font-black uppercase tracking-tighter leading-none mb-12 ${theme === "white" ? "text-[#14A3C7]" : "text-black"}`}>
                   {t.hero.mission_title_mission}
                 </span>
               </h2>
@@ -144,73 +144,34 @@ export default function Home() {
                 <GsapTextReveal
                   text={t.hero.mission_heading}
                   y={-10}
-                  className="text-2xl md:text-3xl font-serif italic text-black mb-8"
+                  className={`text-2xl md:text-3xl font-serif italic mb-8 ${theme === "white" ? "text-black" : "text-white"}`}
                 />
 
                 <p
-                  className={`text-xl md:text-2xl font-light leading-relaxed mb-2 ${theme === "white" ? "text-black/80" : "text-white/80"
+                  className={`text-xl md:text-2xl font-light leading-relaxed mb-2 ${theme === "white" ? "text-black" : "text-white/80"
                     }`}
                 >
-                  {t.hero.mission_desc}
+                  Our mission is to revolutionize the fashion industry through a unique <span className={theme === "white" ? "text-black" : "text-black"}>buyback program</span> that allows consumers to return their clothes after a period of use.
                 </p>
               </div>
 
-              <div
-                className="grid grid-cols-2 gap-6 md:gap-12 pt-0"
-              >
-                <div
-                  className={`mission-stat-card p-8 rounded-3xl border backdrop-blur-sm group transition-all duration-500 hover:scale-105 ${theme === "white"
-                    ? "bg-black/5 border-black/5 hover:bg-black hover:text-white"
-                    : "bg-white/5 border-white/5 hover:bg-white hover:text-black"
-                    }`}
-                >
-                  <span
-                    className={`text-4xl md:text-5xl font-serif italic mb-2 block text-blue-500 transition-colors ${theme === "white"
-                      ? "group-hover:text-white"
-                      : "group-hover:text-black"
-                      }`}
-                  >
-                    12k+
-                  </span>
-                  <span className="text-[10px] uppercase tracking-widest opacity-40 font-bold group-hover:opacity-80">
-                    {t.hero.items_recycled}
-                  </span>
-                </div>
-                <div
-                  className={`mission-stat-card p-8 rounded-3xl border backdrop-blur-sm group transition-all duration-500 hover:scale-105 ${theme === "white"
-                    ? "bg-black/5 border-black/5 hover:bg-black hover:text-white"
-                    : "bg-white/5 border-white/5 hover:bg-white hover:text-black"
-                    }`}
-                >
-                  <span
-                    className={`text-4xl md:text-5xl font-serif italic mb-2 block text-blue-500 transition-colors ${theme === "white"
-                      ? "group-hover:text-white"
-                      : "group-hover:text-black"
-                      }`}
-                  >
-                    45+
-                  </span>
-                  <span className="text-[10px] uppercase tracking-widest opacity-40 font-bold group-hover:opacity-80">
-                    {t.hero.brand_partners}
-                  </span>
-                </div>
-              </div>
+
               <div
                 className="mission-footer pt-0 mt-4"
               >
                 <p
-                  className={`text-xl md:text-2xl font-light leading-relaxed max-w-4xl ${theme === "white" ? "text-black/80" : "text-black/80"
+                  className={`text-xl md:text-2xl font-light leading-relaxed max-w-4xl ${theme === "white" ? "text-black/80" : "text-white/80"
                     }`}
                 >
                   {t.hero.mission_footer_desc}
                 </p>
                 <Link
                   href="/our-mission"
-                  className={`font-bold uppercase tracking-[0.2em] flex items-center gap-4 hover:gap-6 transition-all group pt-8 ${theme === "white" ? "text-blue-500" : "text-black"
+                  className={`font-bold uppercase tracking-[0.2em] flex items-center gap-4 hover:gap-6 transition-all group pt-8 ${theme === "white" ? "text-black" : "text-black"
                     }`}
                 >
                   {t.hero.read_story}
-                  <span className={`w-12 h-[1px] group-hover:w-20 transition-all ${theme === "white" ? "bg-blue-500" : "bg-black"}`}></span>
+                  <span className={`w-12 h-[1px] group-hover:w-20 transition-all ${theme === "white" ? "bg-black" : "bg-black"}`}></span>
                 </Link>
               </div>
             </div>
@@ -253,7 +214,11 @@ export default function Home() {
                     }`}
                 >
                   {t.hero.win_win_title_global} <br />{" "}
-                  {t.hero.win_win_title_scenario}
+                  {language === 'en' ? (
+                    <>
+                      <span className={theme === "white" ? "text-[#14A3C7]" : "text-black"}>Win-Win</span> Scenario.
+                    </>
+                  ) : t.hero.win_win_title_scenario}
                 </h2>
                 <p
                   className={`text-lg md:text-xl font-light leading-relaxed max-w-xl ${theme === "white" ? "text-black/80" : "text-white/80"

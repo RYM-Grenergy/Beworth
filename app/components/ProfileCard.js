@@ -432,10 +432,10 @@ const ProfileCardComponent = ({
             )}
             <div ref={shellRef} className="relative z-[1] group">
                 <section
-                    className="grid relative overflow-hidden backface-hidden"
+                    className="grid relative overflow-hidden backface-hidden mx-auto"
                     style={{
-                        height: '80svh',
-                        maxHeight: '540px',
+                        width: '100%',
+                        maxWidth: '380px',
                         aspectRatio: '0.718',
                         borderRadius: cardRadius,
                         backgroundBlendMode: 'color-dodge, normal, normal, normal',
@@ -508,21 +508,21 @@ const ProfileCardComponent = ({
                                     className={`absolute z-[2] flex items-center justify-between backdrop-blur-[30px] border pointer-events-auto ${theme === 'white' ? 'border-black/5' : 'border-white/10'
                                         }`}
                                     style={{
-                                        '--ui-inset': '20px',
-                                        '--ui-radius-bias': '6px',
+                                        '--ui-inset': '12px',
+                                        '--ui-radius-bias': '4px',
                                         bottom: 'var(--ui-inset)',
                                         left: 'var(--ui-inset)',
                                         right: 'var(--ui-inset)',
-                                        background: theme === 'white' ? 'rgba(0, 0, 0, 0.03)' : 'rgba(0, 0, 0, 0.05)',
+                                        background: theme === 'white' ? 'rgba(255, 255, 255, 0.4)' : 'rgba(0, 0, 0, 0.2)',
                                         borderRadius: 'calc(max(0px, var(--card-radius) - var(--ui-inset) + var(--ui-radius-bias)))',
-                                        padding: '12px 14px'
+                                        padding: '8px 10px'
                                     }}
                                 >
-                                    <div className="flex items-center gap-3">
+                                    <div className="flex items-center gap-2">
                                         <div
                                             className={`rounded-full overflow-hidden border flex-shrink-0 ${theme === 'white' ? 'border-black/10' : 'border-white/10'
                                                 }`}
-                                            style={{ width: '48px', height: '48px' }}
+                                            style={{ width: '36px', height: '36px' }}
                                         >
                                             <img
                                                 className="w-full h-full object-cover rounded-full"
@@ -537,15 +537,15 @@ const ProfileCardComponent = ({
                                                 }}
                                             />
                                         </div>
-                                        <div className="flex flex-col items-start gap-1.5">
+                                        <div className="flex flex-col items-start">
                                             <div
-                                                className={`text-sm font-medium leading-none ${theme === 'white' ? 'text-black/90' : 'text-white'
+                                                className={`text-[11px] font-bold leading-none ${theme === 'white' ? 'text-black/90' : 'text-white'
                                                     }`}
                                             >
                                                 @{handle}
                                             </div>
                                             <div
-                                                className={`text-sm leading-none ${theme === 'white' ? 'text-black/60' : 'text-white/70'
+                                                className={`text-[9px] mt-0.5 leading-none ${theme === 'white' ? 'text-black/60' : 'text-white/70'
                                                     }`}
                                             >
                                                 {status}
@@ -553,12 +553,12 @@ const ProfileCardComponent = ({
                                         </div>
                                     </div>
                                     <button
-                                        className={`border rounded-lg px-4 py-3 text-xs font-semibold cursor-pointer backdrop-blur-[10px] transition-all duration-200 ease-out hover:-translate-y-px hover:shadow-[0_0_15px_rgba(59,130,246,0.5)] ${theme === 'white'
+                                        className={`border rounded-lg px-3 py-2 text-[10px] font-bold cursor-pointer backdrop-blur-[10px] transition-all duration-200 ease-out hover:-translate-y-px hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] ${theme === 'white'
                                             ? 'border-black/10 text-black/90 hover:border-black/30'
                                             : 'border-white/10 text-white hover:border-white/40'
                                             }`}
                                         onClick={handleContactClick}
-                                        style={{ pointerEvents: 'auto', display: 'block', gridArea: 'auto', borderRadius: '8px' }}
+                                        style={{ pointerEvents: 'auto', display: 'block', gridArea: 'auto', borderRadius: '6px' }}
                                         type="button"
                                         aria-label={`Contact ${name || 'user'}`}
                                     >

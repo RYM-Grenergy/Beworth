@@ -3,9 +3,9 @@
 @layer base {
   :root {
     --bg-primary: #14A3C7;
-    --text-primary: #020610;
-    --border-primary: rgba(255, 255, 255, 0.05);
-    --glass-bg: rgba(255, 255, 255, 0.03);
+    --text-primary: #FFFFFF;
+    --border-primary: rgba(255, 255, 255, 0.1);
+    --glass-bg: rgba(255, 255, 255, 0.05);
     --menu-bg: #14A3C7;
   }
 
