@@ -127,7 +127,7 @@ export default function Hero() {
                                 text={t.hero_component.sustainable}
                                 delay={0.6}
                             />
-                            <div className={`italic ${theme === "white" ? "text-blue-500" : "text-black"}`}>
+                            <div className={`italic ${theme === "white" ? "text-black" : "text-black"}`}>
                                 <GsapTextReveal
                                     text={t.hero_component.fashion}
                                     delay={0.8}

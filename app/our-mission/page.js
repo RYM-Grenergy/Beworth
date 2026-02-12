@@ -87,7 +87,7 @@ export default function OurMission() {
                       : "bg-white/5 border-white/5"
                       }`}
                   >
-                    <div className="mb-6 text-blue-400 group-hover:text-white transition-colors">
+                    <div className={`mb-6 group-hover:text-white transition-colors ${theme === "white" ? "text-black" : "text-blue-400"}`}>
                       {point.icon}
                     </div>
                     <h3 className="text-xl font-serif font-bold uppercase mb-3">

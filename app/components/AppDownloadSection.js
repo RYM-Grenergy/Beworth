@@ -63,9 +63,9 @@ export default function AppDownloadSection() {
                         {features.map((feature, i) => (
                             <div key={i} className="flex gap-4 group">
                                 <div
-                                    className={`w-12 h-12 border rounded-xl flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all ${theme === "white"
-                                        ? "bg-black/5 border-black/10"
-                                        : "bg-white/5 border-white/10"
+                                    className={`w-12 h-12 border rounded-xl flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all ${theme === "white"
+                                        ? "bg-black/5 border-black/10 text-black"
+                                        : "bg-white/5 border-white/10 text-blue-500"
                                         }`}
                                 >
                                     {feature.icon}
@@ -158,7 +158,7 @@ export default function AppDownloadSection() {
 
                     <p
                         className={`text-[10px] font-bold uppercase tracking-[0.2em] flex items-center gap-2 ${theme === "white"
-                            ? "text-black/20"
+                            ? "text-black"
                             : "text-white/20"
                             }`}
                     >

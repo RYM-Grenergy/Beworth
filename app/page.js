@@ -143,12 +143,12 @@ export default function Home() {
               <div className="mission-desc">
                 <GsapTextReveal
                   text={t.hero.mission_heading}
-                  y={-20}
+                  y={-10}
                   className="text-2xl md:text-3xl font-serif italic text-black mb-8"
                 />
 
                 <p
-                  className={`text-xl md:text-2xl font-light leading-relaxed mb-12 ${theme === "white" ? "text-black/80" : "text-white/80"
+                  className={`text-xl md:text-2xl font-light leading-relaxed mb-2 ${theme === "white" ? "text-black/80" : "text-white/80"
                     }`}
                 >
                   {t.hero.mission_desc}
@@ -156,8 +156,7 @@ export default function Home() {
               </div>
 
               <div
-                className={`grid grid-cols-2 gap-6 md:gap-12 border-t pt-6 ${theme === "white" ? "border-black/10" : "border-white/10"
-                  }`}
+                className="grid grid-cols-2 gap-6 md:gap-12 pt-0"
               >
                 <div
                   className={`mission-stat-card p-8 rounded-3xl border backdrop-blur-sm group transition-all duration-500 hover:scale-105 ${theme === "white"
@@ -197,8 +196,7 @@ export default function Home() {
                 </div>
               </div>
               <div
-                className={`mission-footer border-t pt-6 mt-6 ${theme === "white" ? "border-black/10" : "border-white/10"
-                  }`}
+                className="mission-footer pt-0 mt-4"
               >
                 <p
                   className={`text-xl md:text-2xl font-light leading-relaxed max-w-4xl ${theme === "white" ? "text-black/80" : "text-black/80"
@@ -240,7 +238,7 @@ export default function Home() {
       {/* Vision & Buyback Program Section */}
       <section
         id="how-it-works"
-        className={`py-32 px-6 md:px-12 backdrop-blur-sm border-y overflow-hidden relative transition-colors ${theme === "white"
+        className={`py-32 px-6 md:px-12 backdrop-blur-sm overflow-hidden relative transition-colors ${theme === "white"
           ? "bg-black/[0.02] border-black/[0.05]"
           : "bg-white/[0.01] border-white/[0.05]"
           }`}
@@ -249,9 +247,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
             <div className="vision-content space-y-10">
               <div className="space-y-8">
-                <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-blue-500/20">
-                  <Globe size={24} />
-                </div>
+
                 <h2
                   className={`text-5xl md:text-7xl font-serif font-black uppercase tracking-tighter leading-[0.9] ${theme === "white" ? "text-black" : "text-white"
                     }`}

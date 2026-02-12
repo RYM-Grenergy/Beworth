@@ -43,7 +43,7 @@ export default function Footer() {
               />
             </Link>
             <p
-              className={`text-xl font-medium leading-relaxed mb-10 max-w-sm ${theme === "white" ? "text-black/50" : "text-white"
+              className={`text-xl font-bold leading-relaxed mb-10 max-w-sm ${theme === "white" ? "text-black" : "text-white"
                 }`}
             >
               {t.footer.desc}
@@ -66,7 +66,7 @@ export default function Footer() {
 
           <div className="lg:col-span-3">
             <h4
-              className={`text-xs font-bold uppercase tracking-[0.3em] mb-8 ${theme === "white" ? "text-black/30" : "text-white"
+              className={`text-xs font-bold uppercase tracking-[0.3em] mb-8 ${theme === "white" ? "text-black" : "text-white"
                 }`}
             >
               {t.footer.navigation}
@@ -92,14 +92,14 @@ export default function Footer() {
           <div className="lg:col-span-4 flex flex-col justify-between">
             <div className="space-y-4">
               <h4
-                className={`text-xs font-bold uppercase tracking-[0.3em] mb-6 ${theme === "white" ? "text-black/30" : "text-white"
+                className={`text-xs font-bold uppercase tracking-[0.3em] mb-6 ${theme === "white" ? "text-black" : "text-white"
                   }`}
               >
                 {t.footer.contact_details}
               </h4>
               <div className="space-y-2">
                 <p
-                  className={`text-2xl font-serif font-bold ${theme === "white" ? "text-black/80" : "text-white"
+                  className={`text-2xl font-serif font-bold ${theme === "white" ? "text-black" : "text-white"
                     }`}
                 >
                   +91 8826668050
@@ -112,13 +112,13 @@ export default function Footer() {
 
             <div className="mt-12 lg:mt-0">
               <h4
-                className={`text-xs font-bold uppercase tracking-[0.3em] mb-4 ${theme === "white" ? "text-black/30" : "text-white"
+                className={`text-xs font-bold uppercase tracking-[0.3em] mb-4 ${theme === "white" ? "text-black" : "text-white"
                   }`}
               >
                 {t.footer.location}
               </h4>
               <p
-                className={`text-sm font-bold tracking-widest uppercase ${theme === "white" ? "text-black/40" : "text-white"
+                className={`text-sm font-bold tracking-widest uppercase ${theme === "white" ? "text-black" : "text-white"
                   }`}
               >
                 {t.footer.address}
@@ -132,13 +132,13 @@ export default function Footer() {
             }`}
         >
           <p
-            className={`text-[10px] font-bold tracking-[0.5em] uppercase ${theme === "white" ? "text-black/20" : "text-white"
+            className={`text-[10px] font-bold tracking-[0.5em] uppercase ${theme === "white" ? "text-black" : "text-white"
               }`}
           >
             © {currentYear} {t.footer.rights}
           </p>
           <div
-            className={`flex gap-8 text-[10px] font-bold tracking-[0.5em] uppercase ${theme === "white" ? "text-black/20" : "text-white"
+            className={`flex gap-8 text-[10px] font-bold tracking-[0.5em] uppercase ${theme === "white" ? "text-black" : "text-white"
               }`}
           >
             <Link

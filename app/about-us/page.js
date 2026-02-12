@@ -57,14 +57,14 @@ export default function AboutUs() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
           <div className="lg:col-span-5">
             <div className="sticky top-40 space-y-8">
-              <span className="text-sm font-bold tracking-[0.3em] text-blue-500 block uppercase italic">
+              <span className={`text-sm font-bold tracking-[0.3em] block uppercase italic ${theme === "white" ? "text-black" : "text-blue-500"}`}>
                 {t.about_page.company_name}
               </span>
               <h2 className="text-4xl md:text-5xl font-serif font-bold uppercase leading-tight tracking-tighter">
                 {t.about_page.repurposing}
               </h2>
-              <div className="w-20 h-20 border-2 border-blue-500 rounded-full flex items-center justify-center animate-spin-slow">
-                <ShipWheel size={40} className="text-blue-500" />
+              <div className={`w-20 h-20 border-2 rounded-full flex items-center justify-center animate-spin-slow ${theme === "white" ? "border-black" : "border-blue-500"}`}>
+                <ShipWheel size={40} className={`${theme === "white" ? "text-black" : "text-blue-500"}`} />
               </div>
             </div>
           </div>
@@ -93,14 +93,14 @@ export default function AboutUs() {
               </div>
 
               <p
-                className={`text-lg font-medium leading-relaxed text-justify ${theme === "white" ? "text-black/60" : "text-white"
+                className={`text-lg font-bold leading-relaxed text-justify ${theme === "white" ? "text-black" : "text-white"
                   }`}
               >
                 To mitigate this environmental impact, Bworth has developed an ecosystem where used apparel is repurposed through reuse, upcycling, and recycling methods. Our vision extends beyond environmental conservation to also address changing fashion trends.
               </p>
 
               <p
-                className={`text-lg font-medium leading-relaxed text-justify ${theme === "white" ? "text-black/60" : "text-white"
+                className={`text-lg font-bold leading-relaxed text-justify ${theme === "white" ? "text-black" : "text-white"
                   }`}
               >
                 Our flagship Buyback program plays a crucial role in this by helping to reduce the fashion industry's carbon footprint and its environmental impact. This program allows consumers to participate in a circular economy, promoting the sustainable use of fashion. Our mission is to integrate sustainability into the fabric of fashion, thereby preserving the planet's beauty for future generations.
@@ -166,7 +166,7 @@ export default function AboutUs() {
               </span>
             </h2>
             <p
-              className={`text-lg md:text-xl font-light leading-relaxed text-justify ${theme === "white" ? "text-black/40" : "text-black"
+              className={`text-lg md:text-xl font-bold leading-relaxed text-justify ${theme === "white" ? "text-black" : "text-black"
                 }`}
             >
               With 18 years of deep expertise in building businesses, Dheeraj Anand leads BWorth with a strategic vision to redefine sustainability in fashion. His leadership combines improved business acumen with a passion for environmental impact.

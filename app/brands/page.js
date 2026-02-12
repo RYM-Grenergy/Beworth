@@ -56,14 +56,14 @@ export default function Brands() {
           <div className="lg:col-span-4">
             <div className="sticky top-40 space-y-12">
               <div className="flex items-center gap-6">
-                <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-xl shadow-blue-500/20">
+                <div className="w-20 h-20 bg-black rounded-full flex items-center justify-center text-white shadow-xl shadow-black">
                   <Flag size={32} />
                 </div>
                 <div>
                   <h2 className="text-3xl font-serif font-bold uppercase leading-none">
                     Make In India
                   </h2>
-                  <p className="text-xs font-bold tracking-[0.3em] text-blue-400 uppercase mt-2">
+                  <p className={`text-xs font-bold tracking-[0.3em] uppercase mt-2 ${theme === "white" ? "text-black" : "text-blue-400"}`}>
                     Collab Association
                   </p>
                 </div>
@@ -71,7 +71,7 @@ export default function Brands() {
 
               <div className="space-y-6">
                 <div
-                  className={`flex items-center gap-4 ${theme === "white" ? "text-black/40" : "text-white"
+                  className={`flex items-center gap-4 ${theme === "white" ? "text-black" : "text-white"
                     }`}
                 >
                   <MapPin size={18} className="text-blue-500" />
@@ -80,7 +80,7 @@ export default function Brands() {
                   </span>
                 </div>
                 <div
-                  className={`flex items-center gap-4 ${theme === "white" ? "text-black/40" : "text-white"
+                  className={`flex items-center gap-4 ${theme === "white" ? "text-black" : "text-white"
                     }`}
                 >
                   <Award size={18} className="text-blue-500" />
@@ -91,7 +91,7 @@ export default function Brands() {
               </div>
 
               <p
-                className={`text-sm font-medium leading-relaxed italic ${theme === "white" ? "text-black/30" : "text-white/60"
+                className={`text-sm font-bold leading-relaxed ${theme === "white" ? "text-black" : "text-white"
                   }`}
               >
                 Supporting local businesses and promoting indigenous talent through conscious production.

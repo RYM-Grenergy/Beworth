@@ -86,9 +86,9 @@ export default function FeatureSection() {
                                 }`}
                         >
                             <motion.div
-                                className={`mb-8 p-3 w-fit rounded-lg group-hover:bg-blue-600 group-hover:text-white transition-all text-blue-500 ${theme === "white"
-                                    ? "bg-black/[0.05]"
-                                    : "bg-white/[0.05]"
+                                className={`mb-8 p-3 w-fit rounded-lg transition-all ${theme === "white"
+                                    ? "bg-black/[0.05] text-black group-hover:bg-black group-hover:text-white"
+                                    : "bg-white/[0.05] text-blue-500 group-hover:bg-blue-600 group-hover:text-white"
                                     }`}
                                 whileHover={{ scale: 1.1, rotate: 5 }}
                             >
