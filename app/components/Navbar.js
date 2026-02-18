@@ -261,20 +261,22 @@ export default function Navbar() {
 
                           <span
                             className={`text-2xl sm:text-3xl md:text-3xl xl:text-4xl font-serif font-black uppercase tracking-tight transition-all group-hover:scale-[1.01] inline-block ${isActive
-                              ? "text-[#14A3C7]"
+                              ? theme === "white"
+                                ? "text-[#14A3C7]"
+                                : "text-black"
                               : theme === "white"
                                 ? "text-black/80 group-hover:text-black"
-                                : "text-white group-hover:text-white"
+                                : "text-white group-hover:text-black"
                               }`}
                           >
                             {link.name}
                           </span>
                           <ArrowRight
                             size={32}
-                            className={`ml-auto transition-all duration-300 text-[#14A3C7] hidden md:block ${isActive
+                            className={`ml-auto transition-all duration-300 hidden md:block ${isActive
                               ? "opacity-100 translate-x-0"
                               : "opacity-0 -translate-x-10 group-hover:opacity-100 group-hover:translate-x-0"
-                              }`}
+                              } ${theme === "white" ? "text-[#14A3C7]" : "text-black"}`}
                           />
                         </Link>
                       </motion.div>
@@ -294,7 +296,7 @@ export default function Navbar() {
             </div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence >
     </>
   );
 }
