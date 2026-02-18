@@ -181,12 +181,13 @@ export default function Home() {
                 className={`mission-image aspect-square rounded-[3rem] overflow-hidden border ${theme === "white" ? "border-black/10" : "border-white/10"
                   }`}
               >
-                <Image
-                  src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=800&q=80"
-                  alt="Sustainable Fashion Concept"
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                  className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+                <video
+                  src="/video.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-1000"
                 />
               </div>
             </div>

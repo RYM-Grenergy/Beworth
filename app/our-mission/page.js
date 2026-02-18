@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowLeft, Target, Recycle, Users } from "lucide-react";
+import { ArrowLeft, Target, Recycle, Users, Cloud, Gift, Building2 } from "lucide-react";
 import Footer from "../components/Footer";
 import { useLanguage } from "../context/LanguageContext";
 import { useTheme } from "../context/ThemeContext";
@@ -15,22 +15,37 @@ export default function OurMission() {
   const missionPoints = [
     {
       icon: <Recycle size={28} />,
-      title: "Circular Lifecycle",
-      desc: "Extending the life of every garment through our unique buyback program."
+      title: t.mission_page.circular_title,
+      desc: t.mission_page.circular_desc
     },
     {
       icon: <Users size={28} />,
-      title: "Community Engagement",
+      title: t.mission_page.community_title,
       desc: (
         <>
-          Organizing <span className={theme === "white" ? "text-[#14A3C7]" : "text-black"}>offline events</span> in residential societies to build direct platforms.
+          {t.mission_page.community_desc}
         </>
       )
     },
     {
       icon: <Target size={28} />,
-      title: "Dead Stock Clearance",
-      desc: "Assisting brands in clearing dead stock, promoting a waste-free industry."
+      title: t.mission_page.deadstock_title,
+      desc: t.mission_page.deadstock_desc
+    },
+    {
+      icon: <Gift size={28} />,
+      title: t.mission_page.referral_title,
+      desc: t.mission_page.referral_desc
+    },
+    {
+      icon: <Cloud size={28} />,
+      title: t.mission_page.carbon_title,
+      desc: t.mission_page.carbon_desc
+    },
+    {
+      icon: <Building2 size={28} />,
+      title: t.mission_page.b2b_title,
+      desc: t.mission_page.b2b_desc
     }
   ];
 

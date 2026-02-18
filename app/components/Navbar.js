@@ -31,6 +31,7 @@ export default function Navbar() {
     { name: t.navbar.mission, href: "/our-mission" },
     { name: t.navbar.vision, href: "/our-vision" },
     { name: t.navbar.brands, href: "/brands" },
+    { name: t.navbar.b2b, href: "/b2b" },
     { name: t.navbar.contact, href: "/contact-us" },
   ];
 
@@ -259,7 +260,7 @@ export default function Navbar() {
                         >
 
                           <span
-                            className={`text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-serif font-black uppercase tracking-tight transition-all group-hover:scale-[1.01] inline-block ${isActive
+                            className={`text-2xl sm:text-3xl md:text-3xl xl:text-4xl font-serif font-black uppercase tracking-tight transition-all group-hover:scale-[1.01] inline-block ${isActive
                               ? "text-[#14A3C7]"
                               : theme === "white"
                                 ? "text-black/80 group-hover:text-black"

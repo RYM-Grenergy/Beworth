@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, Instagram, Twitter, Linkedin, Youtube } from "lucide-react";
+import { ArrowUpRight, Instagram, Facebook, Linkedin, Youtube } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import { useTheme } from "../context/ThemeContext";
 import { translations } from "../utils/translations";
@@ -18,6 +18,7 @@ export default function Footer() {
     { name: t.footer.mission, href: "/our-mission" },
     { name: t.footer.vision, href: "/our-vision" },
     { name: t.footer.brands, href: "/brands" },
+    { name: t.footer.b2b, href: "/b2b" },
     { name: t.footer.contact, href: "/contact-us" },
   ];
 
@@ -49,10 +50,17 @@ export default function Footer() {
               {t.footer.desc}
             </p>
             <div className="flex gap-4">
-              {[Instagram, Twitter, Linkedin, Youtube].map((Icon, i) => (
+              {[
+                { Icon: Instagram, href: "https://www.instagram.com/bworth.fashion" },
+                { Icon: Facebook, href: "https://www.facebook.com/people/BWorth/61565081468088/" },
+                { Icon: Linkedin, href: "https://www.linkedin.com/company/bworth-technologies" },
+                { Icon: Youtube, href: "https://www.youtube.com/@Bworth_Fashion" }
+              ].map(({ Icon, href }, i) => (
                 <Link
                   key={i}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`w-12 h-12 flex items-center justify-center border rounded-full hover:bg-[#14A3C7] hover:text-white transition-all cursor-pointer ${theme === "white"
                     ? "bg-black/5 border-black/10"
                     : "bg-white/5 border-white/10"

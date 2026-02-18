@@ -28,11 +28,7 @@ export default function Hero() {
         return () => window.removeEventListener("mousemove", handleMouseMove);
     }, []);
 
-
-
     useGSAP(() => {
-
-
         // Image card entrance
         gsap.from(".hero-image-card", {
             x: 100,
@@ -62,8 +58,6 @@ export default function Hero() {
                     background: `radial-gradient(600px circle at ${mousePos.x}px ${mousePos.y}px, rgba(20, 163, 199, 0.15), transparent 40%)`,
                 }}
             />
-
-
 
             {/* Background Decorative Element - Subtler Neutral Glow */}
             <div
@@ -120,11 +114,10 @@ export default function Hero() {
                         >
                             <div className="aspect-[3/4] relative overflow-hidden">
                                 <Image
-                                    src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000&auto=format&fit=crop"
-                                    alt="Sustainable Fashion Editorial"
+                                    src="/hero.png"
+                                    alt="Hero Image"
                                     fill
-                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                    className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                                    className="object-cover w-full h-full transition-transform duration-1000 group-hover:scale-110"
                                     priority
                                 />
                             </div>

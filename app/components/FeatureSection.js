@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Recycle, Zap, ShieldCheck, TrendingUp } from "lucide-react";
+import { Recycle, Zap, ShieldCheck, TrendingUp, Heart, Users, Cloud, Building2 } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 import { useTheme } from "../context/ThemeContext";
 import { translations } from "../utils/translations";
@@ -25,6 +25,21 @@ export default function FeatureSection() {
             icon: <ShieldCheck size={32} />,
             title: t.features.events_title,
             desc: t.features.events_desc
+        },
+        {
+            icon: <Heart size={32} />,
+            title: t.features.social_cause_title,
+            desc: t.features.social_cause_desc
+        },
+        {
+            icon: <Users size={32} />,
+            title: t.features.referral_title,
+            desc: t.features.referral_desc
+        },
+        {
+            icon: <Cloud size={32} />,
+            title: t.features.carbon_credits_title,
+            desc: t.features.carbon_credits_desc
         }
     ];
 
