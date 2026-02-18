@@ -74,7 +74,7 @@ export default function ContactUs() {
             <div className="space-y-10">
               <div className="flex gap-6 group">
                 <div
-                  className={`w-14 h-14 rounded-2xl flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 ${theme === "white" ? "bg-black/5 text-blue-500" : "bg-white/5 text-white"
+                  className={`w-14 h-14 rounded-2xl flex items-center justify-center group-hover:bg-[#14A3C7] group-hover:text-white transition-all duration-300 ${theme === "white" ? "bg-black/5 text-[#14A3C7]" : "bg-white/5 text-white"
                     }`}
                 >
                   <Phone size={24} />
@@ -86,13 +86,13 @@ export default function ContactUs() {
                   >
                     {t.contact_page.phone}
                   </span>
-                  <p className="text-xl font-bold">+91 8826668050</p>
+                  <p className="text-xl font-normal">+91 8826668050</p>
                 </div>
               </div>
 
               <div className="flex gap-6 group">
                 <div
-                  className={`w-14 h-14 rounded-2xl flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 ${theme === "white" ? "bg-black/5" : "bg-white/5"
+                  className={`w-14 h-14 rounded-2xl flex items-center justify-center text-[#14A3C7] group-hover:bg-[#14A3C7] group-hover:text-white transition-all duration-300 ${theme === "white" ? "bg-black/5" : "bg-white/5"
                     }`}
                 >
                   <Mail size={24} />
@@ -104,7 +104,7 @@ export default function ContactUs() {
                   >
                     {t.contact_page.email}
                   </span>
-                  <p className="text-xl font-bold underline decoration-blue-500/30 underline-offset-8">
+                  <p className="text-xl font-bold underline decoration-[#14A3C7]/30 underline-offset-8">
                     info@bworth.co.in
                   </p>
                 </div>
@@ -112,7 +112,7 @@ export default function ContactUs() {
 
               <div className="flex gap-6 group">
                 <div
-                  className={`w-14 h-14 rounded-2xl flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 ${theme === "white" ? "bg-black/5" : "bg-white/5"
+                  className={`w-14 h-14 rounded-2xl flex items-center justify-center text-[#14A3C7] group-hover:bg-[#14A3C7] group-hover:text-white transition-all duration-300 ${theme === "white" ? "bg-black/5" : "bg-white/5"
                     }`}
                 >
                   <MapPin size={24} />
@@ -158,7 +158,7 @@ export default function ContactUs() {
                       maxLength={50}
                       pattern="[a-zA-Z\s]+"
                       title="Name should only contain letters and spaces."
-                      className={`w-full border-b p-4 focus:border-blue-500 outline-none transition-colors font-bold ${theme === "white"
+                      className={`w-full border-b p-4 focus:border-[#14A3C7] outline-none transition-colors font-bold ${theme === "white"
                         ? "bg-black/5 border-black/10 placeholder:text-black/50 text-black"
                         : "bg-white/5 border-white/10 placeholder:text-white/40 text-white"
                         }`}
@@ -181,7 +181,7 @@ export default function ContactUs() {
                       autoComplete="email"
                       pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                       title="Please enter a valid email address."
-                      className={`w-full border-b p-4 focus:border-blue-500 outline-none transition-colors font-bold ${theme === "white"
+                      className={`w-full border-b p-4 focus:border-[#14A3C7] outline-none transition-colors font-bold ${theme === "white"
                         ? "bg-black/5 border-black/10 placeholder:text-black/50 text-black"
                         : "bg-white/5 border-white/10 placeholder:text-white/40 text-white"
                         }`}
@@ -205,7 +205,7 @@ export default function ContactUs() {
                     autoComplete="tel"
                     pattern="[+]?[0-9]{10,14}"
                     title="Phone number should be 10-14 digits, optionally starting with +."
-                    className={`w-full border-b p-4 focus:border-blue-500 outline-none transition-colors font-bold ${theme === "white"
+                    className={`w-full border-b p-4 focus:border-[#14A3C7] outline-none transition-colors font-bold ${theme === "white"
                       ? "bg-black/5 border-black/10 placeholder:text-black/50 text-black"
                       : "bg-white/5 border-white/10 placeholder:text-white/40 text-white"
                       }`}
@@ -227,7 +227,7 @@ export default function ContactUs() {
                     minLength={10}
                     maxLength={1000}
                     placeholder={t.contact_page.ph_comments}
-                    className={`w-full border-b p-4 focus:border-blue-500 outline-none transition-colors font-bold resize-none ${theme === "white"
+                    className={`w-full border-b p-4 focus:border-[#14A3C7] outline-none transition-colors font-bold resize-none ${theme === "white"
                       ? "bg-black/5 border-black/10 placeholder:text-black/50 text-black"
                       : "bg-white/5 border-white/10 placeholder:text-white/40 text-white"
                       }`}
@@ -236,7 +236,7 @@ export default function ContactUs() {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 text-white p-6 rounded-full font-bold uppercase tracking-widest hover:bg-blue-500 transition-all flex items-center justify-center gap-3 shadow-xl shadow-blue-500/20 group"
+                  className="w-full bg-[#14A3C7] text-white p-6 rounded-full font-bold uppercase tracking-widest hover:bg-[#14A3C7] transition-all flex items-center justify-center gap-3 shadow-xl shadow-[#14A3C7]/20 group"
                 >
                   {t.contact_page.send}
                   <Send

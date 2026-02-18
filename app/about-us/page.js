@@ -85,7 +85,7 @@ export default function AboutUs() {
                   }`}
               >
                 <p
-                  className={`text-xl font-bold leading-relaxed italic mb-0 ${theme === "white" ? "text-blue-900" : "text-white"
+                  className={`text-xl font-bold leading-relaxed italic mb-0 ${theme === "white" ? "text-[#14A3C7]" : "text-white"
                     }`}
                 >
                   {t.about_page.quote}

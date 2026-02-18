@@ -47,7 +47,7 @@ export default function ScrollBanner() {
               <span className={`text-3xl md:text-6xl font-serif font-black tracking-tighter mx-4 md:mx-12 ${language === 'hi' ? 'leading-[1.4] py-2' : ''}`}>
                 {item}
               </span>
-              <div className="w-4 h-4 md:w-6 md:h-6 bg-blue-500 rotate-45 mx-4 shadow-[0_0_15px_rgba(59,130,246,0.5)]"></div>
+              <div className="w-4 h-4 md:w-6 md:h-6 bg-[#14A3C7] rotate-45 mx-4 shadow-[0_0_15px_rgba(20,163,199,0.5)]"></div>
             </div>
           ))}
         </div>

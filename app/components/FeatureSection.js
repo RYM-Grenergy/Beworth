@@ -12,24 +12,19 @@ export default function FeatureSection() {
 
     const features = [
         {
+            icon: <TrendingUp size={32} />,
+            title: t.features.marketplace_title,
+            desc: t.features.marketplace_desc
+        },
+        {
             icon: <Recycle size={32} />,
             title: t.features.buyback_title,
             desc: t.features.buyback_desc
         },
         {
-            icon: <Zap size={32} />,
-            title: t.features.thrifting_title,
-            desc: t.features.thrifting_desc
-        },
-        {
             icon: <ShieldCheck size={32} />,
             title: t.features.events_title,
             desc: t.features.events_desc
-        },
-        {
-            icon: <TrendingUp size={32} />,
-            title: t.features.marketplace_title,
-            desc: t.features.marketplace_desc
         }
     ];
 
@@ -70,7 +65,7 @@ export default function FeatureSection() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-0">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-0">
                     {features.map((f, i) => (
                         <motion.div
                             key={i}

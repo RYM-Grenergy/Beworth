@@ -50,8 +50,7 @@ export const translations = {
             desc: "We are building the rails for a world where fashion never ends, only evolves.",
             buyback_title: "Buyback Program",
             buyback_desc: "Our comprehensive solution to manage unwanted clothing while promoting environmental sustainability.",
-            thrifting_title: "Thrifting Platform",
-            thrifting_desc: "An integrated offline and online platform for conscious fashion swaps and purchases.",
+
             events_title: "Offline Events",
             events_desc: "Direct and engaging platforms in residential societies and brand partnerships.",
             marketplace_title: "Unique Marketplace",
@@ -116,10 +115,10 @@ export const translations = {
             leadership: "Leadership",
             visionary: "Visionary",
             leader_title: "Leadership.",
-            leader_desc: "With an MBA and 18 years of deep expertise in building businesses, Dheeraj Anand leads BWorth with a strategic vision to redefine sustainability in fashion. His leadership combines improved business acumen with a passion for environmental impact.",
+            leader_desc: "With 18 years of deep expertise in building businesses, Dheeraj Anand leads BWorth with a strategic vision to redefine sustainability in fashion. His leadership combines improved business acumen with a passion for environmental impact.",
             founder_name: "Dheeraj Anand",
             founder_title: "Founder",
-            founder_status: "MBA • 18 Years Expertise",
+            founder_status: "18 Years Expertise",
             connect: "Connect"
         },
         mission_page: {
@@ -322,8 +321,7 @@ export const translations = {
             desc: "हम एक ऐसी दुनिया के लिए रेल बना रहे हैं जहाँ फैशन कभी समाप्त नहीं होता, केवल विकसित होता है।",
             buyback_title: "बायबैक कार्यक्रम",
             buyback_desc: "पर्यावरण स्थिरता को बढ़ावा देते हुए अवांछित कपड़ों का प्रबंधन करने के लिए हमारा व्यापक समाधान।",
-            thrifting_title: "थ्रिफ्टिंग प्लेटफॉर्म",
-            thrifting_desc: "जागरूक फैशन अदला-बदली और खरीद के लिए एक एकीकृत ऑफ़लाइन और ऑनलाइन मंच।",
+
             events_title: "ऑफ़लाइन कार्यक्रम",
             events_desc: "आवासीय सोसाइटियों और ब्रांड साझेदारी में प्रत्यक्ष और आकर्षक प्लेटफॉर्म।",
             marketplace_title: "अद्वितीय बाज़ार",

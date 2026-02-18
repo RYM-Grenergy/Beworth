@@ -229,8 +229,8 @@ export default function Home() {
 
               <Link
                 href="/our-vision"
-                className={`inline-block text-xs font-bold uppercase tracking-widest border-b pb-2 transition-colors ${theme === "white"
-                  ? "text-blue-500 border-blue-500 hover:text-black hover:border-black"
+                className={`inline-block text-xs uppercase tracking-widest border-b pb-2 transition-colors ${theme === "white"
+                  ? "text-[#14A3C7] border-[#14A3C7] hover:text-black hover:border-black"
                   : "text-black border-black hover:text-white hover:border-white"
                   }`}
               >

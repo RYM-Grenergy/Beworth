@@ -26,12 +26,12 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: t.navbar.home, href: "/", count: "01" },
-    { name: t.navbar.about, href: "/about-us", count: "02" },
-    { name: t.navbar.mission, href: "/our-mission", count: "03" },
-    { name: t.navbar.vision, href: "/our-vision", count: "04" },
-    { name: t.navbar.brands, href: "/brands", count: "05" },
-    { name: t.navbar.contact, href: "/contact-us", count: "06" },
+    { name: t.navbar.home, href: "/" },
+    { name: t.navbar.about, href: "/about-us" },
+    { name: t.navbar.mission, href: "/our-mission" },
+    { name: t.navbar.vision, href: "/our-vision" },
+    { name: t.navbar.brands, href: "/brands" },
+    { name: t.navbar.contact, href: "/contact-us" },
   ];
 
   const menuVariants = {
@@ -87,7 +87,7 @@ export default function Navbar() {
           <div className="flex items-center gap-4 md:gap-10 shrink-0">
             <button
               onClick={() => setIsOpen(true)}
-              className={`flex items-center gap-2 md:gap-3 px-4 md:px-5 py-2 md:py-2.5 rounded-full hover:bg-blue-600 hover:text-white transition-all active:scale-95 group shadow-xl ${theme === "white"
+              className={`flex items-center gap-2 md:gap-3 px-4 md:px-5 py-2 md:py-2.5 rounded-full hover:bg-[#14A3C7] hover:text-white transition-all active:scale-95 group shadow-xl ${theme === "white"
                 ? "bg-black text-white shadow-black/5"
                 : "bg-white text-black shadow-white/5"
                 }`}
@@ -145,8 +145,8 @@ export default function Navbar() {
                 <div
                   onClick={toggleLanguage}
                   className={`flex items-center gap-3 transition-colors cursor-pointer group ${theme === "white"
-                    ? "text-black/40 hover:text-blue-600"
-                    : "text-white hover:text-blue-400"
+                    ? "text-black/40 hover:text-[#14A3C7]"
+                    : "text-white hover:text-[#14A3C7]"
                     }`}
                 >
                   <Globe size={18} />
@@ -162,8 +162,8 @@ export default function Navbar() {
                     toggleTheme(theme === "blue" ? "white" : "blue")
                   }
                   className={`flex items-center gap-3 transition-colors cursor-pointer group ${theme === "white"
-                    ? "text-black/40 hover:text-blue-600"
-                    : "text-white hover:text-blue-400"
+                    ? "text-black/40 hover:text-[#14A3C7]"
+                    : "text-white hover:text-[#14A3C7]"
                     }`}
                 >
                   {theme === "blue" ? <Sun size={18} /> : <Moon size={18} />}
@@ -257,19 +257,10 @@ export default function Navbar() {
                             : "border-white/5 group-hover:border-white/10"
                             } md:group-hover:pl-4`}
                         >
-                          <span
-                            className={`text-[9px] md:text-[10px] font-mono font-bold transition-colors mb-1 ${isActive
-                              ? "text-blue-500"
-                              : theme === "white"
-                                ? "text-black/40"
-                                : "text-white"
-                              }`}
-                          >
-                            {link.count}
-                          </span>
+
                           <span
                             className={`text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-serif font-black uppercase tracking-tight transition-all group-hover:scale-[1.01] inline-block ${isActive
-                              ? "text-blue-600"
+                              ? "text-[#14A3C7]"
                               : theme === "white"
                                 ? "text-black/80 group-hover:text-black"
                                 : "text-white group-hover:text-white"
@@ -279,7 +270,7 @@ export default function Navbar() {
                           </span>
                           <ArrowRight
                             size={32}
-                            className={`ml-auto transition-all duration-300 text-blue-500 hidden md:block ${isActive
+                            className={`ml-auto transition-all duration-300 text-[#14A3C7] hidden md:block ${isActive
                               ? "opacity-100 translate-x-0"
                               : "opacity-0 -translate-x-10 group-hover:opacity-100 group-hover:translate-x-0"
                               }`}

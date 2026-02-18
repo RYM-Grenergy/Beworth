@@ -87,19 +87,19 @@ export default function OurMission() {
                 {missionPoints.map((point, i) => (
                   <div
                     key={i}
-                    className={`p-8 rounded-3xl border hover:bg-blue-600 transition-all duration-500 group ${theme === "white"
+                    className={`p-8 rounded-3xl border transition-all duration-500 ${theme === "white"
                       ? "bg-black/5 border-black/5"
                       : "bg-white/5 border-white/5"
                       }`}
                   >
-                    <div className={`mb-6 group-hover:text-white transition-colors ${theme === "white" ? "text-black" : "text-white"}`}>
+                    <div className={`mb-6 transition-colors ${theme === "white" ? "text-black" : "text-white"}`}>
                       {point.icon}
                     </div>
                     <h3 className="text-xl font-serif font-bold uppercase mb-3">
                       {point.title}
                     </h3>
                     <p
-                      className={`text-sm group-hover:text-white/80 transition-colors uppercase tracking-wider font-bold ${theme === "white" ? "text-black/40" : "text-white"
+                      className={`text-sm transition-colors uppercase tracking-wider font-bold ${theme === "white" ? "text-black/40" : "text-white"
                         }`}
                     >
                       {point.desc}
@@ -124,8 +124,8 @@ export default function OurMission() {
           <div className="lg:col-span-4">
             <div
               className={`p-10 border rounded-[3rem] backdrop-blur-xl sticky top-40 ${theme === "white"
-                ? "border-blue-500/20 bg-blue-600/5"
-                : "border-blue-500/30 bg-blue-600/5"
+                ? "border-[#14A3C7]/20 bg-[#14A3C7]/5"
+                : "border-[#14A3C7]/30 bg-[#14A3C7]/5"
                 }`}
             >
               <span className="text-xs font-bold uppercase tracking-[0.3em] text-black mb-6 block">

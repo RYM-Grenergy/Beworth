@@ -40,7 +40,7 @@ export default function AppDownloadSection() {
 
     const features = [
         { icon: <Zap className="text-yellow-400" size={20} />, title: t.app_download.shop_smart, desc: t.app_download.shop_smart_desc },
-        { icon: <Coins className="text-blue-400" size={20} />, title: t.app_download.sell_earn, desc: t.app_download.sell_earn_desc },
+        { icon: <Coins className="text-[#14A3C7]" size={20} />, title: t.app_download.sell_earn, desc: t.app_download.sell_earn_desc },
         { icon: <Recycle className="text-green-400" size={20} />, title: t.app_download.recycle, desc: t.app_download.recycle_desc },
         { icon: <Leaf className="text-emerald-400" size={20} />, title: t.app_download.carbon_savings, desc: t.app_download.carbon_savings_desc },
     ];
@@ -66,8 +66,8 @@ export default function AppDownloadSection() {
                             viewport={{ once: true }}
                             className="flex items-center gap-2"
                         >
-                            <span className="w-8 h-[2px] bg-blue-500"></span>
-                            <span className={`text-xs font-black tracking-[0.4em] uppercase ${theme === "white" ? "text-blue-500" : "text-white"}`}>
+                            <span className="w-8 h-[2px] bg-[#14A3C7]"></span>
+                            <span className={`text-xs font-normal tracking-[0.4em] uppercase ${theme === "white" ? "text-[#14A3C7]" : "text-white"}`}>
                                 {t.app_download.mobile_app}
                             </span>
                         </motion.div>
@@ -134,7 +134,7 @@ export default function AppDownloadSection() {
                                     : "bg-white text-black shadow-white/5 hover:bg-zinc-100"
                                     }`}
                             >
-                                <div className="w-10 h-10 flex items-center justify-center bg-blue-500 rounded-xl">
+                                <div className="w-10 h-10 flex items-center justify-center bg-[#14A3C7] rounded-xl">
                                     <Download size={20} className="text-white group-hover:animate-bounce" />
                                 </div>
                                 <div className="flex flex-col items-start leading-none">
@@ -197,22 +197,22 @@ export default function AppDownloadSection() {
                                         <div className="h-6 w-auto">
                                             <Image src="/logo.png" alt="Bworth" width={80} height={20} className="h-full w-auto object-contain grayscale" />
                                         </div>
-                                        <div className="w-9 h-9 rounded-full bg-blue-500 flex items-center justify-center text-white">
+                                        <div className="w-9 h-9 rounded-full bg-[#14A3C7] flex items-center justify-center text-white">
                                             <Smartphone size={16} />
                                         </div>
                                     </div>
 
                                     {/* Balance Card */}
                                     <div className="p-5 bg-black rounded-[2rem] text-white shadow-lg relative overflow-hidden group">
-                                        <div className="absolute top-[-20%] right-[-10%] w-24 h-24 bg-blue-500/20 rounded-full blur-2xl"></div>
+                                        <div className="absolute top-[-20%] right-[-10%] w-24 h-24 bg-[#14A3C7]/20 rounded-full blur-2xl"></div>
                                         <span className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em]">{t.app_download.your_balance}</span>
                                         <div className="flex items-baseline gap-2 mt-1">
                                             <span className="text-4xl font-serif font-black tracking-tighter">2,450</span>
-                                            <span className="text-[10px] font-bold uppercase text-blue-400">BWorth Coins</span>
+                                            <span className="text-[10px] font-bold uppercase text-[#14A3C7]">BWorth Coins</span>
                                         </div>
                                         <div className="mt-4 flex gap-2">
                                             <div className="h-1 w-full bg-white/10 rounded-full overflow-hidden">
-                                                <div className="h-full w-[70%] bg-blue-500"></div>
+                                                <div className="h-full w-[70%] bg-[#14A3C7]"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -231,12 +231,12 @@ export default function AppDownloadSection() {
                                                 <span className="text-lg font-serif font-black text-emerald-900 leading-none">12.4kg</span>
                                                 <span className="text-[8px] uppercase font-bold text-emerald-600/60 tracking-wider font-sans">{t.app_download.co2_saved}</span>
                                             </div>
-                                            <div className="p-4 bg-blue-50 rounded-3xl border border-blue-100 flex flex-col gap-1">
-                                                <div className="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center mb-1">
-                                                    <Recycle size={14} className="text-blue-600" />
+                                            <div className="p-4 bg-[#14A3C7]/5 rounded-3xl border border-[#14A3C7]/10 flex flex-col gap-1">
+                                                <div className="w-8 h-8 rounded-full bg-[#14A3C7]/10 flex items-center justify-center mb-1">
+                                                    <Recycle size={14} className="text-[#14A3C7]" />
                                                 </div>
-                                                <span className="text-lg font-serif font-black text-blue-900 leading-none">8 Items</span>
-                                                <span className="text-[8px] uppercase font-bold text-blue-600/60 tracking-wider font-sans">{t.app_download.recycled}</span>
+                                                <span className="text-lg font-serif font-black text-[#14A3C7] leading-none">8 Items</span>
+                                                <span className="text-[8px] uppercase font-bold text-[#14A3C7]/60 tracking-wider font-sans">{t.app_download.recycled}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -245,7 +245,7 @@ export default function AppDownloadSection() {
                                     <div className="space-y-3 bg-zinc-50 p-4 rounded-3xl border border-zinc-100">
                                         <div className="flex justify-between items-center px-1">
                                             <span className="text-[10px] font-black uppercase tracking-widest text-black/40">{t.app_download.picks}</span>
-                                            <span className="text-[9px] font-bold text-blue-500 uppercase tracking-tight">View All</span>
+                                            <span className="text-[9px] font-bold text-[#14A3C7] uppercase tracking-tight">View All</span>
                                         </div>
                                         <div className="flex gap-3 overflow-x-auto pb-1 scrollbar-hide">
                                             {[
@@ -276,13 +276,13 @@ export default function AppDownloadSection() {
                                 <div className="mt-auto border-t border-zinc-100 bg-white/90 backdrop-blur-md pb-2">
                                     <div className="h-16 w-full flex items-center justify-around px-4">
                                         <motion.div whileHover={{ scale: 1.2 }} className="p-2 cursor-pointer">
-                                            <Home size={18} className="text-blue-600" />
+                                            <Home size={18} className="text-[#14A3C7]" />
                                         </motion.div>
                                         <motion.div whileHover={{ scale: 1.2 }} className="p-2 cursor-pointer opacity-40">
                                             <Search size={18} />
                                         </motion.div>
                                         <div className="relative">
-                                            <div className="absolute -inset-2 bg-blue-500/20 blur-xl rounded-full"></div>
+                                            <div className="absolute -inset-2 bg-[#14A3C7]/20 blur-xl rounded-full"></div>
                                             <motion.div
                                                 whileHover={{ scale: 1.1, y: -22 }}
                                                 className="w-12 h-12 bg-black rounded-full flex items-center justify-center shadow-xl transform -translate-y-5 ring-4 ring-white relative z-10"

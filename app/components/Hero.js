@@ -59,7 +59,7 @@ export default function Hero() {
             <div
                 className="pointer-events-none fixed inset-0 z-10 opacity-30 transition-opacity duration-300 pointer-events-none"
                 style={{
-                    background: `radial-gradient(600px circle at ${mousePos.x}px ${mousePos.y}px, rgba(59, 130, 246, 0.15), transparent 40%)`,
+                    background: `radial-gradient(600px circle at ${mousePos.x}px ${mousePos.y}px, rgba(20, 163, 199, 0.15), transparent 40%)`,
                 }}
             />
 
@@ -70,7 +70,7 @@ export default function Hero() {
                 className={`absolute top-1/4 right-0 w-1/2 h-1/2 rounded-full blur-[120px] -z-10 animate-pulse ${theme === "white" ? "bg-black/[0.02]" : "bg-white/[0.02]"
                     }`}
             ></div>
-            <div className="absolute bottom-1/4 left-0 w-1/3 h-1/3 bg-blue-600/[0.03] rounded-full blur-[100px] -z-10"></div>
+            <div className="absolute bottom-1/4 left-0 w-1/3 h-1/3 bg-[#14A3C7]/[0.03] rounded-full blur-[100px] -z-10"></div>
 
             <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-8 lg:gap-12 items-center relative z-20">
                 <div className="lg:col-span-7">
@@ -113,7 +113,7 @@ export default function Hero() {
                     <div className="space-y-8">
                         {/* Premium Unsplash Image Card */}
                         <div
-                            className={`hero-image-card relative group overflow-hidden rounded-[2.5rem] border shadow-2xl shadow-blue-500/5 max-w-sm lg:ml-auto ${theme === "white"
+                            className={`hero-image-card relative group overflow-hidden rounded-[2.5rem] border shadow-2xl shadow-[#14A3C7]/5 max-w-sm lg:ml-auto ${theme === "white"
                                 ? "border-black/10"
                                 : "border-white/10"
                                 }`}
@@ -131,7 +131,7 @@ export default function Hero() {
                             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
                             <div className="absolute bottom-8 left-8 right-8">
                                 <div className="flex items-center gap-2 mb-2">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></div>
+                                    <div className="w-1.5 h-1.5 rounded-full bg-[#14A3C7] animate-pulse"></div>
                                     <span className="text-[10px] font-black tracking-[0.3em] text-white/60 uppercase">
                                         {t.hero_component.exclusive}
                                     </span>
@@ -155,7 +155,7 @@ export default function Hero() {
                             <div className="flex flex-wrap gap-4 justify-start">
                                 <Link
                                     href="#ecosystem"
-                                    className={`px-8 py-5 rounded-full font-bold flex items-center gap-2 group hover:bg-blue-600 hover:text-white transition-all active:scale-95 shadow-xl text-sm ${theme === "white"
+                                    className={`px-8 py-5 rounded-full font-bold flex items-center gap-2 group hover:bg-[#14A3C7] hover:text-white transition-all active:scale-95 shadow-xl text-sm ${theme === "white"
                                         ? "bg-black text-white shadow-black/5"
                                         : "bg-white text-black shadow-white/5"
                                         }`}

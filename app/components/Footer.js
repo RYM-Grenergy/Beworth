@@ -53,7 +53,7 @@ export default function Footer() {
                 <Link
                   key={i}
                   href="#"
-                  className={`w-12 h-12 flex items-center justify-center border rounded-full hover:bg-blue-600 hover:text-white transition-all cursor-pointer ${theme === "white"
+                  className={`w-12 h-12 flex items-center justify-center border rounded-full hover:bg-[#14A3C7] hover:text-white transition-all cursor-pointer ${theme === "white"
                     ? "bg-black/5 border-black/10"
                     : "bg-white/5 border-white/10"
                     }`}
@@ -76,7 +76,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-lg font-serif font-bold uppercase group flex items-center gap-2 hover:text-blue-400 transition-colors"
+                    className="text-lg font-serif font-bold uppercase group flex items-center gap-2 hover:text-[#14A3C7] transition-colors"
                   >
                     {link.name}
                     <ArrowUpRight
@@ -104,7 +104,7 @@ export default function Footer() {
                 >
                   +91 8826668050
                 </p>
-                <p className={`text-lg font-medium underline decoration-white/30 underline-offset-8 ${theme === "white" ? "text-blue-500 decoration-blue-500/30" : "text-white"}`}>
+                <p className={`text-lg font-normal underline decoration-white/30 underline-offset-8 ${theme === "white" ? "text-[#14A3C7] decoration-[#14A3C7]/30" : "text-white"}`}>
                   info@bworth.co.in
                 </p>
               </div>
@@ -142,13 +142,13 @@ export default function Footer() {
           >
             <Link
               href="/privacy-policy"
-              className="hover:text-blue-400 transition-colors"
+              className="hover:text-[#14A3C7] transition-colors"
             >
               {t.footer.policy}
             </Link>
             <Link
               href="/terms-of-use"
-              className="hover:text-blue-400 transition-colors"
+              className="hover:text-[#14A3C7] transition-colors"
             >
               {t.footer.terms}
             </Link>
