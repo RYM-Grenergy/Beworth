@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import CustomCursor from "./components/CustomCursor";
 import { LanguageProvider } from "./context/LanguageContext";
 import { ThemeProvider } from "./context/ThemeContext";
+import Loading from "./loading";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -58,6 +59,7 @@ export default function RootLayout({ children }) {
       >
         <LanguageProvider>
           <ThemeProvider>
+            <Loading />
             <CustomCursor />
             <Navbar />
             {children}

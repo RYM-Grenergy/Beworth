@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import gsap from "gsap";
@@ -23,6 +23,35 @@ export default function Home() {
   const { theme } = useTheme();
   const t = translations[language];
   const containerRef = useRef(null);
+  const sectionRef = useRef(null);
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!videoRef.current) return;
+
+        if (entry.isIntersecting) {
+          videoRef.current.play();
+        } else {
+          videoRef.current.pause();
+        }
+      },
+      {
+        threshold: 0.6, // plays when 60% visible
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   useGSAP(
     () => {
@@ -124,6 +153,7 @@ export default function Home() {
 
       {/* Our Mission & Legacy Section */}
       <section
+        ref={sectionRef}
         id="mission-section"
         className={`py-32 px-6 md:px-12 overflow-hidden relative border-t transition-colors ${theme === "white"
           ? "bg-[#F8FAFC] text-black border-black/[0.05]"
@@ -178,15 +208,16 @@ export default function Home() {
 
             <div className="flex-1 relative">
               <div
-                className={`mission-image aspect-square rounded-[3rem] overflow-hidden border ${theme === "white" ? "border-black/10" : "border-white/10"
+                className={`mission-image aspect-square rounded-[2rem] overflow-hidden border ${theme === "white" ? "border-black/10" : "border-white/10"
                   }`}
               >
                 <video
+                  ref={videoRef}
                   src="/video.mp4"
-                  autoPlay
-                  muted
+                  controls
                   loop
                   playsInline
+                  preload="metadata"
                   className="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-1000"
                 />
               </div>
