@@ -11,66 +11,92 @@ export default function Loading() {
         setLoading(true);
         const timer = setTimeout(() => {
             setLoading(false);
-        }, 1500); // Slightly reduced duration for smoother navigation feel
+        }, 2500);
         return () => clearTimeout(timer);
-    }, [pathname]); // Runs on every route change
+    }, [pathname]);
+
+    const letterVariants = {
+        hidden: { y: 100, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                duration: 0.8,
+                ease: [0.22, 1, 0.36, 1],
+            },
+        },
+        exit: {
+            y: -100,
+            opacity: 0,
+            transition: {
+                duration: 0.4,
+                ease: "easeIn",
+            },
+        },
+    };
+
+    const containerVariants = {
+        visible: {
+            transition: {
+                staggerChildren: 0.1,
+            },
+        },
+        exit: {
+            transition: {
+                staggerChildren: 0.05,
+                staggerDirection: -1,
+            },
+        },
+    };
 
     return (
-        <AnimatePresence>
+        <AnimatePresence mode="wait">
             {loading && (
                 <motion.div
                     key="loader"
-                    className="fixed inset-0 z-[1000] flex items-center justify-center bg-black"
-                    initial={{ opacity: 1 }}
+                    className="fixed inset-0 z-[1000] flex flex-col items-center justify-center bg-[#14A3C7]"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    transition={{ duration: 0.5 }}
                 >
-                    <div className="relative flex flex-col items-center">
-                        {/* Modern Minimalistic Spinner */}
-                        <div className="relative w-24 h-24 mb-8">
-                            {/* Background Circle */}
-                            <motion.div
-                                className="absolute inset-0 border-4 border-white/10 rounded-full"
-                                initial={{ scale: 0.8, opacity: 0 }}
-                                animate={{ scale: 1, opacity: 1 }}
-                                transition={{ duration: 0.5 }}
-                            />
-                            {/* Spinning Arc */}
-                            <motion.div
-                                className="absolute inset-0 border-t-4 border-[#14A3C7] rounded-full"
-                                animate={{ rotate: 360 }}
-                                transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                            />
-
-                            {/* Inner Pulse */}
-                            <motion.div
-                                className="absolute inset-0 m-auto w-2 h-2 bg-white rounded-full"
-                                animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
-                                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                            />
-                        </div>
-
-                        {/* Text Reveal Animation */}
-                        <div className="overflow-hidden flex flex-col items-center">
-                            <motion.span
-                                initial={{ y: 20, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                                className="text-white font-serif uppercase tracking-[0.3em] text-lg font-bold mb-2"
-                            >
-                                BWorth
-                            </motion.span>
-
-                            <motion.span
-                                initial={{ y: 20, opacity: 0 }}
-                                animate={{ y: 0, opacity: 1 }}
-                                transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-                                className="text-[#14A3C7] text-[10px] uppercase tracking-[0.2em] font-medium"
-                            >
-                                Sustainable Fashion
-                            </motion.span>
-                        </div>
+                    <div className="relative overflow-hidden">
+                        <motion.div
+                            className="flex items-center justify-center gap-2 sm:gap-4"
+                            variants={containerVariants}
+                            initial="hidden"
+                            animate="visible"
+                            exit="exit"
+                        >
+                            {["B", "W", "O", "R", "T", "H"].map((letter, index) => (
+                                <motion.span
+                                    key={index}
+                                    variants={letterVariants}
+                                    className="text-6xl sm:text-8xl md:text-9xl font-serif font-black text-white mix-blend-overlay"
+                                >
+                                    {letter}
+                                </motion.span>
+                            ))}
+                        </motion.div>
                     </div>
+
+                    <div className="mt-12 overflow-hidden">
+                        <motion.div
+                            initial={{ width: 0 }}
+                            animate={{ width: "200px" }}
+                            transition={{ duration: 2.2, ease: "easeInOut" }}
+                            className="h-[2px] bg-white/50 rounded-full"
+                        />
+                    </div>
+
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.5, duration: 0.8 }}
+                        className="absolute bottom-12 text-white/60 text-xs font-bold tracking-[0.3em] uppercase"
+                    >
+                        Redefining Fashion
+                    </motion.p>
                 </motion.div>
             )}
         </AnimatePresence>
