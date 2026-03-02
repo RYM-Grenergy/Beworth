@@ -84,7 +84,9 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-lg font-serif font-bold uppercase group flex items-center gap-2 hover:text-[#14A3C7] transition-colors"
+                    className={`text-lg font-serif font-bold uppercase group flex items-center gap-2 transition-colors ${
+                      theme === "white" ? "hover:text-[#14A3C7]" : "hover:text-black"
+                    }`}
                   >
                     {link.name}
                     <ArrowUpRight
